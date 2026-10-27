@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Iran Escalation Ladder, explained</title>
+<style>
+:root{
+  --bg:#f7f5f1;
+  --fg:#1d1b18;
+  --muted:#5c5852;
+  --card:#ffffff;
+  --border:#e3dfd7;
+  --accent:#b25c2e;
+  --accent-soft:#f1e2d6;
+  --established:#2f6b4f;
+  --established-bg:#e4f1e9;
+  --contested:#9c6b16;
+  --contested-bg:#f6ecd8;
+  --speaker:#6a5a8a;
+  --speaker-bg:#ece7f5;
+  --rung-failed:#c0523a;
+  --rung-failed-bg:#f6e2dd;
+  --rung-next:#9c6b16;
+  --rung-next-bg:#f6ecd8;
+  --rail:#8a847a;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --fg:#f0ece4;
+    --muted:#b3ab9e;
+    --card:#201d18;
+    --border:#332f27;
+    --accent:#d98356;
+    --accent-soft:#3a2a1f;
+    --established:#7fc49c;
+    --established-bg:#1e2e25;
+    --contested:#e0b464;
+    --contested-bg:#332a16;
+    --speaker:#b7a6e0;
+    --speaker-bg:#28223a;
+    --rung-failed:#e07a62;
+    --rung-failed-bg:#3a241f;
+    --rung-next:#e0b464;
+    --rung-next-bg:#332a16;
+    --rail:#6b655a;
+  }
+}
+*{box-sizing:border-box;}
+html{background:var(--bg);}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px 48px;
+}
+h1,h2,h3{line-height:1.25;}
+h1{font-size:1.5rem;margin:0 0 6px;}
+h2{font-size:1.15rem;margin:36px 0 12px;border-top:1px solid var(--border);padding-top:20px;}
+.kicker{color:var(--accent);font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin:0 0 8px;}
+header{padding-top:28px;}
+.standfirst{font-size:1.02rem;color:var(--muted);margin:0 0 4px;}
+.lead{font-size:1rem;color:var(--fg);}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.card h3{font-size:1rem;margin:0 0 6px;color:var(--accent);}
+.card p{margin:4px 0;font-size:0.94rem;}
+.card .label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--border);}
+.timeline li{position:relative;padding:4px 0 18px 20px;}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;top:6px;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{font-size:0.8rem;color:var(--accent);font-weight:600;display:block;margin-bottom:2px;}
+.timeline .what{font-size:0.94rem;}
+.claim{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px;}
+.chip{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-bottom:8px;}
+.chip.established{color:var(--established);background:var(--established-bg);}
+.chip.contested{color:var(--contested);background:var(--contested-bg);}
+.chip.speaker{color:var(--speaker);background:var(--speaker-bg);}
+.claim p{margin:4px 0;font-size:0.94rem;}
+.claim .why{font-size:0.86rem;color:var(--muted);}
+.numgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.numtile{background:var(--accent-soft);border-radius:10px;padding:14px;text-align:center;}
+.numtile .big{font-size:1.5rem;font-weight:700;color:var(--accent);display:block;}
+.numtile .ctx{font-size:0.82rem;color:var(--muted);margin-top:4px;display:block;}
+svg{width:100%;height:auto;display:block;margin:8px 0;}
+.svgtext{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.rail{stroke:var(--rail);stroke-width:3;}
+.rung-failed-box{fill:var(--rung-failed-bg);stroke:var(--rung-failed);stroke-width:2;}
+.rung-next-box{fill:var(--rung-next-bg);stroke:var(--rung-next);stroke-width:2;stroke-dasharray:5 4;}
+.rung-label{fill:var(--fg);font-size:11px;}
+.rung-tag{font-size:9px;font-weight:700;letter-spacing:0.03em;}
+.rung-tag.failed{fill:var(--rung-failed);}
+.rung-tag.next{fill:var(--rung-next);}
+.axis-label{fill:var(--muted);font-size:10px;}
+.script{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;font-size:0.96rem;}
+details{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+summary{font-weight:600;cursor:pointer;font-size:0.96rem;}
+details p{margin:10px 0 2px;color:var(--muted);font-size:0.92rem;}
+.misconception{font-size:0.9rem;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px dashed var(--border);}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:0.82rem;color:var(--muted);}
+footer a{color:var(--accent);}
+.discuss{margin-top:16px;font-size:0.94rem;}
+.discuss .q{font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <p class="kicker">World &middot; Theo Von #675</p>
+  <h1>The Iran Escalation Ladder</h1>
+  <p class="standfirst">Why a high school teacher's war-game prediction matters this week</p>
+  <p class="lead">Professor Jiang, a geopolitics teacher who says his game theory called Trump's 2024 win, laid out a step by step US-Iran war scenario on Theo Von's podcast. Since late February 2026 a real US-Israel conflict with Iran has followed a similar pattern, and this week Iran again disrupted shipping through the Strait of Hormuz.</p>
+</header>
+
+<h2>The situation in 60 seconds</h2>
+<p>A high school teacher who runs a geopolitics YouTube channel, known as Professor Jiang, uses game theory to predict how conflicts unfold: identify the rules and incentives each side faces, then work out their best strategy. He says this method let him correctly call Trump's 2024 win and, two years ahead, a US war with Iran. On the podcast he walks through a four-step "escalation ladder": a decapitation strike on Iran's leadership, a naval blockade of its oil exports, threatened strikes on power infrastructure, and Iran activating proxy groups like Hezbollah and the Houthis. Each harsher step only gets used once the one below it fails to force surrender. He also explains why two narrow shipping lanes, the Strait of Hormuz and the Bab el Mandeb Strait, put global oil, food, and fertilizer trade at risk from the same conflict, and traces today's US-Israel-Gulf alignment back to a 1996 Israeli strategy memo called Clean Break.</p>
+
+<h2>Who wants what</h2>
+<div class="grid">
+  <div class="card">
+    <h3>United States</h3>
+    <p><span class="label">Wants:</span> Force Iran's capitulation and protect oil flow and allies without absorbing full-scale war costs.</p>
+    <p><span class="label">Leverage:</span> Military strikes, naval blockade capability, alliance network with Gulf states.</p>
+  </div>
+  <div class="card">
+    <h3>Iran</h3>
+    <p><span class="label">Wants:</span> Preserve the regime, resist decapitation, make the war too costly for the US and its allies to continue.</p>
+    <p><span class="label">Leverage:</span> Proxies (Hezbollah, Houthis, Iraqi militias), ability to disrupt Hormuz shipping, a higher tolerance for economic pain.</p>
+  </div>
+  <div class="card">
+    <h3>Israel</h3>
+    <p><span class="label">Wants:</span> Eliminate Iran-aligned threats like Hezbollah and secure the region through strength rather than negotiation.</p>
+    <p><span class="label">Leverage:</span> Military strikes, intelligence influence over regional leaders.</p>
+  </div>
+  <div class="card">
+    <h3>Saudi Arabia and Gulf states</h3>
+    <p><span class="label">Wants:</span> Keep oil exports flowing and avoid direct war while protecting energy infrastructure.</p>
+    <p><span class="label">Leverage:</span> Economic ties to the US economy, potential ground action against the Houthis.</p>
+  </div>
+  <div class="card">
+    <h3>Proxy groups (Hezbollah, Houthis, Shia militias)</h3>
+    <p><span class="label">Wants:</span> Protect Iran's interests and keep local legitimacy through services.</p>
+    <p><span class="label">Leverage:</span> Control over secondary chokepoints like Bab el Mandeb, ability to raise the war's global cost.</p>
+  </div>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">1996</span><span class="what">The Clean Break memo is written for Netanyahu by a group including Richard Perle and Douglas Feith, proposing deterrence through force over the negotiated peace process with Palestinians.</span></li>
+  <li><span class="when">Years later</span><span class="what">Perle and Feith join the Pentagon and, with Paul Wolfowitz, become architects of the Iraq War.</span></li>
+  <li><span class="when">Speaker's scenario, late February 2026</span><span class="what">The US allegedly carries out a decapitation strike aimed at Iran's supreme leader and senior leadership, hoping to trigger regime collapse.</span></li>
+  <li><span class="when">Following that strike, per the speaker</span><span class="what">Iran does not collapse; a successor leader takes over and Iran retaliates by pressuring US allies and intermittently closing the Strait of Hormuz.</span></li>
+  <li><span class="when">Next step, per the speaker</span><span class="what">The US imposes a naval blockade on Iran's oil exports to China, which the speaker says fails because Iranians are already used to sanctions-era scarcity.</span></li>
+  <li><span class="when">Since Feb 28, 2026, reported</span><span class="what">A real conflict beginning with US-Israeli strikes has led to Iran intermittently blocking and attacking shipping in the Strait of Hormuz, with a Pakistan-mediated ceasefire and a June 2026 memorandum that have not fully restored safe passage.</span></li>
+  <li><span class="when">October 22, 2026, reported</span><span class="what">Iran claimed seven oil tankers were hit in the Strait, attributed to Iranian action or naval mines, not independently verified, while threatening US bases if military escorts continue.</span></li>
+  <li><span class="when">Predicted, not yet confirmed as occurring</span><span class="what">The speaker expects US strikes on Iranian power infrastructure next, followed by Iran activating Hezbollah and the Houthis to close more chokepoints.</span></li>
+</ul>
+
+<h2>Claims: what to trust, what to question</h2>
+
+<div class="claim">
+  <span class="chip speaker">Speaker's view</span>
+  <p>His game theory predictions, Trump's 2024 win, a US-Iran war, and the US losing that war, all came true.</p>
+  <p class="why">Why: this is a self-reported track record with no independent verification given in the source.</p>
+</div>
+
+<div class="claim">
+  <span class="chip speaker">Speaker's view</span>
+  <p>A US strike killed Iran's supreme leader Khamenei and much of the senior leadership in a decapitation strike.</p>
+  <p class="why">Why: presented as part of his scenario narrative with a specific date; no independent reporting confirms this as a historical event.</p>
+</div>
+
+<div class="claim">
+  <span class="chip established">Established</span>
+  <p>The Strait of Hormuz carries roughly 20% of global oil supply.</p>
+  <p class="why">Why: consistent with widely cited figures for that chokepoint's share of global oil trade.</p>
+</div>
+
+<div class="claim">
+  <span class="chip contested">Contested</span>
+  <p>Russia and Ukraine together supply a third of the world's carbohydrates.</p>
+  <p class="why">Why: challenged in the transcript itself; the better figure is about 12% of internationally traded food calories and 28 to 30% of traded wheat.</p>
+</div>
+
+<div class="claim">
+  <span class="chip speaker">Speaker's view</span>
+  <p>A Ukrainian drone struck an Iranian cargo ship carrying Russian supplies through the Caspian Sea, risking a merger of the Ukraine and Iran war fronts.</p>
+  <p class="why">Why: offered as a specific, unverified incident supporting his broader escalation theory.</p>
+</div>
+
+<div class="claim">
+  <span class="chip established">Established</span>
+  <p>The Clean Break memo was written in 1996 by a group including Richard Perle and Douglas Feith for Netanyahu, and both later helped plan the Iraq War at the Pentagon.</p>
+  <p class="why">Why: matches the publicly documented history of the Clean Break report and its authors' later Pentagon roles.</p>
+</div>
+
+<div class="claim">
+  <span class="chip speaker">Speaker's view</span>
+  <p>Hezbollah and the Houthis are popular locally mainly because they deliver services that corrupt governments do not.</p>
+  <p class="why">Why: offered as his explanation; it simplifies more complex sectarian and political dynamics.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numgrid">
+  <div class="numtile">
+    <span class="big">~20%</span>
+    <span class="ctx">of global oil supply moves through the Strait of Hormuz</span>
+  </div>
+  <div class="numtile">
+    <span class="big">~7%</span>
+    <span class="ctx">more of global oil trade is at risk if the Houthis close Bab el Mandeb</span>
+  </div>
+  <div class="numtile">
+    <span class="big">28 to 30%</span>
+    <span class="ctx">of globally traded wheat comes from Russia and Ukraine combined</span>
+  </div>
+  <div class="numtile">
+    <span class="big">~50,000</span>
+    <span class="ctx">people crossed into Ceuta in a single event, cited as a sign of regional spillover</span>
+  </div>
+</div>
+
+<h2>The mechanism: an escalation ladder</h2>
+<svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escalation ladder diagram showing four steps from decapitation strike to proxy activation">
+  <line class="rail" x1="40" y1="30" x2="40" y2="400"/>
+  <line class="rail" x1="300" y1="30" x2="300" y2="400"/>
+
+  <rect class="rung-next-box" x="55" y="30" width="230" height="56" rx="8"/>
+  <text class="svgtext rung-label" x="170" y="52" text-anchor="middle">4. Proxies activate,</text>
+  <text class="svgtext rung-label" x="170" y="66" text-anchor="middle">close more chokepoints</text>
+  <text class="svgtext rung-tag next" x="170" y="80" text-anchor="middle">PREDICTED NEXT</text>
+
+  <rect class="rung-next-box" x="55" y="116" width="230" height="56" rx="8"/>
+  <text class="svgtext rung-label" x="170" y="138" text-anchor="middle">3. Strikes on power</text>
+  <text class="svgtext rung-label" x="170" y="152" text-anchor="middle">infrastructure</text>
+  <text class="svgtext rung-tag next" x="170" y="166" text-anchor="middle">PREDICTED NEXT</text>
+
+  <rect class="rung-failed-box" x="55" y="202" width="230" height="56" rx="8"/>
+  <text class="svgtext rung-label" x="170" y="224" text-anchor="middle">2. Naval blockade</text>
+  <text class="svgtext rung-label" x="170" y="238" text-anchor="middle">of oil exports</text>
+  <text class="svgtext rung-tag failed" x="170" y="252" text-anchor="middle">TRIED, FAILED</text>
+
+  <rect class="rung-failed-box" x="55" y="288" width="230" height="56" rx="8"/>
+  <text class="svgtext rung-label" x="170" y="310" text-anchor="middle">1. Decapitation strike</text>
+  <text class="svgtext rung-label" x="170" y="324" text-anchor="middle">on leadership</text>
+  <text class="svgtext rung-tag failed" x="170" y="338" text-anchor="middle">TRIED, FAILED</text>
+
+  <text class="svgtext axis-label" x="170" y="20" text-anchor="middle">costlier, harder to reverse</text>
+  <text class="svgtext axis-label" x="170" y="412" text-anchor="middle">cheaper, more reversible</text>
+</svg>
+<p style="font-size:0.86rem;color:var(--muted);">Each rung is only tried after the one below it fails to force surrender, per the speaker's framework.</p>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+"So there's this teacher, Professor Jiang, who called Trump's win using game theory, basically mapping out what each side's cheapest move is before they escalate. He says wars climb a ladder: first you try a decapitation strike on the enemy's leaders, then an economic blockade, then you hit their infrastructure, and only then do proxies like Hezbollah or the Houthis get activated to shut down shipping lanes like the Strait of Hormuz. The scary part is those same lanes carry the world's oil and fertilizer, so a regional war can hit food prices in Africa too."
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+  <summary>Why does the speaker argue Iran can absorb economic pain better than the US can?</summary>
+  <p>Because decades of sanctions already normalized scarcity for Iranians, while sudden cost spikes would trigger unrest among Americans unused to that kind of hardship.</p>
+</details>
+
+<details>
+  <summary>Why would closing the Strait of Hormuz threaten Africa's food supply, not just Asia's oil supply?</summary>
+  <p>Because fertilizer, a byproduct of oil production, also transits Hormuz and feeds African agriculture, so closing it threatens both energy and food chains at once.</p>
+</details>
+
+<details>
+  <summary>Explain the escalation ladder idea in your own words. What should a good answer cover?</summary>
+  <p>Conflicts escalate in a logical order rather than randomly; each side tries the cheapest coercive tactic first (decapitation strike, economic blockade, infrastructure strikes, proxy activation); and the next rung only gets used once the previous one fails to force surrender.</p>
+</details>
+
+<div class="misconception">
+  Common misconception: Russia and Ukraine do not supply a third of the world's carbohydrates. The accurate figures are about 12% of internationally traded food calories and 28 to 30% of globally traded wheat specifically.
+</div>
+
+<div class="discuss">
+  <p class="q">Worth discussing:</p>
+  <p>If Iran can tolerate economic pain better than the US because of decades of sanctions, what actually forces either side to back down first?</p>
+</div>
+
+<footer>
+  <p>Source video: <a href="https://www.youtube.com/watch?v=3cZN0OcSsqE">This Past Weekend w/ Theo Von #675</a></p>
+  <p>Brief prepared October 26, 2026. General background may be dated; the assistant's knowledge cutoff is January 2026, so specific recent military events are drawn from the brief's own sourcing rather than independent verification.</p>
+</footer>
+
+</body>
+</html>
