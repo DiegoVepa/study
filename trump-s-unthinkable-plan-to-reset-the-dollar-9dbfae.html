@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trump's Unthinkable Plan to Reset the Dollar</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --panel:#ffffff;
+  --text:#1f2320;
+  --muted:#5b6058;
+  --line:#dedad2;
+  --accent:#9a3b2e;
+  --accent-soft:#f3e4df;
+  --ok:#2f6b4f;
+  --ok-soft:#e3f0e9;
+  --warn:#8a6a1f;
+  --warn-soft:#f6ecd6;
+  --view:#5a5fa8;
+  --view-soft:#e7e7f5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15140f;
+    --panel:#1e1d17;
+    --text:#ece7dd;
+    --muted:#a8a296;
+    --line:#38362d;
+    --accent:#e08a74;
+    --accent-soft:#2e211c;
+    --ok:#7fc39e;
+    --ok-soft:#1f2e26;
+    --warn:#e0c067;
+    --warn-soft:#2e2718;
+    --view:#b4b8e8;
+    --view-soft:#24243a;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+h2{
+  font-size:1.05rem;
+  color:var(--accent);
+  margin:36px 0 12px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:6px;
+}
+.why{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin:0 0 4px;
+}
+.lede{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px;
+  font-size:1rem;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card p{
+  margin:4px 0;
+  font-size:0.92rem;
+}
+.card .label{
+  color:var(--muted);
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-left:2px solid var(--line);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 18px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--accent);
+  display:block;
+}
+.timeline .what{
+  font-size:0.92rem;
+  margin-top:2px;
+}
+.claim{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+.claim p{
+  margin:6px 0 0;
+  font-size:0.92rem;
+}
+.claim .note{
+  color:var(--muted);
+  font-size:0.85rem;
+  margin-top:4px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:600;
+  padding:3px 9px;
+  border-radius:999px;
+}
+.tag.established{background:var(--ok-soft);color:var(--ok);}
+.tag.contested{background:var(--warn-soft);color:var(--warn);}
+.tag.view{background:var(--view-soft);color:var(--view);}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.numbers .tile{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+}
+.numbers .tile .big{
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.numbers .tile .ctx{
+  font-size:0.8rem;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+.visual{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px;
+}
+.visual svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.script{
+  background:var(--accent-soft);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px;
+  font-size:0.95rem;
+}
+.script p{margin:0 0 10px;}
+.script p:last-child{margin-bottom:0;}
+details{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+  font-size:0.95rem;
+}
+details p{
+  margin:10px 0 0;
+  font-size:0.92rem;
+  color:var(--muted);
+}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Trump's Unthinkable Plan to Reset the Dollar</h1>
+<p class="why">Why this matters this week: mortgage rates just jumped to 7.45% even though most people think the Fed controls that number. It doesn't, and the real story is about who sets your borrowing costs and who benefits when inflation runs hot.</p>
+
+<h2>The situation in 60 seconds</h2>
+<div class="lede">
+<p>The 30-year fixed mortgage rate jumped to 7.45% because the bond market, not the Fed, sets long-term borrowing costs, and the 10-year Treasury yield just hit 5.23%, its highest since 2007. The Fed raised its own short-term rate anyway, by a quarter point to 3.75-4%, but the argument here is that this won't cool inflation because today's price pressure comes from shortages (homes, chips, power) and from AI capital spending that doesn't slow down just because rates rise. Separately, the Treasury's own cash account at the Fed and a possible recalculation of a key inflation gauge are framed as a quiet way to make inflation look lower without prices actually falling.</p>
+</div>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+<h3>Federal Reserve</h3>
+<p><span class="label">Wants:</span> Bring inflation down toward its 2% target without crashing the economy.</p>
+<p><span class="label">Leverage:</span> Sets the short-term federal funds rate, but cannot directly control long-term yields or mortgage rates.</p>
+</div>
+
+<div class="card">
+<h3>US Treasury</h3>
+<p><span class="label">Wants:</span> Manage the government's own borrowing costs and keep the financial system liquid.</p>
+<p><span class="label">Leverage:</span> Controls the TGA, the Treasury's cash account at the Fed, which can inject or drain cash from bank reserves.</p>
+</div>
+
+<div class="card">
+<h3>Bond market investors</h3>
+<p><span class="label">Wants:</span> Adequate compensation for the risk of lending to a heavily indebted US government.</p>
+<p><span class="label">Leverage:</span> Set the 10-year Treasury yield through buying and selling, which banks use as the reference for 30-year mortgage pricing.</p>
+</div>
+
+<div class="card">
+<h3>AI and tech companies</h3>
+<p><span class="label">Wants:</span> Cheap, abundant financing to keep building AI infrastructure.</p>
+<p><span class="label">Leverage:</span> Enormous capital need, cited at $300-570B in new debt this year, that doesn't shrink when rates rise, according to Bill Ackman as quoted in the video.</p>
+</div>
+
+<div class="card">
+<h3>Savers and pension holders</h3>
+<p><span class="label">Wants:</span> Purchasing power and promised benefits preserved over time.</p>
+<p><span class="label">Leverage:</span> Little. Their returns are tied to official rates and inflation figures set by others.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+<li><span class="when">1800-1940</span><span class="what">US inflation averaged just 0.2% a year, a 28% total rise over 140 years, per the video's figures.</span></li>
+<li><span class="when">Since 1940</span><span class="what">Inflation has averaged about 3.7% a year, a cumulative +2,200%, framed in the video as a slow transfer from savers to the government.</span></li>
+<li><span class="when">Post-2008 era</span><span class="what">Low and falling interest rates made "buy and hold" investing work well for decades, per the video's framing.</span></li>
+<li><span class="when">2023</span><span class="what">The Fed's prior rate hike cycle paused, before this new rise.</span></li>
+<li><span class="when">September 16, 2026</span><span class="what">The Fed raises its target rate 0.25 points to 3.75-4%, its first hike since 2023, with every member voting yes.</span></li>
+<li><span class="when">Mid-September 2026</span><span class="what">10-year Treasury yield peaks near 5.04%, a 19-year high, on its way toward 5.23%.</span></li>
+<li><span class="when">Recent weeks</span><span class="what">30-year mortgage jumps to 7.45%; the Treasury injects $57B via the TGA with no public announcement.</span></li>
+</ul>
+
+<h2>Claims: what's solid, what's not</h2>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p>The 10-year Treasury yield reached 5.23%, its highest since 2007.</p>
+<p class="note">Cited from FRED (Federal Reserve Economic Data), a standard public data source.</p>
+</div>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p>The Fed raised its target rate 0.25 points to 3.75-4%, with every member voting yes.</p>
+<p class="note">A reported, votable Fed action, not an opinion.</p>
+</div>
+
+<div class="claim">
+<span class="tag contested">Contested</span>
+<p>The Core PCE inflation gauge will be recalculated to read about 0.5 points lower.</p>
+<p class="note">Attributed to Tom Lee's estimate, a specific number and timing not independently confirmed in the source video.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>AI debt demand is effectively rate-insensitive because of "a near infinite ROI."</p>
+<p class="note">This is Bill Ackman's quoted opinion, relayed secondhand by the narrator, not a measured fact.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>There is a deliberate, unannounced government "plan" to let inflation run hot, under-report it, then cut rates to shrink real debt.</p>
+<p class="note">This is the narrator's interpretive framing of normal fiscal and monetary dynamics, not a disclosed or confirmed policy.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>The Treasury is effectively becoming "a second central bank" through TGA cash movements.</p>
+<p class="note">TGA inflows and outflows are routine Treasury cash management. Calling it a shadow central bank is the narrator's interpretation.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>The "buy and hold" investing strategy no longer works for this generation.</p>
+<p class="note">This is marketing framing tied to the presenter's paid training content, not an established investing fact.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+<div class="tile"><span class="big">5.23%</span><span class="ctx">10-year Treasury yield, highest since 2007</span></div>
+<div class="tile"><span class="big">7.45%</span><span class="ctx">30-year fixed mortgage rate, up from 7.24% the day before</span></div>
+<div class="tile"><span class="big">3.75-4%</span><span class="ctx">Fed funds rate after a 0.25pp hike, first since 2023</span></div>
+<div class="tile"><span class="big">$57B</span><span class="ctx">TGA injection into the financial system last week, no public announcement</span></div>
+<div class="tile"><span class="big">+2,200%</span><span class="ctx">Cumulative inflation since 1940, vs. +28% from 1800-1940, per the video</span></div>
+</div>
+
+<h2>The mechanism, visualized</h2>
+<div class="visual">
+<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing bond investors setting the 10 year yield, which sets the mortgage rate, separate from the Fed's short term rate">
+  <style>
+    text{font-family:-apple-system,Helvetica,Arial,sans-serif;fill:var(--text);}
+    .box{fill:var(--panel);stroke:var(--line);stroke-width:1.5;}
+    .accentbox{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5;}
+    .lbl{font-size:11px;}
+    .val{font-size:13px;font-weight:700;fill:var(--accent);}
+    .arrow{stroke:var(--muted);stroke-width:1.5;fill:none;marker-end:url(#arrow);}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="var(--muted)"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="20" y="10" width="280" height="44" rx="8"/>
+  <text class="lbl" x="35" y="28">Bond market investors</text>
+  <text class="lbl" x="35" y="44">demand return for US debt risk</text>
+
+  <path class="arrow" d="M160,54 L160,74"/>
+
+  <rect class="accentbox" x="20" y="80" width="280" height="46" rx="8"/>
+  <text class="lbl" x="35" y="98">10-year Treasury yield</text>
+  <text class="val" x="35" y="116">5.23% (highest since 2007)</text>
+
+  <path class="arrow" d="M160,126 L160,146"/>
+
+  <rect class="box" x="20" y="152" width="280" height="44" rx="8"/>
+  <text class="lbl" x="35" y="170">Banks price mortgages off that yield</text>
+
+  <path class="arrow" d="M160,196 L160,216"/>
+
+  <rect class="accentbox" x="20" y="222" width="280" height="46" rx="8"/>
+  <text class="lbl" x="35" y="240">Your 30-year mortgage rate</text>
+  <text class="val" x="35" y="258">7.45%, no announcement needed</text>
+
+  <rect class="box" x="20" y="275" width="280" height="18" rx="6" opacity="0"/>
+  <text class="lbl" x="20" y="290" font-size="10" fill="var(--muted)">Separately: the Fed's own rate moved to 3.75-4%. It influences but does not set the chain above.</text>
+</svg>
+</div>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+<p>"Everyone assumes the Fed sets mortgage rates. It doesn't. The Fed sets a short-term rate, but your 30-year mortgage actually tracks the 10-year Treasury yield, which investors set based on how much risk they think is in lending to the US government. That yield just hit 5.23%, the highest since 2007, and mortgages followed to 7.45%, with zero announcement."</p>
+<p>"There's also a real debate about whether rate hikes even work right now, since a lot of today's inflation pressure is shortages and AI spending that barely reacts to rates, not simple excess demand."</p>
+<p>"And it's worth naming, without assuming any secret plan, that a government carrying heavy debt is structurally better off if inflation runs a bit hot than if it has to pay high rates for a long time."</p>
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>Who actually sets the 30-year mortgage rate, and why doesn't the Fed control it directly?</summary>
+<p>Bond market investors set the 10-year Treasury yield based on demand for US debt. Banks price mortgages off that yield. The Fed only sets short-term rates, which influence but don't dictate long-term borrowing costs.</p>
+</details>
+
+<details>
+<summary>Why might raising interest rates fail to cool inflation if the real problem is a shortage instead of too much demand?</summary>
+<p>Rate hikes work by cutting demand when "too much money chases too few goods." If the actual problem is too few homes, chips, or power, making borrowing pricier discourages building more of the scarce thing, which can keep prices up instead of bringing them down.</p>
+</details>
+
+<details>
+<summary>Why are some people skeptical that inflation gauges like Core PCE are being "recalculated"?</summary>
+<p>Statistics agencies do periodically revise how inflation is calculated, for stated methodological reasons, published openly. Skeptics point to the convenient timing for a heavily indebted government that wants to cut rates without admitting inflation is still high. But calling it a secret plan is the video's interpretation of motive, not a confirmed fact.</p>
+</details>
+
+<footer>
+<p>Source video: <a href="https://www.youtube.com/watch?v=YXrjo8HvQ1Q" target="_blank" rel="noopener">Trump's Unthinkable Plan to Reset the Dollar, Felix Nikolas Prehn</a></p>
+<p>Brief written: 2026-10-26. General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>

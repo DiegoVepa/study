@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Changing World Order</title>
+<style>
+  :root{
+    --bg:#faf8f3;
+    --card:#ffffff;
+    --text:#232220;
+    --muted:#6b6560;
+    --accent:#a6420f;
+    --accent-soft:#f1e3d6;
+    --line:#e2dcd1;
+    --est:#2e6b4f;
+    --est-bg:#e4f0e9;
+    --view:#8a5a00;
+    --view-bg:#f6e9cf;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#171512;
+      --card:#221f1b;
+      --text:#eee8e0;
+      --muted:#a39c92;
+      --accent:#e07a42;
+      --accent-soft:#3a2a1f;
+      --line:#3a352e;
+      --est:#7fcba3;
+      --est-bg:#1f3329;
+      --view:#e0b45c;
+      --view-bg:#3a2f16;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px 16px 48px;
+  }
+  h1{
+    font-size:1.6rem;
+    line-height:1.25;
+    margin:0 0 6px;
+  }
+  .tagline{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.95rem;
+    margin:0 0 28px;
+  }
+  h2{
+    font-size:1.1rem;
+    margin:36px 0 12px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:6px;
+  }
+  p{margin:0 0 12px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .card h3{
+    margin:0 0 6px;
+    font-size:1rem;
+  }
+  .card .label{
+    font-size:0.8rem;
+    color:var(--muted);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-left:2px solid var(--line);
+  }
+  .timeline li{
+    position:relative;
+    padding:0 0 20px 20px;
+  }
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-6px;
+    top:3px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .timeline .when{
+    font-weight:700;
+    display:block;
+    margin-bottom:2px;
+  }
+  .claim{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .tag{
+    display:inline-block;
+    font-size:0.75rem;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:999px;
+    margin-bottom:8px;
+  }
+  .tag.established{color:var(--est);background:var(--est-bg);}
+  .tag.view{color:var(--view);background:var(--view-bg);}
+  .claim .reason{
+    color:var(--muted);
+    font-size:0.9rem;
+    margin:6px 0 0;
+  }
+  .numbers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .num-tile{
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:12px 12px;
+  }
+  .num-tile .big{
+    font-size:1.3rem;
+    font-weight:800;
+    color:var(--accent);
+    display:block;
+  }
+  .num-tile .small{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .viz{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:12px;
+  }
+  svg text{
+    fill:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .script{
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:16px;
+    font-size:0.98rem;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:10px;
+  }
+  summary{
+    font-weight:600;
+    cursor:pointer;
+  }
+  details p{margin-top:10px;color:var(--muted);}
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent);}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>The Changing World Order</h1>
+  <p class="tagline">Why this matters this week: the "is the dollar declining" argument people have online is really an argument about which end of a 250-year cycle we're standing in.</p>
+
+  <h2>The situation in 60 seconds</h2>
+  <p>Ray Dalio argues that the world's dominant powers rise and fall in overlapping cycles that last roughly 250 years, separated by messy 10 to 20 year transition periods. He built this view by comparing the Dutch, British, US, and Chinese empires, plus several others, and by tracking Chinese dynasties back to the year 600. He scores each empire's power using eight averaged measures, things like education, innovation, trade share, military strength, and reserve-currency status. In his model, strong education sparks innovation, which eventually builds reserve-currency power, and when an empire declines, that same chain unwinds in reverse.</p>
+
+  <h2>Who wants what</h2>
+  <div class="card">
+    <span class="label">Incumbent power</span>
+    <h3>United States</h3>
+    <p>Wants to keep the dollar as the dominant reserve currency and preserve its economic, military, and financial lead.</p>
+    <p><strong>Leverage:</strong> deepest capital markets, dominant reserve currency, strong military. Dalio's framing places it in "early decline."</p>
+  </div>
+  <div class="card">
+    <span class="label">Rising power, in the model</span>
+    <h3>China</h3>
+    <p>Wants to grow its share of global trade, strengthen its currency's international role, and keep investing in education and technology.</p>
+    <p><strong>Leverage:</strong> large and growing trade share, rapid investment in education and innovation, framed by Dalio as echoing its historical dynastic pattern.</p>
+  </div>
+  <div class="card">
+    <span class="label">Historical precedent, not current actors</span>
+    <h3>Dutch Guilder and British Pound</h3>
+    <p>Each previously held the world's dominant reserve currency before entering decline, which is what gives Dalio his comparison data.</p>
+    <p><strong>Leverage:</strong> none today; they exist in this story as the two prior case studies.</p>
+  </div>
+  <div class="card">
+    <span class="label">Internal dynamic within a declining empire</span>
+    <h3>"Haves" vs "have-nots"</h3>
+    <p>In the model, have-nots push for wealth redistribution once a debt bubble bursts and inequality has grown large.</p>
+    <p><strong>Leverage:</strong> political and social pressure that drives reform, or in extreme cases, internal conflict.</p>
+  </div>
+
+  <h2>How we got here</h2>
+  <ul class="timeline">
+    <li><span class="when">1600s to 1700s</span>The Dutch Empire rises to dominance with the Guilder as the world's reserve currency, the first of three reserve currencies in Dalio's close study.</li>
+    <li><span class="when">1700s to mid-1900s</span>The British Empire rises, and the pound sterling becomes the dominant reserve currency for roughly 250 years before its decline.</li>
+    <li><span class="when">1944 onward</span>The US Empire rises after a major global conflict, and the dollar becomes the world's reserve currency.</li>
+    <li><span class="when">600 AD to present</span>Separately, Dalio tracks Chinese dynasties and their currencies over a much longer span and finds the same rise-and-decline pattern.</li>
+    <li><span class="when">Present, per the video's view</span>The dollar is framed as being in early decline while China's currency and power are framed as rising, within the same cyclical model.</li>
+  </ul>
+
+  <h2>Claims worth sorting</h2>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>Dominant powers' cycles last roughly 250 years, with 10 to 20 year transitions.</p>
+    <p class="reason">This is Dalio's own interpretive pattern drawn from his historical study, not a universally accepted law of economics or history.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>An empire's total power can be captured by averaging eight specific metrics.</p>
+    <p class="reason">The choice and weighting of these eight metrics is Dalio's own methodology, open to debate among economists and historians.</p>
+  </div>
+  <div class="claim">
+    <span class="tag established">Established</span>
+    <p>Reserve-currency transitions between major powers have historically coincided with major wars or conflict.</p>
+    <p class="reason">The Dutch-to-British and British-to-US transitions did coincide with major European and world wars, a widely documented historical pattern.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>The US dollar is currently in "early decline" as a reserve currency.</p>
+    <p class="reason">Many economists note the dollar still holds the largest share of global reserves and trade invoicing by a wide margin, which makes "decline" a contested characterization rather than settled fact.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>Growing wealth gaps reliably precede the bursting of debt bubbles inside a declining empire.</p>
+    <p class="reason">Rising inequality during late-stage credit booms shows up in some historical cases, but this causal ordering is Dalio's own framework, not a proven universal sequence.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>Better education causally leads, with a lag, to reserve-currency status.</p>
+    <p class="reason">This is a multi-step causal chain Dalio asserts. Each link, from education to innovation to trade competitiveness to reserve status, is plausible but not individually proven in the clip.</p>
+  </div>
+
+  <h2>Numbers worth remembering</h2>
+  <div class="numbers">
+    <div class="num-tile"><span class="big">~250 yrs</span><span class="small">typical length of a full empire or reserve-currency cycle</span></div>
+    <div class="num-tile"><span class="big">10-20 yrs</span><span class="small">length of the conflict-heavy transition between dominant powers</span></div>
+    <div class="num-tile"><span class="big">8 metrics</span><span class="small">components Dalio averages to score an empire's total power</span></div>
+    <div class="num-tile"><span class="big">600 AD</span><span class="small">how far back he traces Chinese dynasties for comparison</span></div>
+    <div class="num-tile"><span class="big">3 currencies</span><span class="small">reserve currencies studied in depth: Guilder, Pound, Dollar</span></div>
+  </div>
+
+  <h2>The core mechanism</h2>
+  <div class="viz">
+    <svg viewBox="0 0 300 400" width="100%" role="img" aria-label="Diagram of the chain from education to reserve currency on the way up, and the same chain reversing on the way down">
+      <defs>
+        <marker id="arrowUp" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto">
+          <path d="M0,8 L4,0 L8,8 Z" fill="var(--accent)"/>
+        </marker>
+        <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto">
+          <path d="M0,0 L4,8 L8,0 Z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+
+      <text x="150" y="18" text-anchor="middle" font-size="12" font-weight="700">RISE: bottom to top</text>
+
+      <rect x="30" y="30" width="150" height="34" rx="7" fill="var(--accent-soft)"/>
+      <text x="105" y="51" text-anchor="middle" font-size="12">1. Education</text>
+      <line x1="105" y1="64" x2="105" y2="90" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+      <rect x="30" y="94" width="180" height="34" rx="7" fill="var(--accent-soft)"/>
+      <text x="120" y="115" text-anchor="middle" font-size="12">2. Innovation / tech</text>
+      <line x1="120" y1="128" x2="120" y2="154" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+      <rect x="30" y="158" width="210" height="34" rx="7" fill="var(--accent-soft)"/>
+      <text x="135" y="179" text-anchor="middle" font-size="12">3. Trade competitiveness</text>
+      <line x1="135" y1="192" x2="135" y2="218" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrowUp)"/>
+
+      <rect x="30" y="222" width="230" height="34" rx="7" fill="var(--accent)"/>
+      <text x="145" y="243" text-anchor="middle" font-size="12" fill="#fff">4. Reserve currency status</text>
+
+      <text x="150" y="285" text-anchor="middle" font-size="12" font-weight="700">DECLINE: same chain, reversed</text>
+
+      <line x1="80" y1="294" x2="80" y2="320" stroke="var(--muted)" stroke-width="2" marker-end="url(#arrowDown)"/>
+      <rect x="40" y="322" width="160" height="26" rx="6" fill="none" stroke="var(--muted)"/>
+      <text x="120" y="339" text-anchor="middle" font-size="11">Trade share weakens</text>
+
+      <line x1="120" y1="348" x2="120" y2="364" stroke="var(--muted)" stroke-width="2" marker-end="url(#arrowDown)"/>
+      <rect x="60" y="366" width="150" height="26" rx="6" fill="none" stroke="var(--muted)"/>
+      <text x="135" y="383" text-anchor="middle" font-size="11">Innovation lead fades</text>
+    </svg>
+  </div>
+
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script">
+    <p>"Dalio's big cycle starts with a war that ends the old order and creates a new leading power. Peace and confidence follow, people borrow against that confidence, and a bubble forms while the currency becomes dominant. Wealth inequality grows, the bubble bursts, money gets printed, internal conflict rises, and some kind of revolution redistributes wealth. Meanwhile a rival power is quietly getting stronger outside. That clash between internal breakdown and external rivalry is what tends to produce the next war, and the cycle starts over."</p>
+  </div>
+
+  <h2>Check yourself</h2>
+
+  <details>
+    <summary>Why does Dalio say power transitions tend to involve conflict instead of a peaceful handoff?</summary>
+    <p>The declining power is also dealing with internal conflict (wealth gap, bursting bubble, printing money) at the same time a rival power is rising externally. Internal and external pressure combine, and historically that combination has produced war rather than a quiet handoff.</p>
+  </details>
+
+  <details>
+    <summary>What's the chain from education to a currency becoming the world's reserve currency?</summary>
+    <p>Better education leads to innovation and technology development, which, with a time lag, builds competitiveness and trade share. Eventually the currency is used enough in global transactions to become a reserve currency. Decline reverses the same chain.</p>
+  </details>
+
+  <details>
+    <summary>Explain Dalio's "big cycle" in 30 seconds, from one war to the next.</summary>
+    <p>A war ends the old order and creates a new leading power. Peace and prosperity follow, people borrow against that confidence, and a bubble builds while the currency becomes dominant. Wealth inequality grows, the bubble bursts, money gets printed, internal conflict rises and triggers some form of revolution. Meanwhile a rival power grows stronger externally, and the clash between internal breakdown and external rivalry produces a new war that restarts the cycle.</p>
+  </details>
+
+  <footer>
+    Source video: <a href="https://www.youtube.com/watch?v=BB2r_eOjsPw" target="_blank" rel="noopener">Principles for Dealing with the Changing World Order (5-minute Version)</a>, by Principles by Ray Dalio.<br>
+    Brief written 2026-10-24. General background may be dated.
+  </footer>
+
+</main>
+</body>
+</html>
