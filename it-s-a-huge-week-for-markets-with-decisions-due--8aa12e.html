@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A huge week for markets</title>
+<style>
+:root{
+  --bg:#f7f5f0;
+  --card:#ffffff;
+  --text:#1b1b1b;
+  --muted:#5a5a5a;
+  --accent:#9a4b2f;
+  --line:#dedad0;
+  --est:#2f6f4e;
+  --est-bg:#e6f2ea;
+  --cont:#a9742d;
+  --cont-bg:#f7ecd9;
+  --spk:#8a3b3b;
+  --spk-bg:#f7e4e0;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#ece7dd;
+    --muted:#a9a296;
+    --accent:#d98a63;
+    --line:#38342c;
+    --est:#7fc29b;
+    --est-bg:#1d2c24;
+    --cont:#e0b06a;
+    --cont-bg:#2e2616;
+    --spk:#e39b8f;
+    --spk-bg:#2e1c1a;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  margin:0 0 4px;
+  line-height:1.3;
+}
+h2{
+  font-size:1.05rem;
+  margin:36px 0 12px;
+  color:var(--accent);
+  border-bottom:1px solid var(--line);
+  padding-bottom:6px;
+}
+.tagline{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin:0 0 8px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.8rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-left:2px solid var(--line);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  font-size:0.9rem;
+  color:var(--muted);
+  display:block;
+  margin-bottom:2px;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+.tag.established{background:var(--est-bg);color:var(--est);}
+.tag.contested{background:var(--cont-bg);color:var(--cont);}
+.tag.speaker{background:var(--spk-bg);color:var(--spk);}
+.claim .text{font-weight:600;margin-bottom:4px;}
+.claim .why{color:var(--muted);font-size:0.9rem;}
+.tiles{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.tile{
+  flex:1 1 130px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px;
+  text-align:center;
+}
+.tile .big{
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.tile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:4px;
+  display:block;
+}
+svg{width:100%;height:auto;display:block;margin:8px 0;}
+.script{
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{margin-top:10px;margin-bottom:0;color:var(--muted);}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.85rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{
+  font-size:0.85rem;
+  color:var(--muted);
+  margin-top:-4px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>A huge week for markets</h1>
+<p class="tagline">Why it matters: the Fed, the ECB and the Bank of Japan almost never decide interest rates in the same week. This week they do.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>This week, three of the world's most powerful central banks all announce interest rate decisions: the US Federal Reserve, the European Central Bank, and the Bank of Japan. Normally these decisions are spread out, so investors can digest one at a time. Having all three land close together is unusual, and it raises the chances of sharper moves in currencies, bonds and stocks, since markets now have to process several major signals about the direction of money at once. Reuters frames it as a pivotal stretch for global markets, with investors watching each decision closely for clues about where borrowing costs and growth are headed next.</p>
+
+<h2>Who wants what</h2>
+<div class="card">
+  <h3>US Federal Reserve</h3>
+  <p><strong>Wants:</strong> Balance inflation control with supporting growth and employment.</p>
+  <p><strong>Leverage:</strong> Sets the benchmark rate for the world's largest economy, which influences global capital flows.</p>
+</div>
+<div class="card">
+  <h3>European Central Bank</h3>
+  <p><strong>Wants:</strong> Manage inflation and growth across all eurozone member states at once.</p>
+  <p><strong>Leverage:</strong> Sets rates for the euro, affecting eurozone borrowing costs and the euro's exchange rate.</p>
+</div>
+<div class="card">
+  <h3>Bank of Japan</h3>
+  <p><strong>Wants:</strong> Normalize policy after years of ultra-low rates without disrupting the economy.</p>
+  <p><strong>Leverage:</strong> Controls yen interest rates, which affects global carry trades and yen-funded investments.</p>
+</div>
+<div class="card">
+  <h3>Investors / markets</h3>
+  <p><strong>Wants:</strong> Predictability and clarity on future borrowing costs so assets can be priced correctly.</p>
+  <p><strong>Leverage:</strong> Can move capital rapidly in response to rate signals, amplifying market reactions.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">Recent months, 2026</span>Central banks have been navigating inflation and growth signals, setting the stage for this week's decisions.</li>
+  <li><span class="when">Week of October 26, 2026</span>Fed, ECB and Bank of Japan all scheduled to announce rate decisions in the same week.</li>
+  <li><span class="when">October 28, 2026</span>Reuters publishes its Morning Bid podcast previewing what investors are watching most closely.</li>
+</ul>
+
+<h2>Claims</h2>
+<div class="claim">
+  <span class="tag speaker">Speaker's view</span>
+  <div class="text">"It is a huge week for markets."</div>
+  <div class="why">Why: this is Reuters' own framing of the week's significance, not an independently verified fact. Treat it as editorial judgment, not data.</div>
+</div>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <div class="text">Decisions are due from the Fed, ECB and Bank of Japan this week.</div>
+  <div class="why">Why: stated directly as a scheduled fact, confirmed by the actual dates of each meeting.</div>
+</div>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <div class="text">Investors are watching these decisions closely.</div>
+  <div class="why">Why: directly stated as the premise of the podcast episode, and consistent with how markets normally react to rate news.</div>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="tiles">
+  <div class="tile"><span class="big">3</span><span class="ctx">major central banks deciding rates the same week, a rare overlap</span></div>
+  <div class="tile"><span class="big">3.75&ndash;4%</span><span class="ctx">Fed's rate, held steady on Oct 28 after a hike in September</span></div>
+  <div class="tile"><span class="big">2.5%</span><span class="ctx">ECB's deposit rate, expected to hold on Oct 29</span></div>
+  <div class="tile"><span class="big">1.25%</span><span class="ctx">Bank of Japan's rate, expected to hold on Oct 30</span></div>
+</div>
+<p class="note">Rate figures come from reporting after the decisions; general background: central banks typically set rates every 6&ndash;8 weeks, so having three land together is unusual and can amplify currency and bond market swings.</p>
+
+<h2>One visual: the rate ladder</h2>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing Fed, ECB and Bank of Japan interest rates">
+  <line x1="40" y1="20" x2="40" y2="190" stroke="currentColor" stroke-opacity="0.3" />
+  <line x1="40" y1="190" x2="300" y2="190" stroke="currentColor" stroke-opacity="0.3" />
+  <rect x="55" y="38" width="60" height="152" fill="#9a4b2f" />
+  <text x="85" y="30" text-anchor="middle" font-size="13" fill="currentColor">Fed</text>
+  <text x="85" y="208" text-anchor="middle" font-size="11" fill="currentColor">3.75&ndash;4%</text>
+
+  <rect x="140" y="88" width="60" height="102" fill="#a9742d" />
+  <text x="170" y="80" text-anchor="middle" font-size="13" fill="currentColor">ECB</text>
+  <text x="170" y="208" text-anchor="middle" font-size="11" fill="currentColor">2.5%</text>
+
+  <rect x="225" y="139" width="60" height="51" fill="#5a5a5a" />
+  <text x="255" y="131" text-anchor="middle" font-size="13" fill="currentColor">BOJ</text>
+  <text x="255" y="208" text-anchor="middle" font-size="11" fill="currentColor">1.25%</text>
+</svg>
+<p class="note">Bar height shows each bank's current rate. The Fed sits highest, then the ECB, then the Bank of Japan, which is still catching up after years of near-zero rates. All three decide within the same week, so these three bars move almost at once.</p>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<p class="script">"This week, three of the biggest central banks in the world, the US Fed, the European Central Bank, and the Bank of Japan, are all announcing interest rate decisions. Normally that's spread out over weeks so markets can breathe between each one. This time they're bunched together, so stocks, bonds and currencies could all swing harder than usual as investors try to process every signal at once."</p>
+
+<h2>Check yourself</h2>
+<details>
+  <summary>Why does it matter that the Fed, ECB and Bank of Japan decide rates the same week?</summary>
+  <p>Because their decisions can move currencies, bond yields and stocks together, amplifying each other's effects.</p>
+</details>
+<details>
+  <summary>Who is most affected by this week's rate decisions, and why do they care?</summary>
+  <p>Investors, since rate moves change borrowing costs, currency values and the asset prices they hold.</p>
+</details>
+<details>
+  <summary>Explain to a friend in 30 seconds why this week matters for markets.</summary>
+  <p>A strong answer covers: three major central banks deciding rates together, why that's rare, and how it can cause bigger swings in stocks, bonds and currencies than normal.</p>
+</details>
+
+<footer>
+  Source video: <a href="https://x.com/Reuters/status/2114714956998300007" target="_blank" rel="noopener">Reuters on X</a><br>
+  Brief written: 2026-10-28<br>
+  General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>

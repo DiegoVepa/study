@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US-Canada Tariff Deal: What's Happening</title>
+<style>
+  :root{
+    --bg:#f7f5f1;
+    --card:#ffffff;
+    --text:#1c1c1c;
+    --muted:#5b5b5b;
+    --accent:#b5452b;
+    --accent-soft:#f1ded6;
+    --line:#e4ddd3;
+    --established:#2f6b4f;
+    --established-bg:#e4f0e9;
+    --contested:#8a6d1f;
+    --contested-bg:#f5ecd4;
+    --view:#6b4ba1;
+    --view-bg:#ebe3f5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17150f;
+      --card:#201d17;
+      --text:#f0ece4;
+      --muted:#b3ac9e;
+      --accent:#e07a56;
+      --accent-soft:#3a2620;
+      --line:#352f26;
+      --established:#7cc9a0;
+      --established-bg:#1f3129;
+      --contested:#e0c468;
+      --contested-bg:#332b14;
+      --view:#c7aeed;
+      --view-bg:#2c2338;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px 16px 48px;
+  }
+  h1{
+    font-size:1.5rem;
+    line-height:1.3;
+    margin:0 0 6px;
+  }
+  .tagline{
+    color:var(--muted);
+    font-size:0.95rem;
+    margin:0 0 28px;
+  }
+  h2{
+    font-size:1.05rem;
+    margin:0 0 12px;
+    border-left:4px solid var(--accent);
+    padding-left:10px;
+  }
+  section{
+    margin-bottom:34px;
+  }
+  p{
+    margin:0 0 12px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .card strong{
+    display:block;
+    margin-bottom:6px;
+    font-size:1rem;
+  }
+  .card .label{
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+  .timeline{
+    position:relative;
+    padding-left:20px;
+    border-left:2px solid var(--line);
+  }
+  .tl-item{
+    position:relative;
+    margin-bottom:18px;
+  }
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-26px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .tl-when{
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--accent);
+  }
+  .tl-what{
+    margin-top:2px;
+    font-size:0.95rem;
+  }
+  .claim{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .claim p{
+    margin:8px 0 0;
+    font-size:0.95rem;
+  }
+  .tag{
+    display:inline-block;
+    font-size:0.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    padding:3px 9px;
+    border-radius:20px;
+  }
+  .tag.established{ color:var(--established); background:var(--established-bg); }
+  .tag.contested{ color:var(--contested); background:var(--contested-bg); }
+  .tag.view{ color:var(--view); background:var(--view-bg); }
+  .numbers{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .tile{
+    flex:1 1 140px;
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:14px;
+  }
+  .tile .big{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--accent);
+    line-height:1.1;
+  }
+  .tile .ctx{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-top:4px;
+  }
+  svg{
+    width:100%;
+    height:auto;
+    display:block;
+    margin:8px 0;
+  }
+  .script{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:0.97rem;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:10px;
+  }
+  summary{
+    font-weight:600;
+    cursor:pointer;
+  }
+  details p{
+    margin:10px 0 0;
+    color:var(--muted);
+  }
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  footer a{
+    color:var(--accent);
+  }
+  .note{
+    font-size:0.85rem;
+    color:var(--muted);
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>The US and Canada Are Quietly Working on a Tariff Deal</h1>
+  <p class="tagline">Why this matters this week: steel and auto tariffs could drop right before the US midterms, and critics think the timing is the real story.</p>
+
+  <section>
+    <h2>The situation in 60 seconds</h2>
+    <p>Reuters reports, citing sources familiar with the talks, that the US and Canada are negotiating a deal to ease US tariffs on Canadian steel and autos. This comes after broader trade talks between the two countries broke down in August 2026, straining the relationship. Officials are framing the new talks as an attempt to repair ties. But the timing lines up closely with US midterm elections on November 3, which is why some observers see this as more about domestic politics than a genuine fix to the underlying relationship.</p>
+  </section>
+
+  <section>
+    <h2>Who wants what</h2>
+    <div class="card">
+      <strong>United States (Trump administration)</strong>
+      <span class="label">Wants:</span> To ease tensions with a key trading partner while keeping leverage, possibly timed to midterm elections.<br>
+      <span class="label">Leverage:</span> Control over tariff rates and the timing of any relief.
+    </div>
+    <div class="card">
+      <strong>Canada (federal government)</strong>
+      <span class="label">Wants:</span> Relief for steel and auto industries hurt by US tariffs, and a more stable trade relationship.<br>
+      <span class="label">Leverage:</span> Counter-tariffs and access to Canadian resources and markets the US wants.
+    </div>
+    <div class="card">
+      <strong>Canadian steel and auto industries</strong>
+      <span class="label">Wants:</span> Removal of tariffs that have hurt exports and jobs.<br>
+      <span class="label">Leverage:</span> Political pressure on Canada's government to negotiate hard.
+    </div>
+    <div class="card">
+      <strong>US midterm electorate</strong>
+      <span class="label">Wants:</span> Economic relief, lower prices, stability.<br>
+      <span class="label">Leverage:</span> Votes in the upcoming midterm elections.
+    </div>
+  </section>
+
+  <section>
+    <h2>How we got here</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-when">Early 2025</div>
+        <div class="tl-what">A commenter claims US-Canada relations began deteriorating after Trump's re-election. This is not confirmed by the Reuters report itself.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">August 2026</div>
+        <div class="tl-what">US-Canada trade talks break down.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">October 26, 2026</div>
+        <div class="tl-what">Reuters reports, via sources, that the two countries are working on a deal to ease tariffs on steel and autos.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">October 27, 2026</div>
+        <div class="tl-what">Reuters posts the story on X. Public reaction questions the motives and timing of the talks.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">November 3, 2026</div>
+        <div class="tl-what">US midterm elections take place, the deadline many observers are watching against.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Claims, sorted by how solid they are</h2>
+
+    <div class="claim">
+      <span class="tag established">Established</span>
+      <p><strong>The US and Canada are working on a deal to ease tariffs on Canadian steel and autos.</strong> Directly reported by Reuters, citing sources.</p>
+    </div>
+
+    <div class="claim">
+      <span class="tag established">Established</span>
+      <p><strong>Trade talks broke down in August 2026.</strong> Stated directly in the Reuters report.</p>
+    </div>
+
+    <div class="claim">
+      <span class="tag established">Established</span>
+      <p><strong>Both governments are trying to repair relations that soured.</strong> This is Reuters' own framing of the motive, attributed in the article.</p>
+    </div>
+
+    <div class="claim">
+      <span class="tag view">Speaker's view</span>
+      <p><strong>Trump is doing this to save face ahead of midterm elections.</strong> This is a commenter's opinion and speculation, not something Reuters confirmed.</p>
+    </div>
+
+    <div class="claim">
+      <span class="tag contested">Contested</span>
+      <p><strong>Relations tanked in early 2025 after Trump's re-election, before the August collapse.</strong> Asserted by a commenter as fact, but not corroborated by the source article.</p>
+    </div>
+
+    <div class="claim">
+      <span class="tag view">Speaker's view</span>
+      <p><strong>A trade deal alone won't repair the relationship.</strong> A commenter's opinion about the limits of what a tariff deal can actually fix.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Numbers worth remembering</h2>
+    <div class="numbers">
+      <div class="tile">
+        <div class="big">2 sectors</div>
+        <div class="ctx">Tariff relief talks cover steel and autos specifically, not a full trade deal.</div>
+      </div>
+      <div class="tile">
+        <div class="big">140 / 35</div>
+        <div class="ctx">Likes and retweets on Reuters' original post at time of reporting.</div>
+      </div>
+      <div class="tile">
+        <div class="big">Aug 2026</div>
+        <div class="ctx">When the prior round of trade talks collapsed, setting up this reset attempt.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The mechanism in one picture</h2>
+    <p>A trade relationship went from talks, to breakdown, to new negotiations, all set against an election clock.</p>
+    <svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram showing trade talks breaking down in August 2026, then new negotiations starting in October 2026, aimed at a deal before November 3 midterms">
+      <style>
+        text{ font-family:-apple-system,sans-serif; font-size:11px; fill:var(--text,#1c1c1c); }
+        .node{ fill:#fff; stroke:#b5452b; stroke-width:1.5; }
+        .arrow{ stroke:#b5452b; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+      </style>
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#b5452b"/>
+        </marker>
+      </defs>
+
+      <rect class="node" x="8" y="20" width="90" height="46" rx="8"/>
+      <text x="53" y="40" text-anchor="middle">Trade talks</text>
+      <text x="53" y="54" text-anchor="middle">break down</text>
+      <text x="53" y="80" text-anchor="middle" font-size="10" fill="#5b5b5b">Aug 2026</text>
+
+      <path class="arrow" d="M100,43 L155,43"/>
+
+      <rect class="node" x="156" y="20" width="90" height="46" rx="8"/>
+      <text x="201" y="40" text-anchor="middle">New tariff</text>
+      <text x="201" y="54" text-anchor="middle">talks begin</text>
+      <text x="201" y="80" text-anchor="middle" font-size="10" fill="#5b5b5b">Oct 26-27, 2026</text>
+
+      <path class="arrow" d="M201,68 L201,105"/>
+
+      <rect class="node" x="156" y="106" width="90" height="46" rx="8"/>
+      <text x="201" y="126" text-anchor="middle">Possible deal:</text>
+      <text x="201" y="140" text-anchor="middle">steel + auto relief</text>
+
+      <path class="arrow" d="M100,43 L53,105"/>
+      <rect class="node" x="8" y="106" width="90" height="46" rx="8"/>
+      <text x="53" y="126" text-anchor="middle">US midterms</text>
+      <text x="53" y="140" text-anchor="middle">Nov 3, 2026</text>
+    </svg>
+  </section>
+
+  <section>
+    <h2>Explain it to a friend in 30 seconds</h2>
+    <div class="script">
+      "So the US and Canada had a trade fight, their talks fell apart back in August. Now, right before the US midterm elections, Reuters says they're quietly working on a deal to ease tariffs on Canadian steel and cars. Sounds like good news, but a lot of people are asking: is this an actual fix, or just something that looks good on TV a week before people vote?"
+    </div>
+  </section>
+
+  <section>
+    <h2>Check yourself</h2>
+
+    <details>
+      <summary>Why did US-Canada trade talks break down in August, and why try to fix it now?</summary>
+      <p>This is open. The source brief doesn't give the specific reason talks collapsed, only that they did, in August 2026. The push to fix it now overlaps with US midterm elections, which is the main theory circulating, but not a confirmed cause.</p>
+    </details>
+
+    <details>
+      <summary>What do the US and Canada each want from easing steel and auto tariffs?</summary>
+      <p>This is open, but based on the brief: the US wants to ease tensions with a major trading partner while keeping leverage, possibly timed around midterms. Canada wants relief for its steel and auto industries, which have been hurt by the tariffs, and a more stable overall relationship.</p>
+    </details>
+
+    <details>
+      <summary>Explain this US-Canada tariff deal to a friend in 30 seconds. What should a strong answer cover?</summary>
+      <p>A strong answer mentions: tariffs on Canadian steel and autos were raised, talks between the two countries broke down in August 2026, both sides are now negotiating to ease those tariffs, and the timing overlaps with US midterm elections, which is why some people are skeptical about the real motive.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p>Source video: <a href="https://x.com/Reuters/status/2114903689852867063" target="_blank" rel="noopener">Reuters on X</a>. Brief written 2026-10-28. General background may be dated.</p>
+  </footer>
+
+</main>
+</body>
+</html>
