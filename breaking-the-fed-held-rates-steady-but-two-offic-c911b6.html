@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fed Held Steady, But Not Everyone Agreed</title>
+<style>
+:root{
+  --bg:#f7f6f3;
+  --card:#ffffff;
+  --text:#1c1c1e;
+  --muted:#5b5b60;
+  --accent:#9c3b2e;
+  --accent-soft:#f1ddd6;
+  --line:#e2ddd4;
+  --established:#1f6f4a;
+  --established-bg:#e4f2e9;
+  --contested:#8a6d00;
+  --contested-bg:#f6eecd;
+  --view:#9c3b2e;
+  --view-bg:#f1ddd6;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15140f;
+    --card:#201e18;
+    --text:#ece8e0;
+    --muted:#a8a295;
+    --accent:#e08a6d;
+    --accent-soft:#3a2420;
+    --line:#39352c;
+    --established:#7fd3a5;
+    --established-bg:#1e3127;
+    --contested:#e3c565;
+    --contested-bg:#332b14;
+    --view:#e08a6d;
+    --view-bg:#3a2420;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+.subtitle{
+  color:var(--muted);
+  font-size:0.98rem;
+  margin:0 0 28px;
+}
+h2{
+  font-size:1.05rem;
+  margin:0 0 10px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+section{
+  margin-bottom:34px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.82rem;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+.timeline{
+  border-left:2px solid var(--line);
+  padding-left:16px;
+  margin-left:4px;
+}
+.tl-item{
+  position:relative;
+  margin-bottom:18px;
+}
+.tl-item::before{
+  content:"";
+  position:absolute;
+  left:-22px;
+  top:4px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.tl-when{
+  font-size:0.82rem;
+  color:var(--muted);
+  display:block;
+  margin-bottom:2px;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:600;
+  padding:2px 8px;
+  border-radius:20px;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  margin-bottom:6px;
+}
+.tag.established{color:var(--established);background:var(--established-bg);}
+.tag.contested{color:var(--contested);background:var(--contested-bg);}
+.tag.view{color:var(--view);background:var(--view-bg);}
+.claim .reason{
+  font-size:0.88rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.num-tile{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px;
+}
+.num-tile .big{
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.num-tile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+.visual-wrap{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+  overflow-x:auto;
+}
+.visual-note{
+  font-size:0.78rem;
+  color:var(--muted);
+  margin-top:8px;
+}
+.script-box{
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:16px;
+  font-size:0.98rem;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+footer{
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  font-size:0.84rem;
+  color:var(--muted);
+}
+footer a{
+  color:var(--accent);
+}
+.bg-flag{
+  font-size:0.78rem;
+  color:var(--muted);
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>The Fed Held Steady, But Not Everyone Agreed</h1>
+<p class="subtitle">Two officials wanted a hike right now, and the quiet market reaction tells you the next move is already priced in.</p>
+
+<section>
+  <h2>The situation, in 60 seconds</h2>
+  <p>On October 28, 2026, the Federal Reserve kept its benchmark interest rate unchanged. That sounds like a cautious, unanimous move, but it wasn't. Two officials on the committee dissented and voted for a rate increase instead of a hold. Markets largely shrugged: bitcoin barely moved in the half hour after the announcement. The reason the muted reaction makes sense is that a rate hike in December is already widely expected, so this meeting was less about surprise and more about revealing a split inside the Fed itself.</p>
+</section>
+
+<section>
+  <h2>Who wants what</h2>
+  <div class="card">
+    <h3>Fed majority</h3>
+    <p>Wants to hold rates steady for now, to keep assessing data before tightening further.</p>
+    <span class="label">Leverage: sets official policy through the committee vote.</span>
+  </div>
+  <div class="card">
+    <h3>Two dissenting officials</h3>
+    <p>Wanted to raise rates immediately rather than wait for more data.</p>
+    <span class="label">Leverage: a public dissent, which shapes how markets read the Fed's internal mood going into December.</span>
+  </div>
+  <div class="card">
+    <h3>Markets and investors</h3>
+    <p>Want a predictable rate path so they can price stocks, bonds and crypto accurately.</p>
+    <span class="label">Leverage: trading activity itself reflects and reinforces what the market expects the Fed to do next.</span>
+  </div>
+</section>
+
+<section>
+  <h2>How we got here</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-when">Before Oct 28, 2026</span>
+      <p>Market consensus builds expecting the Fed to hold in October, then hike in December.</p>
+    </div>
+    <div class="tl-item">
+      <span class="tl-when">Oct 28, 2026</span>
+      <p>The Fed holds rates steady on a 10-2 vote. Two officials dissent, pushing for a hike instead.</p>
+    </div>
+    <div class="tl-item">
+      <span class="tl-when">~30 minutes later</span>
+      <p>Bitcoin trades near $80.8K, up about 0.4% over 24 hours, showing almost no reaction.</p>
+    </div>
+    <div class="tl-item">
+      <span class="tl-when">Going forward</span>
+      <p>All eyes shift to the December meeting, the widely expected point for an actual rate increase.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Claims, sorted by how solid they are</h2>
+  <div class="claim">
+    <span class="tag established">Established</span>
+    <p>The Fed held rates steady in October, on a 10-2 vote.</p>
+    <p class="reason">Directly reported by WSJ as the official decision.</p>
+  </div>
+  <div class="claim">
+    <span class="tag established">Established</span>
+    <p>Two officials dissented in favor of a rate increase.</p>
+    <p class="reason">Directly reported by WSJ.</p>
+  </div>
+  <div class="claim">
+    <span class="tag established">Established</span>
+    <p>A December hike is widely expected.</p>
+    <p class="reason">Stated as market consensus by WSJ, though it is a forward-looking expectation, not a guarantee.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>Crypto "barely flinched" at the decision.</p>
+    <p class="reason">A commenter's characterization based on one price snapshot, not official analysis.</p>
+  </div>
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p>The economy is "robust" enough to justify buying Boeing.</p>
+    <p class="reason">An individual commenter's investment opinion, not something WSJ or the Fed stated.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Numbers worth remembering</h2>
+  <div class="numbers">
+    <div class="num-tile">
+      <span class="big">2</span>
+      <span class="ctx">Officials who dissented in favor of a hike instead of a hold.</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">10-2</span>
+      <span class="ctx">The committee vote count behind the "hold" decision.</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">$80.8K</span>
+      <span class="ctx">Bitcoin price about 30 minutes after the decision, per a commenter citing CoinGecko.</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">0.4%</span>
+      <span class="ctx">Bitcoin's 24-hour move around the time of the decision, essentially flat.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>The rate path, visualized</h2>
+  <div class="visual-wrap">
+    <svg viewBox="0 0 320 220" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Staircase showing the Fed rate rising in steps from September to a December hike, with the October step being a hold">
+      <line x1="30" y1="190" x2="300" y2="190" stroke="var(--line)" stroke-width="1"/>
+      <rect x="40" y="130" width="60" height="60" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="70" y="123" text-anchor="middle" font-size="11" fill="var(--text)">Sept 2026</text>
+      <text x="70" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">Hike</text>
+      <text x="70" y="178" text-anchor="middle" font-size="10" fill="var(--muted)">3.50-3.75%</text>
+
+      <rect x="130" y="110" width="60" height="80" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="160" y="103" text-anchor="middle" font-size="11" fill="var(--text)">Oct 28, 2026</text>
+      <text x="160" y="145" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">Hold</text>
+      <text x="160" y="158" text-anchor="middle" font-size="10" fill="var(--muted)">3.75-4.00%</text>
+      <text x="160" y="174" text-anchor="middle" font-size="9" fill="var(--muted)">2 dissents</text>
+
+      <rect x="220" y="80" width="60" height="110" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="250" y="73" text-anchor="middle" font-size="11" fill="var(--text)">Dec 2026</text>
+      <text x="250" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">Expected</text>
+      <text x="250" y="143" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">hike</text>
+      <text x="250" y="159" text-anchor="middle" font-size="10" fill="var(--muted)">4.00-4.25%</text>
+      <text x="250" y="173" text-anchor="middle" font-size="9" fill="var(--muted)">not yet decided</text>
+    </svg>
+    <p class="visual-note bg-flag">General background: the exact rate ranges and vote count come from follow-up reporting, not the original clip, and the December figure is a market expectation, not a done deal. May be dated.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script-box">
+    <p>"So the Fed just met and decided not to change interest rates. That sounds boring, but two of the officials actually voted against it, they wanted to raise rates right away. The bigger deal is that almost everyone already expects the Fed to raise rates in December anyway, so markets barely reacted, bitcoin basically didn't move. The real news isn't the hold, it's that the committee isn't as unified as people assume."</p>
+  </div>
+</section>
+
+<section>
+  <h2>Check yourself</h2>
+  <details>
+    <summary>Why would two Fed officials want a rate hike while the rest voted to hold?</summary>
+    <p>They likely judged inflation or economic strength as reasons to act now rather than wait for more data.</p>
+  </details>
+  <details>
+    <summary>Why does a "widely expected" December hike matter if the Fed hasn't acted yet?</summary>
+    <p>Markets price in expectations in advance, so when the actual move happens it often causes less reaction than the signal did.</p>
+  </details>
+  <details>
+    <summary>Explain to a friend in 30 seconds what happened with the Fed and why some officials disagreed.</summary>
+    <p>A strong answer covers: the Fed held rates steady this meeting, two officials dissented wanting a hike, and markets already expect that hike in December.</p>
+  </details>
+</section>
+
+<footer>
+  <p>Source video: <a href="https://x.com/WSJ/status/2115507240518000676" target="_blank" rel="noopener">WSJ on X</a></p>
+  <p>Brief written: 2026-10-29</p>
+  <p class="bg-flag">General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
