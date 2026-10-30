@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex Plan Math: Is the $500 Tier Actually Worth It?</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --card:#ffffff;
+  --text:#1c1a17;
+  --muted:#6b6459;
+  --accent:#b5541f;
+  --accent-soft:#f2e3d6;
+  --line:#e6e0d6;
+  --established:#2f6b4f;
+  --established-bg:#e3f0e8;
+  --contested:#9a6b00;
+  --contested-bg:#f6ecd0;
+  --speaker:#6a4ea0;
+  --speaker-bg:#ece6f7;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#f0ebe2;
+    --muted:#a69d8d;
+    --accent:#e08a4e;
+    --accent-soft:#3a2a1a;
+    --line:#332e26;
+    --established:#7fd1a8;
+    --established-bg:#1e3327;
+    --contested:#e0b94e;
+    --contested-bg:#3a3014;
+    --speaker:#c3aaf0;
+    --speaker-bg:#2c2440;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+.tagline{
+  color:var(--accent);
+  font-weight:600;
+  font-size:0.95rem;
+  margin:0 0 28px;
+}
+h2{
+  font-size:1.05rem;
+  margin:36px 0 12px;
+  border-left:3px solid var(--accent);
+  padding-left:10px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.75rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  margin-bottom:2px;
+}
+.timeline{
+  position:relative;
+  margin-left:8px;
+  padding-left:20px;
+  border-left:2px solid var(--line);
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:18px;
+}
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:-26px;
+  top:4px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline-date{
+  font-size:0.8rem;
+  color:var(--muted);
+  font-weight:600;
+}
+.claim{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 16px;
+  margin-bottom:12px;
+  background:var(--card);
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:999px;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+}
+.tag.established{background:var(--established-bg);color:var(--established);}
+.tag.contested{background:var(--contested-bg);color:var(--contested);}
+.tag.speaker{background:var(--speaker-bg);color:var(--speaker);}
+.claim-text{font-weight:600;margin:0 0 6px;}
+.claim-reason{color:var(--muted);font-size:0.9rem;margin:0;}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:20px;
+}
+.numbers .tile{
+  background:var(--accent-soft);
+  border-radius:12px;
+  padding:14px 12px;
+  text-align:center;
+}
+.numbers .tile.wide{grid-column:1 / -1;}
+.numbers .big{
+  font-size:1.4rem;
+  font-weight:800;
+  color:var(--accent);
+  display:block;
+  margin-bottom:4px;
+}
+.numbers .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+}
+figure{
+  margin:0 0 20px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+}
+figure svg{width:100%;height:auto;display:block;}
+figcaption{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:8px;
+}
+.script{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{margin-top:10px;margin-bottom:0;color:var(--muted);}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-top:-4px;
+  margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Codex Plan Math: Is the $500 Tier Actually Worth It?</h1>
+<p class="tagline">Why this matters this week: OpenAI just reshuffled Codex pricing, and the numbers say the pricier plan is the better deal, if you can use it.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>
+OpenAI changed the subscription tiers for Codex, its AI coding tool. Theo from t3.gg ran the math on what you actually get back for your money at each tier. He found the $500/month plan hands you roughly $10,500 worth of usage, about a 21x multiplier. The $200/month plan gives roughly $4,300 worth of usage, about 8.6x. So doubling the sticker price more than doubles the usage you get back. Replies compared it to buying the mega roll of toilet paper instead of the regular one, and someone asked the obvious next question: does Anthropic's pricing stack up the same way?
+</p>
+
+<h2>Who wants what</h2>
+<div class="card">
+  <h3>OpenAI</h3>
+  <p class="label">Wants</p>
+  <p>Attract heavy users into the higher Codex subscription tiers.</p>
+  <p class="label">Leverage</p>
+  <p>Controls the usage-to-price ratio across its own plans, so it can make the top tier look disproportionately generous.</p>
+</div>
+<div class="card">
+  <h3>Power users and developers</h3>
+  <p class="label">Wants</p>
+  <p>Get the most usage value per dollar spent on AI coding tools.</p>
+  <p class="label">Leverage</p>
+  <p>Free to pick whichever plan or provider gives the best math, and to publicize that math.</p>
+</div>
+<div class="card">
+  <h3>Anthropic (implied competitor)</h3>
+  <p class="label">Wants</p>
+  <p>Keep or win over developers who are actively comparing coding-tool subscription value.</p>
+  <p class="label">Leverage</p>
+  <p>Its own pricing and usage allowances, which this source does not detail.</p>
+</div>
+
+<h2>How we got here</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">September 29, 2026</div>
+    <p>OpenAI reopens the Pro $200 tier to new subscribers and introduces a new $500/month tier with an "Astra Ultrafast" mode.</p>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">October 14, 2026</div>
+    <p>GPT-5.5 is retired from Codex; users are pushed toward newer GPT-6 models.</p>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">October 26, 2026</div>
+    <p>GPT-6.1 Terra rolls out to ChatGPT Work and Codex, offering better efficiency at roughly half the price of its predecessor.</p>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">October 29, 2026</div>
+    <p>OpenAI reverses a planned cut to usage limits on Pro and Business Premium plans, doubling allowances instead after customer pushback.</p>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">October 30, 2026</div>
+    <p>Theo publishes his calculation comparing usage value across the $200 and $500 tiers. Replies joke about bulk-buy economics and ask how Anthropic compares.</p>
+  </div>
+</div>
+
+<h2>Claims, and how sure we should be</h2>
+
+<div class="claim">
+  <span class="tag speaker">Speaker's view</span>
+  <p class="claim-text">The $500 Codex plan nets about $10,500/month of usage.</p>
+  <p class="claim-reason">This is Theo's own calculation. It is not confirmed directly by OpenAI in this source.</p>
+</div>
+
+<div class="claim">
+  <span class="tag speaker">Speaker's view</span>
+  <p class="claim-text">The $200 Codex plan nets about $4,300/month of usage.</p>
+  <p class="claim-reason">Same caveat: it's Theo's math, not an OpenAI-published figure.</p>
+</div>
+
+<div class="claim">
+  <span class="tag established">Established</span>
+  <p class="claim-text">OpenAI changed its plan structure for Codex.</p>
+  <p class="claim-reason">Stated as the plain premise of the post, and backed by the broader timeline of pricing and tier changes through October 2026.</p>
+</div>
+
+<div class="claim">
+  <span class="tag speaker">Speaker's view</span>
+  <p class="claim-text">The higher tier is a comparatively better value per dollar.</p>
+  <p class="claim-reason">This conclusion follows from Theo's own numbers. There's no independent, OpenAI-verified source cited for it.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="tile">
+    <span class="big">$10.5k</span>
+    <span class="ctx">usage value from the $500/month plan, about 21x the price</span>
+  </div>
+  <div class="tile">
+    <span class="big">$4.3k</span>
+    <span class="ctx">usage value from the $200/month plan, about 8.6x the price</span>
+  </div>
+  <div class="tile wide">
+    <span class="big">1,679 likes / 34 retweets</span>
+    <span class="ctx">on Theo's original post, a sign developers care about this math</span>
+  </div>
+</div>
+
+<h2>The mechanism, visualized</h2>
+<figure>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing price paid to usage value received for the 200 dollar and 500 dollar Codex plans">
+  <!-- axis -->
+  <line x1="40" y1="190" x2="300" y2="190" stroke="currentColor" stroke-opacity="0.3" />
+  <!-- $200 plan: price bar -->
+  <rect x="55" y="170" width="28" height="20" fill="#b5541f" opacity="0.5"/>
+  <text x="69" y="165" font-size="10" text-anchor="middle" fill="currentColor">$200</text>
+  <!-- $200 plan: usage bar -->
+  <rect x="90" y="106" width="28" height="84" fill="#b5541f"/>
+  <text x="104" y="98" font-size="10" text-anchor="middle" fill="currentColor">$4.3k</text>
+
+  <!-- $500 plan: price bar -->
+  <rect x="180" y="150" width="28" height="40" fill="#b5541f" opacity="0.5"/>
+  <text x="194" y="145" font-size="10" text-anchor="middle" fill="currentColor">$500</text>
+  <!-- $500 plan: usage bar -->
+  <rect x="215" y="20" width="28" height="170" fill="#b5541f"/>
+  <text x="229" y="14" font-size="10" text-anchor="middle" fill="currentColor">$10.5k</text>
+
+  <text x="104" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity="0.7">200 plan</text>
+  <text x="229" y="205" font-size="10" text-anchor="middle" fill="currentColor" opacity="0.7">500 plan</text>
+  <text x="20" y="195" font-size="9" fill="currentColor" opacity="0.6" transform="rotate(-90 20 195)">value</text>
+</svg>
+<figcaption>Faded bars are what you pay. Solid bars are what you get back in usage value. The $500 plan's solid bar is proportionally taller, meaning the jump in usage outpaces the jump in price.</figcaption>
+</figure>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<p class="script">
+"OpenAI changed its Codex pricing. Theo did the math: pay $200 a month and you get about $4,300 of usage back, roughly 8.6 times your money. Pay $500 and you get about $10,500 back, roughly 21 times your money. So the expensive plan is actually the better deal per dollar, like buying the giant pack instead of the small one. The catch is you only win if you actually use that much. If you don't, the cheaper plan still makes more sense."
+</p>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>Why does the $500 Codex plan give a better usage-to-price ratio than the $200 plan?</summary>
+<p>Because the jump from $200 to $500 more than doubles the usage credit, roughly 21x value versus roughly 8.6x.</p>
+</details>
+
+<details>
+<summary>What tradeoff do commenters point to when comparing Codex plans to Anthropic's offerings?</summary>
+<p>Whether a rival like Anthropic matches or beats this usage-to-price ratio on its own subscription tiers.</p>
+</details>
+
+<details>
+<summary>Explain to a friend in 30 seconds why a $500 AI plan can be a better deal than a $200 one.</summary>
+<p>A strong answer covers: usage value scales faster than price at higher tiers, so the expensive plan can be cheaper per unit of usage, but only pays off if you actually use that much.</p>
+</details>
+
+<footer>
+  <p>Source: <a href="https://x.com/theo/status/2115969105048359204">Theo's post on X</a>, brief written 2026-10-30.</p>
+  <p>General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
