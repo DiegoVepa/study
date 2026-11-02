@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The harness fight: what Theo's video was really about</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --card:#ffffff;
+  --text:#1c1a17;
+  --muted:#5c564c;
+  --accent:#a6482f;
+  --border:#e5ddd0;
+  --est:#2f6b3a;
+  --contest:#a6482f;
+  --view:#8a6d1f;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#f1ece3;
+    --muted:#a69d8d;
+    --accent:#e08a63;
+    --border:#332e26;
+    --est:#7fc98c;
+    --contest:#e08a63;
+    --view:#d8b84a;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{
+  font-size:1.5rem;
+  margin:0 0 4px;
+  line-height:1.3;
+}
+h2{
+  font-size:1.05rem;
+  margin:36px 0 10px;
+  color:var(--accent);
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.subtitle{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin:0 0 20px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.8rem;
+  color:var(--muted);
+  font-weight:600;
+}
+.card .val{
+  margin:2px 0 8px;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-left:2px solid var(--border);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-size:0.82rem;
+  color:var(--muted);
+  font-weight:600;
+}
+.claim{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+  background:var(--card);
+}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:2px 9px;
+  border-radius:999px;
+  margin-bottom:8px;
+  letter-spacing:.02em;
+}
+.tag.established{background:rgba(47,107,58,0.15);color:var(--est);}
+.tag.contested{background:rgba(166,72,47,0.15);color:var(--contest);}
+.tag.view{background:rgba(138,109,31,0.15);color:var(--view);}
+.claim .reason{color:var(--muted);font-size:0.88rem;margin:6px 0 0;}
+.numbers{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.tile{
+  flex:1 1 140px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  text-align:center;
+}
+.tile .big{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--accent);
+  line-height:1;
+}
+.tile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+svg{
+  width:100%;
+  max-width:100%;
+  display:block;
+  margin:8px 0 4px;
+}
+.script{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:0.82rem;
+}
+footer a{color:var(--accent);text-decoration:none;}
+.note{
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>The harness fight: what Theo's video was really about</h1>
+<p class="subtitle">Why this matters this week: as every dev tool ships an "AI coding agent," builders are now fighting over what to even call the thing they made.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>Theo, the developer-influencer behind the T3 stack, posted that he'd made a video explaining "harnesses," the scaffolding and prompting layer that wraps a raw AI model and turns it into a working coding agent. He added a pointed line: his own product, T3 Code, is not one. The tweet picked up modest engagement, 672 likes and 26 retweets, with a handful of developers replying that the explainer was useful or joking about the effort it must have taken to make.</p>
+
+<h2>Who wants what</h2>
+<div class="card">
+  <h3>Theo (t3.gg)</h3>
+  <div class="label">Wants</div>
+  <div class="val">To define "harness" clearly for his audience, and to position T3 Code outside that category.</div>
+  <div class="label">Leverage</div>
+  <div class="val">A large developer following and credibility built on the T3 stack.</div>
+</div>
+<div class="card">
+  <h3>Other AI coding tool builders</h3>
+  <div class="label">Wants</div>
+  <div class="val">To be seen favorably, whether or not their tool gets labeled a "harness."</div>
+  <div class="label">Leverage</div>
+  <div class="val">Market share and however the public already perceives their product.</div>
+</div>
+<div class="card">
+  <h3>Developer audience commenting</h3>
+  <div class="label">Wants</div>
+  <div class="val">Clarity on confusing jargon in a fast-moving corner of the industry.</div>
+  <div class="label">Leverage</div>
+  <div class="val">Attention and word of mouth that can boost or sink a tool's reputation.</div>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><div class="when">2025 to 2026, general</div>AI coding agents multiply, and "harness" becomes informal jargon for the orchestration layer wrapped around a raw model.</li>
+  <li><div class="when">Oct 26-31, 2026</div>In earlier videos, Theo argues harness choice is becoming trivial, comparing the debate to "tabs versus spaces" with only a 3-5% performance gap between options.</li>
+  <li><div class="when">Nov 2, 2026</div>Theo posts that he's made an explainer video on harnesses and states plainly: T3 Code is not one.</li>
+  <li><div class="when">Nov 2, 2026, minutes later</div>Other developers reply, some calling the video a strong example of the concept, others joking about how much work it took to explain.</li>
+</ul>
+
+<h2>Claims, and how sure we should be</h2>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <p>A "harness" is the scaffolding and orchestration layer, context management, tool-calling, retries, formatting, that turns a raw LLM into a usable coding agent.</p>
+  <p class="reason">Reason: this is general terminology used across the AI dev-tools community, not something Theo invented, and it shows up consistently in how tools like Claude Code, Cursor, and Aider are described.</p>
+</div>
+<div class="claim">
+  <span class="tag view">Speaker's view</span>
+  <p>T3 Code is not a harness.</p>
+  <p class="reason">Reason: this is Theo's own assertion about his own product. The source gives no independent technical definition to check it against.</p>
+</div>
+<div class="claim">
+  <span class="tag view">Speaker's view</span>
+  <p>The video is a particularly good example of explaining the harness concept.</p>
+  <p class="reason">Reason: stated only by one commenter, Rahul, not an independent or established assessment.</p>
+</div>
+<div class="claim">
+  <span class="tag contested">Contested</span>
+  <p>Harness choice barely matters anymore, roughly a 3-5% performance difference, like tabs versus spaces.</p>
+  <p class="reason">Reason: this is Theo's framing from his own videos. It is a strong, specific claim without independent numbers backing it in the source material.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="tile">
+    <div class="big">672</div>
+    <div class="ctx">likes on Theo's tweet, modest but notable for a niche dev-tools topic</div>
+  </div>
+  <div class="tile">
+    <div class="big">26</div>
+    <div class="ctx">retweets, meaning some of his audience found the distinction worth sharing further</div>
+  </div>
+</div>
+
+<h2>How the pieces fit together</h2>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing a raw AI model plus a harness layer combining into a coding agent">
+  <style>
+    .box{fill:none;stroke:#a6482f;stroke-width:2;}
+    .txt{font-family:-apple-system,sans-serif;font-size:11px;fill:#1c1a17;}
+    .sub{font-family:-apple-system,sans-serif;font-size:9px;fill:#5c564c;}
+  </style>
+  <rect x="20" y="20" width="110" height="46" rx="8" class="box"/>
+  <text x="75" y="42" text-anchor="middle" class="txt">Raw model</text>
+  <text x="75" y="55" text-anchor="middle" class="sub">the LLM itself</text>
+
+  <rect x="190" y="20" width="110" height="46" rx="8" class="box"/>
+  <text x="245" y="42" text-anchor="middle" class="txt">Harness</text>
+  <text x="245" y="55" text-anchor="middle" class="sub">context, tools, retries</text>
+
+  <text x="160" y="48" text-anchor="middle" class="txt" font-weight="bold">+</text>
+
+  <path d="M75 66 L75 100 L245 100 L245 66" fill="none" stroke="#a6482f" stroke-width="2"/>
+  <path d="M160 100 L160 118" stroke="#a6482f" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a6482f"/>
+    </marker>
+  </defs>
+
+  <rect x="90" y="124" width="140" height="46" rx="8" class="box" stroke-width="2.5"/>
+  <text x="160" y="146" text-anchor="middle" class="txt" font-weight="bold">Coding agent</text>
+  <text x="160" y="159" text-anchor="middle" class="sub">what you actually use</text>
+
+  <text x="160" y="195" text-anchor="middle" class="sub">The dispute: Theo says T3 Code sits here, not in the harness box.</text>
+  <text x="160" y="208" text-anchor="middle" class="sub">Naming which box a product belongs in shapes how it's judged.</text>
+</svg>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+"So a 'harness' is basically the scaffolding wrapped around a raw AI model, the context handling, the tool-calling, the retry logic, that turns a plain model into something that can actually act like a coding assistant. It's not one official term, it's jargon the dev community is still arguing about. And it matters because if people call your product 'just a harness,' it sounds like a thin wrapper. That's why Theo made a whole video defining it, and then flatly said his own product, T3 Code, isn't one."
+</div>
+
+<h2>Check yourself</h2>
+<details>
+  <summary>Why would a tool-maker spend a whole video just defining a word like "harness" instead of a feature?</summary>
+  <p>Because in a crowded market, what people call your tool shapes how they value and compare it.</p>
+</details>
+<details>
+  <summary>Why might a builder want to publicly deny their product is a "harness"?</summary>
+  <p>If the term implies "thin wrapper," denying it signals the product does more, protecting its perceived value.</p>
+</details>
+<details>
+  <summary>Explain what an AI coding "harness" is and why naming it matters, in 30 seconds.</summary>
+  <p>A harness is the orchestration layer around a raw AI model that makes it act like a coding assistant. Naming it matters because the label signals how much real engineering versus thin wrapping a product has.</p>
+</details>
+
+<footer>
+  <p>Source video: <a href="https://x.com/theo/status/2117213872348348429" target="_blank" rel="noopener">x.com/theo/status/2117213872348348429</a> by Theo (@theo).</p>
+  <p>Brief written 2026-11-02. General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
