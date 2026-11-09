@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlashProve: proving which AI said what</title>
+<style>
+  :root{
+    --bg:#f7f5f1;
+    --surface:#ffffff;
+    --text:#1c1c1c;
+    --muted:#5b5b5b;
+    --accent:#0d6b63;
+    --accent-soft:#e3f1ee;
+    --border:#e3e0da;
+    --established:#1f7a3d;
+    --view:#b5790a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121212;
+      --surface:#1b1b1b;
+      --text:#ececec;
+      --muted:#a8a8a8;
+      --accent:#4fd1c5;
+      --accent-soft:#163331;
+      --border:#2b2b2b;
+      --established:#55c17c;
+      --view:#e0a83d;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.55;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px 16px 48px;
+  }
+  h1{
+    font-size:1.5rem;
+    line-height:1.3;
+    margin:0 0 6px;
+  }
+  .kicker{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.95rem;
+    margin:0 0 18px;
+  }
+  h2{
+    font-size:1.1rem;
+    margin:36px 0 12px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:6px;
+  }
+  p{margin:0 0 12px;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:10px;
+  }
+  .card h3{
+    margin:0 0 6px;
+    font-size:1rem;
+  }
+  .card p{margin:0;}
+  .card .label{
+    color:var(--muted);
+    font-size:0.85rem;
+    font-weight:600;
+    margin-top:6px;
+  }
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0 0 0 18px;
+    border-left:2px solid var(--border);
+  }
+  .timeline li{
+    position:relative;
+    margin-bottom:18px;
+    padding-left:14px;
+  }
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-24px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .timeline .when{
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--muted);
+    display:block;
+    margin-bottom:2px;
+  }
+  .claim{
+    margin-bottom:14px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--border);
+  }
+  .claim:last-child{border-bottom:none;}
+  .pill{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    padding:3px 9px;
+    border-radius:999px;
+    margin-bottom:6px;
+  }
+  .pill.established{
+    background:color-mix(in srgb, var(--established) 18%, transparent);
+    color:var(--established);
+  }
+  .pill.view{
+    background:color-mix(in srgb, var(--view) 18%, transparent);
+    color:var(--view);
+  }
+  .claim p{margin:0;}
+  .claim .reason{
+    color:var(--muted);
+    font-size:0.88rem;
+    margin-top:4px;
+  }
+  .numbers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .num-tile{
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:14px;
+  }
+  .num-tile .big{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--accent);
+    display:block;
+    margin-bottom:4px;
+  }
+  .num-tile .ctx{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .note{
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:8px;
+  }
+  svg{
+    width:100%;
+    height:auto;
+    display:block;
+    margin:14px 0;
+  }
+  .callout{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .callout strong{display:block;margin-bottom:4px;}
+  .script{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    font-style:italic;
+  }
+  details{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 16px;
+    margin-bottom:10px;
+  }
+  summary{
+    font-weight:600;
+    cursor:pointer;
+  }
+  details p{margin:10px 0 0;}
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent);}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>FlashProve: proving which AI said what</h1>
+  <p class="kicker">Why it matters this week: Anthropic just open-sourced a way to cryptographically prove a response really came from a specific model, instead of just taking a vendor's word for it.</p>
+
+  <h2>The situation in 60 seconds</h2>
+  <p>Anthropic released FlashProve, a cryptographic tool that proves a specific AI response really came from a specific model. It's built to be faster than older open-source methods for doing this kind of proof, and the code is open-sourced so anyone can use or check it. The two stated goals: making it harder for attackers to hijack a chat session, and letting safety auditors confirm that the model they tested is the same one actually being served to real customers.</p>
+
+  <h2>Who wants what</h2>
+  <div class="card">
+    <h3>Anthropic</h3>
+    <p>Wants: Establish provable inference as trusted infrastructure across the AI industry.</p>
+    <p class="label">Leverage: Built and open-sourced the tool, controls the reference implementation and framing.</p>
+  </div>
+  <div class="card">
+    <h3>Safety evaluators / auditors</h3>
+    <p>Wants: Confirm the model they tested is the same one deployed to customers.</p>
+    <p class="label">Leverage: Can use FlashProve proofs as independent evidence instead of relying on vendor assurances.</p>
+  </div>
+  <div class="card">
+    <h3>Attackers seeking to hijack chats</h3>
+    <p>Wants: Insert or impersonate model responses undetected.</p>
+    <p class="label">Leverage: Currently can exploit the lack of cryptographic verification between client and model.</p>
+  </div>
+  <div class="card">
+    <h3>Academic and industry collaborators</h3>
+    <p>Wants: Advance cryptographic proof techniques and see them applied to real AI systems.</p>
+    <p class="label">Leverage: Contributed the established cryptographic techniques FlashProve builds on.</p>
+  </div>
+
+  <h2>How we got here</h2>
+  <ul class="timeline">
+    <li><span class="when">Before this release</span>Open-source methods for verifying AI response provenance already existed, but were comparatively inefficient.</li>
+    <li><span class="when">Before this release</span>The underlying cryptographic techniques FlashProve builds on were already developed by the credited collaborators and the wider research community.</li>
+    <li><span class="when">2026-11-03</span>Anthropic publishes the FlashProve announcement and write-up.</li>
+    <li><span class="when">2026-11-03</span>Anthropic open-sources the FlashProve code alongside the announcement.</li>
+  </ul>
+
+  <h2>Claims, labeled</h2>
+  <div class="claim">
+    <span class="pill established">Established</span>
+    <p>FlashProve's code has been open-sourced and is publicly available.</p>
+    <p class="reason">This is a verifiable action, not an opinion; the announcement links directly to the release.</p>
+  </div>
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>FlashProve is substantially more efficient than prior open-source methods for this kind of verification.</p>
+    <p class="reason">Anthropic's own characterization, with no independent benchmark shown in the source.</p>
+  </div>
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>FlashProve can make it harder for attackers to hijack a chat.</p>
+    <p class="reason">Stated as a potential application by Anthropic, not demonstrated with a concrete incident or test.</p>
+  </div>
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>FlashProve lets safety evaluators confirm the tested model matches the one served to customers.</p>
+    <p class="reason">Presented as an intended use case by Anthropic, not an independently verified outcome.</p>
+  </div>
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>Provable inference will likely be an important part of improving trust in AI deployment.</p>
+    <p class="reason">A forward-looking opinion from Anthropic about where the field is heading.</p>
+  </div>
+
+  <h2>Numbers worth remembering</h2>
+  <div class="numbers">
+    <div class="num-tile">
+      <span class="big">5,263</span>
+      <span class="ctx">likes on Anthropic's announcement post</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">541</span>
+      <span class="ctx">retweets spreading the announcement</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">6</span>
+      <span class="ctx">named external collaborators credited for the underlying cryptography</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">70-95x</span>
+      <span class="ctx">computational overhead versus normal inference, per early outside reporting</span>
+    </div>
+  </div>
+  <p class="note">The overhead figure comes from early independent reporting right after the open-source release, not from the brief's core announcement, and may shift as the tool matures.</p>
+
+  <h2>How the proof actually works</h2>
+  <svg viewBox="0 0 320 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram of FlashProve: model generates a response, FlashProve creates a cryptographic proof, the response and proof travel together, then either a chat client or a safety auditor verifies the proof.">
+    <defs>
+      <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="currentColor"/>
+      </marker>
+    </defs>
+    <style>
+      .box{fill:var(--surface);stroke:var(--border);stroke-width:1.5;}
+      .lbl{font-family:-apple-system,sans-serif;font-size:12px;fill:var(--text);}
+      .sub{font-family:-apple-system,sans-serif;font-size:10px;fill:var(--muted);}
+      .arrow{stroke:var(--accent);stroke-width:2;fill:none;color:var(--accent);}
+      .acc{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5;}
+    </style>
+
+    <rect class="box" x="60" y="10" width="200" height="44" rx="8"/>
+    <text class="lbl" x="160" y="29" text-anchor="middle">AI model</text>
+    <text class="sub" x="160" y="43" text-anchor="middle">generates a response</text>
+
+    <line class="arrow" x1="160" y1="54" x2="160" y2="84" marker-end="url(#arrow)"/>
+
+    <rect class="acc" x="40" y="88" width="240" height="52" rx="8"/>
+    <text class="lbl" x="160" y="109" text-anchor="middle">FlashProve</text>
+    <text class="sub" x="160" y="124" text-anchor="middle">creates a cryptographic proof tied</text>
+    <text class="sub" x="160" y="136" text-anchor="middle">to that exact model's identity</text>
+
+    <line class="arrow" x1="160" y1="140" x2="160" y2="170" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="60" y="174" width="200" height="44" rx="8"/>
+    <text class="lbl" x="160" y="193" text-anchor="middle">Response + proof</text>
+    <text class="sub" x="160" y="207" text-anchor="middle">travel together</text>
+
+    <line class="arrow" x1="130" y1="218" x2="90" y2="254" marker-end="url(#arrow)"/>
+    <line class="arrow" x1="190" y1="218" x2="230" y2="254" marker-end="url(#arrow)"/>
+
+    <rect class="box" x="10" y="258" width="150" height="70" rx="8"/>
+    <text class="lbl" x="85" y="279" text-anchor="middle">Chat client checks</text>
+    <text class="sub" x="85" y="294" text-anchor="middle">is this really from the</text>
+    <text class="sub" x="85" y="307" text-anchor="middle">claimed model?</text>
+    <text class="sub" x="85" y="320" text-anchor="middle">(blocks hijacking)</text>
+
+    <rect class="box" x="160" y="258" width="150" height="70" rx="8"/>
+    <text class="lbl" x="235" y="279" text-anchor="middle">Auditor checks</text>
+    <text class="sub" x="235" y="294" text-anchor="middle">does tested model</text>
+    <text class="sub" x="235" y="307" text-anchor="middle">match deployed model?</text>
+    <text class="sub" x="235" y="320" text-anchor="middle">(catches a swap)</text>
+
+    <line class="arrow" x1="85" y1="328" x2="140" y2="360" marker-end="url(#arrow)"/>
+    <line class="arrow" x1="235" y1="328" x2="180" y2="360" marker-end="url(#arrow)"/>
+
+    <rect class="acc" x="60" y="364" width="200" height="60" rx="8"/>
+    <text class="lbl" x="160" y="386" text-anchor="middle">Result: confirmed match</text>
+    <text class="sub" x="160" y="401" text-anchor="middle">or flagged mismatch,</text>
+    <text class="sub" x="160" y="414" text-anchor="middle">without exposing model weights</text>
+  </svg>
+
+  <div class="callout">
+    <strong>Common misconception</strong>
+    FlashProve does not check whether an answer is true or correct. It only proves which model produced the output.
+  </div>
+
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script">
+    "Anthropic built a thing called FlashProve. It's a cryptographic proof, like a tamper-proof receipt, that shows exactly which AI model produced a given response. It doesn't check if the answer is right, just who actually said it. Two uses: stopping attackers from hijacking a chat and impersonating the model, and letting safety auditors confirm the model they tested is the same one real users are getting, not some quietly swapped-in substitute. They open-sourced the code so any company or auditor can check it, not just Anthropic."
+  </div>
+
+  <h2>Check yourself</h2>
+  <details>
+    <summary>What problem is FlashProve solving, and why would a safety evaluator care if the tested model matches the deployed one?</summary>
+    <p>It proves the AI response really came from a claimed model. Evaluators care because a company could test a safe model then quietly swap in a different one for real users; the proof closes that gap.</p>
+  </details>
+  <details>
+    <summary>Why did Anthropic open-source FlashProve instead of keeping it as a competitive advantage?</summary>
+    <p>Because the value depends on it becoming a shared trust standard across the industry; a private tool only one company can check wouldn't build the same cross-company trust.</p>
+  </details>
+  <details>
+    <summary>Explain FlashProve to a friend in 30 seconds.</summary>
+    <p>A strong answer covers: it's a cryptographic proof system, not a truth-checker; it confirms which model generated an output, it doesn't confirm the output is correct; main uses are stopping chat hijacking and letting auditors verify tested vs. deployed models match; code is now open-source.</p>
+  </details>
+
+  <footer>
+    Source: <a href="https://x.com/AnthropicAI/status/2117710942826123294">Anthropic's announcement on X</a>, by @AnthropicAI.<br>
+    Brief written 2026-11-08.<br>
+    General background may be dated.
+  </footer>
+
+</main>
+</body>
+</html>
