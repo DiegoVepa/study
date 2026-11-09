@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why AI stocks cracked this week</title>
+<style>
+  :root{
+    --bg:#f5f3ef;
+    --card:#ffffff;
+    --text:#1b1b1b;
+    --muted:#5c5c5c;
+    --border:#e2ddd3;
+    --accent:#a6471c;
+    --accent-soft:#f1e2d8;
+    --est:#2f6b3a;
+    --est-bg:#e4efe2;
+    --con:#9a6b00;
+    --con-bg:#f6ecd4;
+    --view:#5b4b9c;
+    --view-bg:#eae6f6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141210;
+      --card:#1f1c19;
+      --text:#eee9e2;
+      --muted:#a8a099;
+      --border:#352f29;
+      --accent:#e0824a;
+      --accent-soft:#3a271c;
+      --est:#7ecb8b;
+      --est-bg:#20321f;
+      --con:#e0b84a;
+      --con-bg:#3a2f14;
+      --view:#b6a6f0;
+      --view-bg:#2a2440;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px 16px 48px;
+  }
+  h1{
+    font-size:1.5rem;
+    line-height:1.3;
+    margin:0 0 6px;
+  }
+  .subhead{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.95rem;
+    margin:0 0 28px;
+  }
+  h2{
+    font-size:1.05rem;
+    margin:0 0 12px;
+    padding-top:4px;
+    border-top:1px solid var(--border);
+    padding-top:24px;
+  }
+  section{margin-bottom:32px;}
+  p{margin:0 0 12px;}
+  .lede{font-size:1.02rem;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .card h3{
+    margin:0 0 6px;
+    font-size:0.98rem;
+  }
+  .card .label{
+    font-size:0.78rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .card .val{margin-bottom:4px;}
+  .timeline{
+    border-left:2px solid var(--border);
+    margin-left:6px;
+    padding-left:18px;
+  }
+  .t-item{
+    position:relative;
+    margin-bottom:18px;
+  }
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-23px;
+    top:4px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .t-when{
+    font-size:0.8rem;
+    color:var(--muted);
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .claim{
+    margin-bottom:14px;
+    padding-bottom:4px;
+  }
+  .tag{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:999px;
+    margin-bottom:6px;
+    letter-spacing:0.02em;
+  }
+  .tag.est{background:var(--est-bg);color:var(--est);}
+  .tag.con{background:var(--con-bg);color:var(--con);}
+  .tag.view{background:var(--view-bg);color:var(--view);}
+  .claim-text{font-weight:600;margin-bottom:3px;}
+  .claim-reason{font-size:0.9rem;color:var(--muted);margin:0;}
+  .num-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .num-tile{
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:12px;
+  }
+  .num-tile .big{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--accent);
+    display:block;
+  }
+  .num-tile .ctx{
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  svg{width:100%;height:auto;display:block;}
+  .svg-wrap{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px;
+  }
+  .svg-caption{
+    font-size:0.8rem;
+    color:var(--muted);
+    margin-top:8px;
+    text-align:center;
+  }
+  .script-box{
+    background:var(--card);
+    border:1px dashed var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+    font-style:italic;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 14px;
+    margin-bottom:10px;
+  }
+  summary{
+    font-weight:600;
+    cursor:pointer;
+  }
+  details p{margin-top:8px;margin-bottom:0;color:var(--muted);}
+  footer{
+    border-top:1px solid var(--border);
+    padding-top:16px;
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent);}
+</style>
+</head>
+<body>
+<main>
+
+<h1>The midterms just changed the AI story</h1>
+<p class="subhead">S&amp;P 500 down 4.4%, Nasdaq down 5.5%: the technology didn't break, the financing story did.</p>
+
+<section>
+  <h2>The situation, in 60 seconds</h2>
+  <p class="lede">This week's selloff came from a shift in the story investors tell themselves about AI, not from anything going wrong with the technology. Confidence was already shaky after Coreweave's debt yield jumped to 15%, which exposed how much of the AI buildout runs on borrowed money rather than cash. Then Democrats swept both houses of Congress in the midterms, raising fears that a new majority will slow down AI data center construction through regulation. The selling hit chipmakers, power suppliers, and debt-dependent "neocloud" companies the hardest. Cash-rich giants like Microsoft, Amazon, and Google held up better, because a slower building pace could actually ease the strain on their own cash flow.</p>
+</section>
+
+<section>
+  <h2>Who wants what</h2>
+
+  <div class="card">
+    <h3>Democrats (new Congressional majority)</h3>
+    <p class="val"><strong>Want:</strong> Slow AI data center construction, likely over energy use, local impact, or economic concerns.</p>
+    <p class="val"><strong>Leverage:</strong> Legislative and regulatory power over permits and energy policy.</p>
+  </div>
+
+  <div class="card">
+    <h3>Hyperscalers (Microsoft, Amazon, Google)</h3>
+    <p class="val"><strong>Want:</strong> Fund the AI buildout at a sustainable pace from their own cash flow instead of debt.</p>
+    <p class="val"><strong>Leverage:</strong> Diversified revenue beyond AI and large, if currently strained, cash reserves.</p>
+  </div>
+
+  <div class="card">
+    <h3>Neocloud companies (Coreweave, Nebius, Iren)</h3>
+    <p class="val"><strong>Want:</strong> Keep raising cheap debt so they can keep building data centers.</p>
+    <p class="val"><strong>Leverage:</strong> Weak. No other business line, so they depend entirely on investor confidence and debt markets.</p>
+  </div>
+
+  <div class="card">
+    <h3>Anthropic</h3>
+    <p class="val"><strong>Want:</strong> Keep showing strong revenue growth to justify its valuation and its $895 billion in compute commitments.</p>
+    <p class="val"><strong>Leverage:</strong> Price cuts to stimulate demand, though that move itself signals growth is already slowing.</p>
+  </div>
+
+  <div class="card">
+    <h3>Retail and institutional investors</h3>
+    <p class="val"><strong>Want:</strong> Protect gains from the AI trade while reading the new political and financing risk correctly.</p>
+    <p class="val"><strong>Leverage:</strong> Collective selling pressure that can move prices fast, as seen on Thursday.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How we got here</h2>
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-when">Earlier in 2026</div>
+      <p>The dominant AI narrative was one of global conquest and unstoppable growth.</p>
+    </div>
+    <div class="t-item">
+      <div class="t-when">Recent weeks before this episode</div>
+      <p>Coreweave's debt yield jumped to 15%, shifting the narrative toward financing risk.</p>
+    </div>
+    <div class="t-item">
+      <div class="t-when">Late October 2026</div>
+      <p>Anthropic cut token pricing by up to 50% as sequential revenue growth slowed sharply. Meta began raising $90 billion in equity.</p>
+    </div>
+    <div class="t-item">
+      <div class="t-when">This week's midterms</div>
+      <p>Democrats swept both houses of Congress and won key governorships in states central to data center growth, including Texas, Ohio, and Georgia. Local ballot measures also favored new restrictions on data center development. (General background)</p>
+    </div>
+    <div class="t-item">
+      <div class="t-when">Thursday</div>
+      <p>Panic selling hit the market: S&amp;P down 4.4%, Nasdaq down 5.5%, with AI infrastructure names down double digits.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Claims worth separating</h2>
+
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p class="claim-text">Market narrative matters more than valuation.</p>
+    <p class="claim-reason">This is Eisman's personal investing philosophy, not a measurable fact.</p>
+  </div>
+
+  <div class="claim">
+    <span class="tag con">Contested</span>
+    <p class="claim-text">AI capital spending accounts for at least 50% of GDP growth this year.</p>
+    <p class="claim-reason">Stated as fact in the video, but this kind of attribution depends heavily on methodology and would be debated by economists.</p>
+  </div>
+
+  <div class="claim">
+    <span class="tag con">Contested</span>
+    <p class="claim-text">A Democratic Congress will act to slow AI data center construction.</p>
+    <p class="claim-reason">Presented as a likely outcome, but no specific legislation has been passed or introduced yet.</p>
+  </div>
+
+  <div class="claim">
+    <span class="tag est">Established</span>
+    <p class="claim-text">Google's free cash flow was negative $9 billion and Amazon's negative $33 billion this quarter.</p>
+    <p class="claim-reason">Reported company financial results.</p>
+  </div>
+
+  <div class="claim">
+    <span class="tag est">Established</span>
+    <p class="claim-text">Anthropic's sequential revenue growth fell from 147% to 47% between Q2 and Q3 2026.</p>
+    <p class="claim-reason">Drawn directly from figures in Anthropic's amended S-1 filing.</p>
+  </div>
+
+  <div class="claim">
+    <span class="tag view">Speaker's view</span>
+    <p class="claim-text">A full-blown AI price war is underway.</p>
+    <p class="claim-reason">This is Eisman's interpretation of the token price cuts. It hasn't been confirmed by competitors' own statements.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Numbers worth remembering</h2>
+  <div class="num-grid">
+    <div class="num-tile">
+      <span class="big">-4.4%</span>
+      <span class="ctx">S&amp;P 500, this week</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">-5.5%</span>
+      <span class="ctx">Nasdaq, this week</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">$895B</span>
+      <span class="ctx">Anthropic's total compute and leasing commitments, roughly $100B a year starting next year</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">147% &rarr; 47%</span>
+      <span class="ctx">Anthropic's sequential revenue growth, Q2 to Q3 2026</span>
+    </div>
+    <div class="num-tile">
+      <span class="big">-$9B / -$33B</span>
+      <span class="ctx">Google and Amazon free cash flow, this quarter</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>The mechanism: debt exposure drove Thursday's rout</h2>
+  <div class="svg-wrap">
+    <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of single day stock drops on Thursday">
+      <text x="160" y="14" text-anchor="middle" font-size="10" fill="currentColor" font-weight="700">Thursday single day drop (%)</text>
+
+      <text x="85" y="38" text-anchor="end" font-size="9" fill="currentColor">Micron</text>
+      <rect x="90" y="24" width="170" height="24" fill="var(--accent)"/>
+      <text x="265" y="40" font-size="9" fill="currentColor">-17.5%</text>
+
+      <text x="85" y="74" text-anchor="end" font-size="9" fill="currentColor">AMD</text>
+      <rect x="90" y="60" width="168" height="24" fill="var(--accent)"/>
+      <text x="263" y="76" font-size="9" fill="currentColor">-17.3%</text>
+
+      <text x="85" y="110" text-anchor="end" font-size="9" fill="currentColor">Iren</text>
+      <rect x="90" y="96" width="165" height="24" fill="var(--accent)"/>
+      <text x="260" y="112" font-size="9" fill="currentColor">-17.0%</text>
+
+      <text x="85" y="146" text-anchor="end" font-size="9" fill="currentColor">Nebius</text>
+      <rect x="90" y="132" width="145" height="24" fill="var(--accent)"/>
+      <text x="240" y="148" font-size="9" fill="currentColor">-14.9%</text>
+
+      <text x="85" y="182" text-anchor="end" font-size="9" fill="currentColor">Vertiv</text>
+      <rect x="90" y="168" width="137" height="24" fill="var(--accent)"/>
+      <text x="232" y="184" font-size="9" fill="currentColor">-14.1%</text>
+
+      <text x="160" y="208" text-anchor="middle" font-size="8.5" fill="currentColor" opacity="0.7">All five build or power AI data centers and depend on continued debt-funded construction</text>
+    </svg>
+    <p class="svg-caption">These are the companies most exposed to debt costs and a potential construction slowdown, which is why they fell hardest while cash-rich hyperscalers held up better.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script-box">
+    <p>"The market didn't crash because AI stopped working. It crashed because the story changed. First, investors noticed Coreweave was borrowing at a 15% yield just to build data centers, so people started asking who's actually paying for all this. Then Democrats won Congress, and the fear is they'll slow down data center permits. The companies that only build data centers and fund it all with debt, like Coreweave and Nebius, got crushed. Microsoft, Amazon, and Google have other businesses to fall back on, so they held up better. And even Anthropic just cut its prices in half because its own growth is slowing, which is the real warning sign here, not the politics."</p>
+  </div>
+</section>
+
+<section>
+  <h2>Check yourself</h2>
+
+  <details>
+    <summary>Why did the midterm results trigger panic selling in AI stocks specifically?</summary>
+    <p>The AI narrative was already shaky because Coreweave's debt yield had jumped to 15%, exposing heavy reliance on borrowed money. A Democratic sweep added the fear that the new Congress would act to slow AI data center construction, stacking political risk on top of existing financing risk.</p>
+  </details>
+
+  <details>
+    <summary>Why are neocloud companies like Coreweave more fragile than hyperscalers like Microsoft in this selloff?</summary>
+    <p>Neoclouds have no other revenue line. They depend entirely on debt to fund construction, so any shift in credit market confidence or construction pace hits them directly. Hyperscalers have diversified cash flow, even though that cash flow is currently negative, so they have more room to absorb a slowdown.</p>
+  </details>
+
+  <details>
+    <summary>Why is Anthropic cutting prices 50% actually a warning sign, not good news?</summary>
+    <p>Sequential revenue growth fell sharply, from 147% to 47% between Q2 and Q3 2026. Cutting prices to spark demand suggests that growth was already softening. Meanwhile, Anthropic is locked into roughly $895 billion in compute commitments, close to $100 billion a year, which has to be paid regardless of whether revenue growth keeps up.</p>
+  </details>
+</section>
+
+<footer>
+  <p>Source video: <a href="https://www.youtube.com/watch?v=1rNv4K_UZqY" target="_blank" rel="noopener">The Weekly Wrap, with Steve Eisman</a></p>
+  <p>Study brief written 2026-11-08. General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
