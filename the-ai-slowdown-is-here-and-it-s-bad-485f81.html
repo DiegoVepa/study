@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Slowdown Is Here</title>
+<style>
+:root{
+  --bg:#faf8f5;
+  --card:#ffffff;
+  --text:#1c1b1a;
+  --muted:#5c5955;
+  --accent:#a8441f;
+  --border:#e4ddd3;
+  --est:#2f6b3a;
+  --cont:#a8441f;
+  --view:#7a5b1e;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#f1ece3;
+    --muted:#b3aba0;
+    --accent:#e07a4a;
+    --border:#3a352b;
+    --est:#6fbf7a;
+    --cont:#e07a4a;
+    --view:#d9ad5c;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{
+  font-size:1.5rem;
+  margin:0 0 4px;
+  line-height:1.25;
+}
+h2{
+  font-size:1.1rem;
+  margin:28px 0 10px;
+  border-bottom:1px solid var(--border);
+  padding-bottom:6px;
+}
+.subtitle{
+  color:var(--accent);
+  font-size:0.95rem;
+  margin:0 0 20px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:10px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.8rem;
+  color:var(--muted);
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-left:2px solid var(--border);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 18px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-size:0.8rem;
+  color:var(--muted);
+  display:block;
+}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:600;
+  padding:2px 8px;
+  border-radius:999px;
+  margin-bottom:6px;
+}
+.tag.established{background:rgba(47,107,58,0.15);color:var(--est);}
+.tag.contested{background:rgba(168,68,31,0.15);color:var(--cont);}
+.tag.view{background:rgba(122,91,30,0.15);color:var(--view);}
+.numgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.numtile{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+}
+.numtile .big{
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+  margin-bottom:4px;
+}
+.numtile .ctx{
+  font-size:0.8rem;
+  color:var(--muted);
+}
+svg{width:100%;height:auto;display:block;}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:10px;
+}
+summary{
+  cursor:pointer;
+  font-weight:600;
+}
+details p{margin-top:8px;margin-bottom:0;color:var(--muted);}
+.script{
+  background:var(--card);
+  border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;
+  padding:14px 16px;
+  font-style:italic;
+}
+footer{
+  margin-top:32px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  font-size:0.8rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{
+  font-size:0.85rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>The AI Slowdown Is Here, and It's Bad</h1>
+<p class="subtitle">Why this matters this week: AI stocks just had their worst drop since the 2020 crash, and Anthropic's own IPO price tag is shrinking in real time.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>AI-linked stocks suffered one of their sharpest selloffs since the 2020 COVID crash. Around the same time, reporting says Anthropic's IPO valuation talk has fallen toward roughly 1.3 trillion dollars, down from numbers closer to 2 trillion just weeks earlier. Underneath the panic are real costs: top-end GPUs run 30,000 to 40,000 dollars each, and labs reportedly still spend most of their compute training new models rather than serving the people paying for them. That is a big part of why Claude just added pricier 100 and 200 dollar monthly tiers. A run of security incidents, including a reported 6.3 billion dollar Binance hack and hacked supermarket fridges in Europe, adds to a sense that fast-growing, tightly connected tech systems are fragile in ways that are easy to overlook when everyone is focused on the next model release.</p>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+<h3>Frontier AI labs (OpenAI, Anthropic)</h3>
+<p><strong>Wants:</strong> Keep scaling model capability and revenue to justify their valuations.</p>
+<p class="label"><strong>Leverage:</strong> They control frontier model capability and the enterprise and API relationships built on top of it.</p>
+</div>
+
+<div class="card">
+<h3>Investors and potential IPO backers</h3>
+<p><strong>Wants:</strong> Confidence that AI revenue will catch up to valuations before committing more capital.</p>
+<p class="label"><strong>Leverage:</strong> They can withhold funding or demand lower valuations, which is exactly what seems to be happening to Anthropic's IPO talk.</p>
+</div>
+
+<div class="card">
+<h3>Subscribers and businesses using AI tools</h3>
+<p><strong>Wants:</strong> Capable AI at a stable, affordable price.</p>
+<p class="label"><strong>Leverage:</strong> They can switch providers or cut usage if prices climb too far.</p>
+</div>
+
+<div class="card">
+<h3>Hardware suppliers (Nvidia)</h3>
+<p><strong>Wants:</strong> Sell compute hardware at high margins while demand outstrips supply.</p>
+<p class="label"><strong>Leverage:</strong> They control the GPU supply and pricing power on chips like the H200.</p>
+</div>
+
+<div class="card">
+<h3>Politicians and regulators</h3>
+<p><strong>Wants:</strong> Influence over data center buildout, energy use, and permitting.</p>
+<p class="label"><strong>Leverage:</strong> They can block or slow infrastructure projects through permitting and policy, which is part of why the US midterms are being watched closely here.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">Early October 2026</span>Anthropic's projected IPO valuation is sitting around roughly 2 trillion dollars.</li>
+  <li><span class="when">Recent weeks</span>Labs diverge in strategy. OpenAI reportedly leans into math and cryptography puzzles, while Anthropic opens a "wet lab" for AI-assisted medical research.</li>
+  <li><span class="when">November 2, 2026</span>Anthropic's amended IPO filing reveals nearly 900 billion dollars in contractual spending commitments for AI infrastructure through 2045, including a reported 3.4 billion dollar deal for gas-fired generators to power data centers.</li>
+  <li><span class="when">Thursday, November 5, 2026</span>Sharp AI stock selloff: the Nasdaq Composite falls 5.5% and the Philadelphia Semiconductor Index drops 12.2%, driven by valuation fears and worries about tighter data center regulation after the midterms.</li>
+  <li><span class="when">By November 6, 2026</span>Anthropic's IPO valuation talk drops to roughly 1.1 to 1.3 trillion dollars, against its last private valuation of 965 billion dollars from May 2026.</li>
+  <li><span class="when">Recent</span>Claude rolls out new 100 dollar Max and 200 dollar Ultra subscription tiers, with Ultra removing the old 5 hour usage limit.</li>
+  <li><span class="when">Recent</span>Security incidents stack up: a reported 6.3 billion dollar Binance hack and hacked European supermarket fridges set to dangerous temperatures.</li>
+</ul>
+
+<h2>Claims worth sorting carefully</h2>
+
+<div class="card">
+<span class="tag established">Established</span>
+<p><strong>An Nvidia H200 GPU costs 30,000 to 40,000 dollars.</strong><br>Why this label: consistent with widely reported market pricing for high-end AI chips.</p>
+</div>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p><strong>The recent market crash is the biggest since the 2020 COVID crash.</strong><br>Why this label: asserted by the host in the episode without a cited data source.</p>
+</div>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p><strong>Anthropic spends about 70 percent of compute on training and 30 percent on inference.</strong><br>Why this label: described as a figure one host recalled from memory, not an official Anthropic disclosure.</p>
+</div>
+
+<div class="card">
+<span class="tag contested">Contested</span>
+<p><strong>Anthropic's IPO valuation talk fell to 1.3 trillion dollars.</strong><br>Why this label: attributed to Bloomberg reporting but relayed secondhand in the video; later reporting puts the range at 1.1 to 1.3 trillion against a 965 billion dollar private valuation, so the exact number moves depending on the source and date.</p>
+</div>
+
+<div class="card">
+<span class="tag contested">Contested</span>
+<p><strong>The Binance hack affected 6.3 billion dollars.</strong><br>Why this label: a reported figure cited by the host; the scale of major crypto hacks is often disputed or revised after initial reports.</p>
+</div>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p><strong>AI labs use unreleased, unguardrailed models to reverse-engineer competitor products like Airbnb.</strong><br>Why this label: sourced from a single tweet referenced in the episode, not confirmed by any lab.</p>
+</div>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p><strong>A Democrat win in the US midterms means fewer AI data centers get built and higher subscription costs.</strong><br>Why this label: a speculative prediction from one host with no supporting data cited.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numgrid">
+  <div class="numtile">
+    <span class="big">$30-40K</span>
+    <span class="ctx">Price of a single Nvidia H200 GPU, the kind of chip training and running big models depends on.</span>
+  </div>
+  <div class="numtile">
+    <span class="big">~70% / 30%</span>
+    <span class="ctx">Recalled, unverified split of Anthropic's compute: training versus serving existing users.</span>
+  </div>
+  <div class="numtile">
+    <span class="big">$1.1-1.3T</span>
+    <span class="ctx">Anthropic's reported IPO valuation talk by November 6, 2026, down from about $2T in early October.</span>
+  </div>
+  <div class="numtile">
+    <span class="big">$965B</span>
+    <span class="ctx">Anthropic's last private valuation, from May 2026, now the floor the IPO talk is falling toward.</span>
+  </div>
+  <div class="numtile">
+    <span class="big">$6.3B</span>
+    <span class="ctx">Reported impact of the Binance hack, cited as part of a broader wave of security incidents.</span>
+  </div>
+  <div class="numtile">
+    <span class="big">$100 / $200</span>
+    <span class="ctx">Monthly price of Claude's new Max and Ultra tiers; Ultra removes the old 5 hour usage limit.</span>
+  </div>
+</div>
+
+<h2>The core mechanism, visualized</h2>
+<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing how high compute costs squeeze lab economics and fuel investor doubt">
+  <style>
+    text{font-family:-apple-system,sans-serif;fill:currentColor;}
+    .box{fill:none;stroke:currentColor;stroke-width:1.5;opacity:0.5;}
+    .lbl{font-size:10px;}
+    .val{font-size:11px;font-weight:700;}
+    .arrow{stroke:currentColor;stroke-width:1.5;fill:none;opacity:0.6;marker-end:url(#arrow);}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="currentColor" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <rect class="box" x="20" y="10" width="280" height="44" rx="8"/>
+  <text class="lbl" x="30" y="26">GPU hardware cost</text>
+  <text class="val" x="30" y="44">H200: $30,000-$40,000 each</text>
+
+  <line class="arrow" x1="160" y1="54" x2="160" y2="80"/>
+
+  <rect class="box" x="20" y="82" width="280" height="44" rx="8"/>
+  <text class="lbl" x="30" y="98">Compute spend split</text>
+  <text class="val" x="30" y="116">~70% training / ~30% inference</text>
+
+  <line class="arrow" x1="160" y1="126" x2="160" y2="152"/>
+
+  <rect class="box" x="20" y="154" width="280" height="44" rx="8"/>
+  <text class="lbl" x="30" y="170">Provider response</text>
+  <text class="val" x="30" y="188">Claude adds $100 / $200 tiers</text>
+
+  <line class="arrow" x1="160" y1="198" x2="160" y2="224"/>
+
+  <rect class="box" x="20" y="226" width="280" height="44" rx="8"/>
+  <text class="lbl" x="30" y="242">Investor reaction</text>
+  <text class="val" x="30" y="260">IPO talk falls to $1.1-1.3T</text>
+</svg>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+<p>"So AI stocks just had their worst week since the 2020 crash. Around the same time, word is Anthropic's IPO valuation talk dropped to about 1.3 trillion dollars, down from nearly 2 trillion a month earlier. Part of why: a single high-end GPU costs 30 to 40 thousand dollars, and labs are reportedly still pouring most of their compute into training new models, not serving the people already paying for them. That is a big reason Claude just rolled out 100 and 200 dollar a month plans. Nobody knows yet if this is a healthy correction or the bubble actually popping, it's probably some of both."</p>
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>What triggered the recent AI stock selloff, and why did it revive bubble talk?</summary>
+<p>The Nasdaq and S&P saw their sharpest drop since the 2020 COVID crash, with the Nasdaq Composite down 5.5% and the Philadelphia Semiconductor Index down 12.2% on November 5, 2026. Reporting that Anthropic's IPO valuation talk fell toward 1.1 to 1.3 trillion dollars amplified fears that AI valuations had gotten overheated.</p>
+</details>
+
+<details>
+<summary>Why are AI subscription prices climbing, according to the compute cost breakdown?</summary>
+<p>GPUs like the H200 cost 30,000 to 40,000 dollars each, and labs like Anthropic reportedly still spend most of their compute, around 70 percent, on training rather than serving existing users. That pushes providers to raise prices, which is part of why Claude added its 100 and 200 dollar monthly tiers.</p>
+</details>
+
+<details>
+<summary>Explain in 30 seconds why investors are getting nervous about AI valuations right now.</summary>
+<p>A strong answer covers: the recent market drop was the sharpest since 2020, Anthropic's reported IPO valuation fell from around 2 trillion to about 1.1 to 1.3 trillion dollars, GPU and training costs remain high relative to revenue, and whether this is a healthy correction or an early bubble pop is not settled, it is being argued both ways.</p>
+</details>
+
+<footer>
+<p>Source video: <a href="https://www.youtube.com/watch?v=vrmTUcaVO4s">God Mode Podcast, "The AI Slowdown Is Here, and It's Bad"</a></p>
+<p>Brief written: 2026-11-09. General background on AI bubble dynamics may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
