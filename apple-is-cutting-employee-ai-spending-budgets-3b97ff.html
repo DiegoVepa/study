@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple's shrinking AI budgets</title>
+<style>
+:root{
+  --bg:#f7f5f1;
+  --card:#ffffff;
+  --text:#1c1c1c;
+  --muted:#5b5b5b;
+  --accent:#b5431a;
+  --accent-soft:#f0ddd2;
+  --border:#e4ddd3;
+  --established:#2f6d3e;
+  --contested:#b8860b;
+  --speaker:#7a4fb0;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#ece7de;
+    --muted:#a8a097;
+    --accent:#e07a4a;
+    --accent-soft:#3a2a20;
+    --border:#332e26;
+    --established:#5fae73;
+    --contested:#d6ab3d;
+    --speaker:#b393e0;
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{font-size:1.5rem;margin:0 0 4px;}
+h2{font-size:1.1rem;margin:28px 0 10px;border-bottom:1px solid var(--border);padding-bottom:6px;}
+.subtitle{color:var(--accent);font-weight:600;font-size:0.95rem;margin-bottom:20px;}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{margin:0 0 6px;font-size:1rem;}
+.card .want{margin-bottom:4px;}
+.card .lev{color:var(--muted);font-size:0.9rem;}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--border);}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;top:4px;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{font-weight:600;font-size:0.9rem;color:var(--accent);display:block;}
+.claim{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.label{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:20px;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+}
+.label.established{background:var(--established);color:#fff;}
+.label.contested{background:var(--contested);color:#2b2200;}
+.label.speaker{background:var(--speaker);color:#fff;}
+.claim .text{font-weight:600;margin-bottom:4px;}
+.claim .reason{color:var(--muted);font-size:0.9rem;}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.num-tile{
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:12px;
+}
+.num-tile .big{font-size:1.4rem;font-weight:800;color:var(--accent);display:block;margin-bottom:2px;}
+.num-tile .ctx{font-size:0.82rem;color:var(--muted);}
+.viz{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+}
+.script{
+  background:var(--accent-soft);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{font-weight:600;cursor:pointer;}
+details p{margin:10px 0 0;color:var(--muted);}
+footer{
+  margin-top:30px;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:0.85rem;
+}
+footer a{color:var(--accent);word-break:break-all;}
+.bg-note{font-size:0.8rem;color:var(--muted);margin-top:6px;}
+</style>
+</head>
+<body>
+
+<h1>Apple is quietly cutting how much it lets employees spend on AI</h1>
+<p class="subtitle">Why this matters: Apple wants staff to use AI more, while shrinking the budget that pays for it, a sign that even the richest tech company is watching AI costs closely.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>Apple has been lowering the daily dollar limit employees can spend on internal AI tools, even as leadership pushes staff to use AI more in their day-to-day work. Engineers saw their daily cap cut from $300 to $200, with a further cut to $100 reportedly planned. Other, non-engineering teams could see limits fall as low as $25 a day. Commenters online suspect the real driver is that Apple pays steep enterprise or API-level pricing for this access, far more expensive than a typical consumer AI subscription, which would explain why costs are being reined in even as AI use expands.</p>
+
+<h2>Who wants what</h2>
+<div class="card">
+  <h3>Apple leadership</h3>
+  <p class="want"><strong>Wants:</strong> Cut internal AI infrastructure costs while still scaling AI adoption across the company.</p>
+  <p class="lev"><strong>Leverage:</strong> Controls employee tool budgets and negotiates enterprise AI contracts.</p>
+</div>
+<div class="card">
+  <h3>Apple engineers and employees</h3>
+  <p class="want"><strong>Wants:</strong> Enough AI tool access and budget to meet rising expectations for AI-assisted output.</p>
+  <p class="lev"><strong>Leverage:</strong> Are the ones expected to actually produce the increased AI-driven output.</p>
+</div>
+<div class="card">
+  <h3>Enterprise and API AI providers</h3>
+  <p class="want"><strong>Wants:</strong> Maximize revenue from Apple's enterprise-tier AI usage contracts.</p>
+  <p class="lev"><strong>Leverage:</strong> Set premium enterprise and API pricing that's harder for large customers to avoid.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">Before the reported cuts</span>Apple engineers had a daily AI usage budget of $300.</li>
+  <li><span class="when">As of this report</span>Engineer daily budget was cut to $200.</li>
+  <li><span class="when">Planned, not yet confirmed</span>Apple reportedly intends to cut the engineer limit further, to $100 a day.</li>
+  <li><span class="when">Planned, not yet confirmed</span>Other, non-engineering teams could see their daily limit fall to $25.</li>
+  <li><span class="when">2026-11-04</span>Mark Gurman publicizes the Bloomberg reporting on these cuts on X.</li>
+</ul>
+
+<h2>Claims, sorted by certainty</h2>
+<div class="claim">
+  <span class="label established">Established</span>
+  <div class="text">Apple cut engineer daily AI budgets from $300 to $200.</div>
+  <div class="reason">Reported directly as fact in the Bloomberg-sourced post.</div>
+</div>
+<div class="claim">
+  <span class="label established">Established</span>
+  <div class="text">Apple is pushing employees to use AI more even as spending is cut.</div>
+  <div class="reason">Stated directly and plainly in the original post.</div>
+</div>
+<div class="claim">
+  <span class="label contested">Contested</span>
+  <div class="text">Apple plans to cut engineer limits further to $100 a day.</div>
+  <div class="reason">Framed as a planned future reduction, not yet confirmed as implemented.</div>
+</div>
+<div class="claim">
+  <span class="label contested">Contested</span>
+  <div class="text">Other teams could see limits fall to $25 a day.</div>
+  <div class="reason">Framed with "could," signaling a possibility being reported, not a finalized policy.</div>
+</div>
+<div class="claim">
+  <span class="label speaker">Speaker's view</span>
+  <div class="text">The high per-employee cost is due to Apple paying enterprise or API pricing rather than consumer subscription rates.</div>
+  <div class="reason">This is a commenter's explanation, not something Apple has confirmed.</div>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="num-tile"><span class="big">$300 to $200</span><span class="ctx">per day, engineer AI budget before vs. now</span></div>
+  <div class="num-tile"><span class="big">$100</span><span class="ctx">per day, further cut planned for engineers</span></div>
+  <div class="num-tile"><span class="big">$25</span><span class="ctx">per day, possible floor for other teams</span></div>
+  <div class="num-tile"><span class="big">~$4,000</span><span class="ctx">per month, what $200 a day adds up to, per a top comment's math</span></div>
+</div>
+
+<h2>The core mechanism, in one picture</h2>
+<div class="viz">
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart showing Apple's daily AI budget caps dropping over time and across teams">
+  <style>
+    text{font-family:-apple-system,Helvetica,Arial,sans-serif;fill:currentColor;}
+    .barlabel{font-size:10px;}
+    .vallabel{font-size:11px;font-weight:700;}
+  </style>
+  <g color="#5b5b5b">
+    <line x1="30" y1="190" x2="310" y2="190" stroke="currentColor" stroke-width="1"/>
+  </g>
+  <!-- bar 1: $300 engineer before -->
+  <rect x="40" y="40" width="40" height="150" fill="#b5431a" opacity="0.55"/>
+  <text x="60" y="34" text-anchor="middle" class="vallabel" fill="#b5431a">$300</text>
+  <text x="60" y="206" text-anchor="middle" class="barlabel" fill="#5b5b5b">Engineers,</text>
+  <text x="60" y="217" text-anchor="middle" class="barlabel" fill="#5b5b5b">before</text>
+  <!-- bar 2: $200 engineer now -->
+  <rect x="110" y="90" width="40" height="100" fill="#b5431a" opacity="0.75"/>
+  <text x="130" y="84" text-anchor="middle" class="vallabel" fill="#b5431a">$200</text>
+  <text x="130" y="206" text-anchor="middle" class="barlabel" fill="#5b5b5b">Engineers,</text>
+  <text x="130" y="217" text-anchor="middle" class="barlabel" fill="#5b5b5b">now</text>
+  <!-- bar 3: $100 engineer planned -->
+  <rect x="180" y="140" width="40" height="50" fill="#b5431a" opacity="1"/>
+  <text x="200" y="134" text-anchor="middle" class="vallabel" fill="#b5431a">$100</text>
+  <text x="200" y="206" text-anchor="middle" class="barlabel" fill="#5b5b5b">Engineers,</text>
+  <text x="200" y="217" text-anchor="middle" class="barlabel" fill="#5b5b5b">planned</text>
+  <!-- bar 4: $25 other teams -->
+  <rect x="250" y="177.5" width="40" height="12.5" fill="#b8860b"/>
+  <text x="270" y="171" text-anchor="middle" class="vallabel" fill="#b8860b">$25</text>
+  <text x="270" y="206" text-anchor="middle" class="barlabel" fill="#5b5b5b">Other teams,</text>
+  <text x="270" y="217" text-anchor="middle" class="barlabel" fill="#5b5b5b">possible floor</text>
+</svg>
+<p class="bg-note">Bar height tracks daily dollar budget per employee. Darker orange bars are engineer caps over time, moving from $300 to $200 to a planned $100. The gold bar is the possible $25 floor for other, non-engineering teams.</p>
+</div>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<p class="script">"Apple told employees to use AI more, but it's actually cutting the budget they get to spend on it. Engineers used to get $300 a day, now it's $200, and Apple might take it down to $100. Other teams could get as little as $25 a day. People think the reason is that Apple pays expensive enterprise or API-level AI pricing, not the cheap $20-a-month consumer plans, so heavy use adds up fast. It's basically: do more with AI, but we're not paying more for it."</p>
+
+<h2>Check yourself</h2>
+<details>
+  <summary>Why would Apple cut AI budgets while telling employees to use AI more, not less?</summary>
+  <p>Apple likely wants efficiency gains from AI, not just higher raw spending on enterprise-tier tool usage.</p>
+</details>
+<details>
+  <summary>Why might Apple give engineers a much higher AI budget than other teams?</summary>
+  <p>Engineering work may be seen as the highest-value internal use case for AI, justifying a bigger spending allowance.</p>
+</details>
+<details>
+  <summary>Explain Apple's AI budget cuts to a friend in 30 seconds. What should a strong answer cover?</summary>
+  <p>A strong answer covers: engineer daily AI limits cut from $300 to $200 with $100 planned, other teams could drop to $25, and this happens even as Apple pushes employees to use AI more, likely because enterprise and API AI pricing is expensive.</p>
+</details>
+
+<footer>
+  Source video: <a href="https://x.com/markgurman/status/2118068667103453360" target="_blank" rel="noopener">x.com/markgurman/status/2118068667103453360</a><br>
+  Brief written: 2026-11-08<br>
+  General background may be dated.
+</footer>
+
+</body>
+</html>
