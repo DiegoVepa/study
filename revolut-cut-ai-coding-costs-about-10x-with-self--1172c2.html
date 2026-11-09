@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revolut's 10x AI Coding Cost Cut</title>
+<style>
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --text: #1d1b18;
+    --muted: #5c584f;
+    --accent: #a8431f;
+    --accent-soft: #f3e2d6;
+    --border: #e7e1d6;
+    --green: #2f6b3a;
+    --green-bg: #e3efe2;
+    --orange: #a8431f;
+    --orange-bg: #f3e2d6;
+    --blue: #395a8f;
+    --blue-bg: #e4e9f3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17140f;
+      --card: #211d17;
+      --text: #ece7dd;
+      --muted: #b2aa9b;
+      --accent: #d9793f;
+      --accent-soft: #3a2a1d;
+      --border: #332c22;
+      --green: #7cc28b;
+      --green-bg: #1f2b1f;
+      --orange: #d9793f;
+      --orange-bg: #3a2a1d;
+      --blue: #8fa6d9;
+      --blue-bg: #1f2534;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0 16px 48px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 6px; }
+  h2 { font-size: 1.05rem; margin: 32px 0 12px; color: var(--accent); }
+  .tagline { color: var(--muted); font-size: 0.95rem; margin: 0 0 24px; }
+  p { margin: 0 0 14px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .player-name { font-weight: 600; margin-bottom: 4px; }
+  .player-label { font-size: 0.8rem; color: var(--muted); display: block; margin-bottom: 2px; }
+  .timeline { border-left: 2px solid var(--border); padding-left: 16px; margin-left: 4px; }
+  .tl-item { margin-bottom: 18px; position: relative; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .tl-when { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+  .claim-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  .label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .label.established { background: var(--green-bg); color: var(--green); }
+  .label.contested { background: var(--orange-bg); color: var(--orange); }
+  .label.speaker { background: var(--blue-bg); color: var(--blue); }
+  .claim-reason { font-size: 0.88rem; color: var(--muted); margin-top: 4px; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .tile .big { font-size: 1.5rem; font-weight: 700; color: var(--accent); display: block; }
+  .tile .ctx { font-size: 0.78rem; color: var(--muted); margin-top: 4px; display: block; }
+  svg { width: 100%; height: auto; display: block; margin: 8px 0 4px; }
+  .script-box {
+    background: var(--accent-soft);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 0.97rem;
+  }
+  details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { margin: 10px 0 0; color: var(--muted); }
+  footer {
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--accent); word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Revolut cut AI coding costs about 10x by self-hosting a Chinese model</h1>
+  <p class="tagline">Why this matters: a major fintech just made a self-hosted open model its default over Claude Code, not a side experiment. That's a signal worth understanding.</p>
+
+  <h2>The situation in 60 seconds</h2>
+  <p>Revolut, the UK fintech, says it stopped defaulting to Anthropic's Claude Code for AI-assisted coding and switched to Z.ai's GLM, a Chinese open-weight model, run on Nvidia GPUs it owns rather than through a paid API. The reported result: AI coding costs dropped roughly 10x, down to about $0.30 per million tokens. The claim traces to a report from The Register, and a top comment on the viral post asks the obvious question: does that $0.30 figure actually include the cost of the GPUs themselves, or just the inference run on hardware Revolut already bought?</p>
+
+  <h2>Who wants what</h2>
+  <div class="card">
+    <span class="player-label">Player</span>
+    <div class="player-name">Revolut</div>
+    <p style="margin:0">Wants lower AI coding costs without losing engineering productivity.<br><strong>Leverage:</strong> owns its own GPU infrastructure and engineering talent to self-host and tune the model itself.</p>
+  </div>
+  <div class="card">
+    <span class="player-label">Player</span>
+    <div class="player-name">Anthropic (Claude Code)</div>
+    <p style="margin:0">Wants to keep enterprise customers on its coding assistant.<br><strong>Leverage:</strong> model quality and ecosystem integration, but weaker on raw per-token price against a self-hosted setup.</p>
+  </div>
+  <div class="card">
+    <span class="player-label">Player</span>
+    <div class="player-name">Z.ai (maker of GLM)</div>
+    <p style="margin:0">Wants enterprise adoption for its open model outside China.<br><strong>Leverage:</strong> an open-weight model companies can run themselves and control the cost of.</p>
+  </div>
+
+  <h2>How we got here</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-when">Before November 2026</div>
+      <p style="margin:4px 0 0">Revolut reportedly used Claude Code as its default AI coding assistant across its engineering team.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">November 3, 2026</div>
+      <p style="margin:4px 0 0">The Register reports Revolut's switch; separate reporting describes the deployment as moving roughly 2,000 engineers onto a self-hosted GLM-5.3 model running on 56 Nvidia B200 GPUs.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">November 5, 2026</div>
+      <p style="margin:4px 0 0">International Cyber Digest posts the claim on X, and the cost figure sparks debate in the comments.</p>
+    </div>
+  </div>
+
+  <h2>Claims, sorted by how solid they are</h2>
+  <div class="claim-card">
+    <span class="label established">Established</span>
+    <p style="margin:0">Revolut made GLM its default coding model in place of Claude Code.</p>
+    <p class="claim-reason">This is the core factual claim reported by The Register and repeated across coverage.</p>
+  </div>
+  <div class="claim-card">
+    <span class="label established">Established</span>
+    <p style="margin:0">GLM is developed by Z.ai, a Chinese AI company, and is openly licensed for self-hosting.</p>
+    <p class="claim-reason">Stated plainly as the model's origin across sources.</p>
+  </div>
+  <div class="claim-card">
+    <span class="label speaker">Speaker's view</span>
+    <p style="margin:0">Switching to self-hosted GLM cut Revolut's AI coding costs by about 10x.</p>
+    <p class="claim-reason">This is Revolut's own stated figure as reported, not independently verified in the source.</p>
+  </div>
+  <div class="claim-card">
+    <span class="label speaker">Speaker's view</span>
+    <p style="margin:0">The self-hosted setup costs about $0.30 per million tokens.</p>
+    <p class="claim-reason">Figure given by Revolut or the report it's based on; not independently audited.</p>
+  </div>
+  <div class="claim-card">
+    <span class="label contested">Contested</span>
+    <p style="margin:0">The $0.30 per million tokens figure represents the full cost of running the system.</p>
+    <p class="claim-reason">A top comment directly challenges whether this includes GPU hardware, power, and operational cost, or only inference.</p>
+  </div>
+
+  <h2>Numbers worth remembering</h2>
+  <div class="tiles">
+    <div class="tile"><span class="big">~10x</span><span class="ctx">claimed cost reduction after switching to self-hosted GLM</span></div>
+    <div class="tile"><span class="big">$0.30</span><span class="ctx">claimed cost per million tokens, self-hosted</span></div>
+    <div class="tile"><span class="big">56</span><span class="ctx">Nvidia B200 GPUs reportedly running the model</span></div>
+    <div class="tile"><span class="big">~2,000</span><span class="ctx">Revolut engineers reportedly moved onto the self-hosted model</span></div>
+    <div class="tile"><span class="big">60%</span><span class="ctx">faster coding time reported after removing token limits</span></div>
+    <div class="tile"><span class="big">1,941</span><span class="ctx">likes on the original post (116 retweets)</span></div>
+  </div>
+
+  <h2>The core mechanism, visualized</h2>
+  <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="10" width="280" height="56" rx="10" fill="var(--blue-bg)" stroke="var(--border)"/>
+    <text x="160" y="32" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="600">Claude Code (API)</text>
+    <text x="160" y="50" text-anchor="middle" font-size="11" fill="var(--muted)">pay-per-token, third-party GPUs</text>
+
+    <line x1="160" y1="66" x2="160" y2="96" stroke="var(--muted)" stroke-width="2"/>
+    <polygon points="160,104 154,92 166,92" fill="var(--muted)"/>
+
+    <rect x="20" y="108" width="280" height="56" rx="10" fill="var(--accent-soft)" stroke="var(--border)"/>
+    <text x="160" y="130" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="600">Switch, Nov 3 2026</text>
+    <text x="160" y="148" text-anchor="middle" font-size="11" fill="var(--muted)">Revolut moves default engineering workflow</text>
+
+    <line x1="160" y1="164" x2="160" y2="194" stroke="var(--muted)" stroke-width="2"/>
+    <polygon points="160,202 154,190 166,190" fill="var(--muted)"/>
+
+    <rect x="20" y="206" width="280" height="64" rx="10" fill="var(--green-bg)" stroke="var(--border)"/>
+    <text x="160" y="228" text-anchor="middle" font-size="13" fill="var(--text)" font-weight="600">Self-hosted GLM-5.3</text>
+    <text x="160" y="246" text-anchor="middle" font-size="11" fill="var(--muted)">on 56 Nvidia B200 GPUs, owned by Revolut</text>
+    <text x="160" y="262" text-anchor="middle" font-size="11" fill="var(--muted)">(open-weight model, not a paid API)</text>
+
+    <line x1="160" y1="270" x2="160" y2="300" stroke="var(--muted)" stroke-width="2"/>
+    <polygon points="160,308 154,296 166,296" fill="var(--muted)"/>
+
+    <rect x="20" y="312" width="280" height="76" rx="10" fill="var(--orange-bg)" stroke="var(--border)"/>
+    <text x="160" y="336" text-anchor="middle" font-size="14" fill="var(--accent)" font-weight="700">~$0.30 per million tokens</text>
+    <text x="160" y="356" text-anchor="middle" font-size="12" fill="var(--text)">claimed ~10x cheaper than before</text>
+    <text x="160" y="374" text-anchor="middle" font-size="10" fill="var(--muted)">figure disputed: does it include GPU cost?</text>
+  </svg>
+
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script-box">
+    "Revolut stopped paying Anthropic per token for Claude Code and started running its own open-source model, GLM, on GPUs it owns. They say that cut their AI coding costs by about 10x, down to around $0.30 per million tokens. But that number is just inference cost. It probably doesn't count the GPUs, the power, or the engineers needed to keep it running, so the real savings might be smaller once you add those back in."
+  </div>
+
+  <h2>Check yourself</h2>
+  <details>
+    <summary>Why would a fintech like Revolut want to control its own AI model and GPUs instead of using Claude Code?</summary>
+    <p>Cost control, data control, and not depending on a third party's pricing or availability.</p>
+  </details>
+  <details>
+    <summary>Why does the $0.30 per million tokens figure get challenged in the comments?</summary>
+    <p>Because it may only count inference cost, not the GPU hardware, power, or engineering needed to run it.</p>
+  </details>
+  <details>
+    <summary>What should a strong 30-second explanation of this story cover?</summary>
+    <p>The cost savings claim (~10x), owning the infrastructure (Nvidia GPUs in-house), using an open model (GLM) instead of a paid API, and the caveat that the headline cost may not include hardware or operational costs.</p>
+  </details>
+
+  <footer>
+    Source video: <a href="https://x.com/IntCyberDigest/status/2118158859235639374">x.com/IntCyberDigest/status/2118158859235639374</a><br>
+    Brief written: 2026-11-08.<br>
+    General background may be dated: details on GPU count, engineer count, and performance percentages come from secondary reporting around the original claim and may be revised as fuller cost breakdowns emerge.
+  </footer>
+
+</main>
+</body>
+</html>
