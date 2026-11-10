@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic's IPO Roadshow, Explained</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --card:#ffffff;
+  --text:#1c1b19;
+  --muted:#5c5850;
+  --accent:#b1521c;
+  --accent-soft:#f1e3d6;
+  --line:#e3ddd3;
+  --established:#2f6b3a;
+  --established-bg:#e4efe3;
+  --contested:#8a6d00;
+  --contested-bg:#f4ecd6;
+  --view:#7a4a9c;
+  --view-bg:#efe4f5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#f0ece4;
+    --muted:#aba499;
+    --accent:#e08a4c;
+    --accent-soft:#3a2a1c;
+    --line:#352f26;
+    --established:#7fc98a;
+    --established-bg:#1f2e20;
+    --contested:#e0c158;
+    --contested-bg:#2e2715;
+    --view:#c79fe0;
+    --view-bg:#2a1f32;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+.subtitle{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin:0 0 28px;
+}
+h2{
+  font-size:1.1rem;
+  margin:36px 0 12px;
+  border-left:3px solid var(--accent);
+  padding-left:10px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.8rem;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 18px;
+  border-left:2px solid var(--line);
+}
+.timeline li{
+  position:relative;
+  margin-bottom:20px;
+  padding-left:14px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-24px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--accent);
+  display:block;
+  margin-bottom:2px;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:600;
+  padding:2px 10px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+.tag.established{background:var(--established-bg);color:var(--established);}
+.tag.contested{background:var(--contested-bg);color:var(--contested);}
+.tag.view{background:var(--view-bg);color:var(--view);}
+.claim .reason{
+  color:var(--muted);
+  font-size:0.88rem;
+  margin:0;
+}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.numtile{
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:14px 12px;
+  text-align:center;
+}
+.numtile .big{
+  font-size:1.35rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.numtile .ctx{
+  font-size:0.78rem;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+svg{
+  width:100%;
+  height:auto;
+  display:block;
+  margin:8px 0 4px;
+}
+.script{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{font-size:0.8rem;color:var(--muted);margin-top:16px;}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Anthropic's IPO Roadshow, Explained</h1>
+<p class="subtitle">Why this matters this week: the company behind Claude just started pitching big investors before going public, this is the step right before shares exist, but they do not exist yet.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>On November 10, 2026, Anthropic announced it has launched the roadshow for its initial public offering. A roadshow is the stretch where company executives present to large institutional investors to drum up demand before shares actually list. Anthropic had already filed a registration statement with the SEC, and on the same day an amended filing reportedly showed a proposed price range of $70 to $78 per share for 825 million Class A shares, aiming to raise up to $64.4 billion. The company also reportedly secured $26 billion in a private placement from investors including Google and Nvidia, and has applied to list on Nasdaq under the ticker ANT, targeting a valuation up to $1.4 trillion. None of this is final: the SEC registration statement has been filed but is not yet effective, which Anthropic's own post states directly, so no shares can legally be bought or sold yet.</p>
+
+<h2>Who wants what</h2>
+<div class="card">
+  <h3>Anthropic</h3>
+  <p>Wants to raise public capital and create a liquid market for its shares.</p>
+  <span class="label">Leverage: position as one of the leading frontier AI labs with major enterprise and consumer traction.</span>
+</div>
+<div class="card">
+  <h3>Institutional investors (roadshow audience)</h3>
+  <p>Want early access and favorable pricing on a high-profile AI company before it lists.</p>
+  <span class="label">Leverage: their capital commitments help set the IPO price and size.</span>
+</div>
+<div class="card">
+  <h3>SEC</h3>
+  <p>Wants accurate disclosures confirmed before anyone can trade.</p>
+  <span class="label">Leverage: authority to declare the registration statement effective, or demand more disclosure first.</span>
+</div>
+<div class="card">
+  <h3>Public market observers</h3>
+  <p>Want to gauge AI industry valuation and sentiment through a bellwether listing.</p>
+  <span class="label">Leverage: none directly, but trading activity after the IPO will shape broader sentiment.</span>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">Earlier (unspecified date)</span>Anthropic files a registration statement with the SEC for the planned offering.</li>
+  <li><span class="when">November 10, 2026</span>Anthropic announces the roadshow has launched. An amended S-1 reportedly shows a $70 to $78 per-share range for 825 million Class A shares, and a $26 billion private placement from investors including Google and Nvidia.</li>
+  <li><span class="when">Pending</span>The SEC must declare the registration statement effective before any sale can legally happen.</li>
+  <li><span class="when">Anticipated, around Nov 19 to 20, 2026</span>Shares could begin trading on Nasdaq under the ticker ANT, if the timeline holds.</li>
+</ul>
+
+<h2>Claims, sorted by how solid they are</h2>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <p><strong>The IPO roadshow has launched.</strong></p>
+  <p class="reason">Stated directly by Anthropic's official account.</p>
+</div>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <p><strong>A registration statement has been filed with the SEC.</strong></p>
+  <p class="reason">Stated in the post's own legal disclaimer.</p>
+</div>
+<div class="claim">
+  <span class="tag established">Established</span>
+  <p><strong>That registration statement is not yet effective.</strong></p>
+  <p class="reason">Explicitly stated in the disclaimer, meaning no shares can legally be sold yet.</p>
+</div>
+<div class="claim">
+  <span class="tag contested">Contested</span>
+  <p><strong>Trading could begin around November 19 or 20, 2026.</strong></p>
+  <p class="reason">Reported as anticipated by outside coverage, not confirmed by Anthropic or the SEC. Treat the date as a target, not a lock.</p>
+</div>
+<div class="claim">
+  <span class="tag view">Speaker's view</span>
+  <p><strong>This is a major, closely watched event.</strong></p>
+  <p class="reason">Inferred from high engagement and reactions like "fireworks," not a factual claim made by Anthropic itself.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="numtile"><span class="big">$70 to $78</span><span class="ctx">proposed price per share</span></div>
+  <div class="numtile"><span class="big">825M</span><span class="ctx">Class A shares offered</span></div>
+  <div class="numtile"><span class="big">$64.4B</span><span class="ctx">potential raise from the public offering</span></div>
+  <div class="numtile"><span class="big">$26B</span><span class="ctx">private placement from investors like Google, Nvidia</span></div>
+  <div class="numtile"><span class="big">$1.4T</span><span class="ctx">targeted fully diluted valuation</span></div>
+  <div class="numtile"><span class="big">3,668 / 393</span><span class="ctx">likes and retweets on the announcement post</span></div>
+</div>
+
+<h2>The process, visualized</h2>
+<svg viewBox="0 0 320 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram of the IPO process from SEC filing to trading start">
+  <rect x="30" y="10" width="260" height="68" rx="10" fill="var(--established-bg)" stroke="var(--established)" stroke-width="2"/>
+  <text x="160" y="38" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text)">SEC Filing</text>
+  <text x="160" y="58" text-anchor="middle" font-size="11" fill="var(--text)">Registration statement on file</text>
+
+  <line x1="160" y1="78" x2="160" y2="108" stroke="var(--line)" stroke-width="2"/>
+  <polygon points="160,116 154,104 166,104" fill="var(--line)"/>
+
+  <rect x="20" y="118" width="280" height="80" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="160" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text)">Roadshow (now)</text>
+  <text x="160" y="166" text-anchor="middle" font-size="11" fill="var(--text)">Nov 10, 2026 — pitching investors</text>
+  <text x="160" y="184" text-anchor="middle" font-size="11" fill="var(--text)">Price range $70-$78 per share</text>
+
+  <line x1="160" y1="198" x2="160" y2="228" stroke="var(--line)" stroke-width="2"/>
+  <polygon points="160,236 154,224 166,224" fill="var(--line)"/>
+
+  <rect x="30" y="238" width="260" height="68" rx="10" fill="var(--contested-bg)" stroke="var(--contested)" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="160" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text)">SEC Effective</text>
+  <text x="160" y="286" text-anchor="middle" font-size="11" fill="var(--text)">Pending — required before any sale</text>
+
+  <line x1="160" y1="306" x2="160" y2="336" stroke="var(--line)" stroke-width="2"/>
+  <polygon points="160,344 154,332 166,332" fill="var(--line)"/>
+
+  <rect x="30" y="346" width="260" height="90" rx="10" fill="var(--contested-bg)" stroke="var(--contested)" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="160" y="374" text-anchor="middle" font-size="14" font-weight="700" fill="var(--text)">Trading Begins</text>
+  <text x="160" y="394" text-anchor="middle" font-size="11" fill="var(--text)">Anticipated ~Nov 19-20, 2026</text>
+  <text x="160" y="412" text-anchor="middle" font-size="11" fill="var(--text)">Nasdaq: ANT (if timeline holds)</text>
+</svg>
+<p class="note">Solid borders mark what is confirmed today. Dashed borders mark steps that are still pending or anticipated.</p>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+"Anthropic just started its IPO roadshow, that's the pitch tour where executives show big investors the numbers before shares list. They've already filed with the SEC, but that filing isn't effective yet, so legally nothing can be bought or sold right now. Word is the price range is $70 to $78 a share, aiming for something like a $1.4 trillion valuation, with trading possibly starting around November 19 or 20 on Nasdaq under the ticker ANT. The announcement itself is just the pitch starting, not the sale."
+</div>
+
+<h2>Check yourself</h2>
+<details>
+  <summary>Why does a company file with the SEC weeks before anyone can actually buy shares?</summary>
+  <p>The registration statement has to be declared effective first. The roadshow happens in between: it's the pitch to investors while that review is pending.</p>
+</details>
+<details>
+  <summary>Who benefits most from Anthropic going public right now, and what do they get from it?</summary>
+  <p>Anthropic gets capital and liquidity for early investors and employees. Public investors get access to AI exposure they previously could not buy directly.</p>
+</details>
+<details>
+  <summary>Explain an IPO roadshow to a friend in 30 seconds.</summary>
+  <p>A strong answer covers: it's the pitch tour to big investors before shares list, it happens after the SEC filing but before the offering is legally effective, and its purpose is to gauge demand and help set the price.</p>
+</details>
+
+<footer>
+  Source video: <a href="https://x.com/AnthropicAI/status/2120117722230968385" target="_blank" rel="noopener">Anthropic's announcement on X</a><br>
+  Brief written: 2026-11-10<br>
+  General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>
