@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Businesses in ChatGPT: what the beta actually does</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --card:#ffffff;
+  --text:#1f2521;
+  --muted:#5b655f;
+  --accent:#8a4b2a;
+  --accent-soft:#f0e3d7;
+  --line:#e2dcd2;
+  --established:#2f6b3a;
+  --established-bg:#e4efe0;
+  --contested:#9c3b2b;
+  --contested-bg:#f6e3dc;
+  --speaker:#8a6d1f;
+  --speaker-bg:#f5edd4;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15181a;
+    --card:#1e2224;
+    --text:#ececea;
+    --muted:#a3aba6;
+    --accent:#d59b6e;
+    --accent-soft:#2e2620;
+    --line:#333836;
+    --established:#8fcf9a;
+    --established-bg:#1f2e22;
+    --contested:#e59a86;
+    --contested-bg:#332220;
+    --speaker:#e3cc7f;
+    --speaker-bg:#312c1c;
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px 40px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:28px 0 6px;
+}
+h2{
+  font-size:1.1rem;
+  margin:36px 0 10px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:6px;
+}
+.tagline{
+  color:var(--accent);
+  font-weight:600;
+  font-size:0.95rem;
+  margin:0 0 20px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.8rem;
+  color:var(--muted);
+  display:block;
+  margin-top:4px;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-left:2px solid var(--accent);
+  margin-left:6px;
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-7px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  color:var(--accent);
+  font-size:0.85rem;
+  display:block;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.03em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:20px;
+  margin-bottom:8px;
+}
+.tag.established{background:var(--established-bg);color:var(--established);}
+.tag.contested{background:var(--contested-bg);color:var(--contested);}
+.tag.speaker{background:var(--speaker-bg);color:var(--speaker);}
+.claim .reason{
+  font-size:0.88rem;
+  color:var(--muted);
+  margin:6px 0 0;
+}
+.numbers{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.number-tile{
+  flex:1 1 140px;
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:14px;
+}
+.number-tile .big{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.number-tile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+svg{
+  width:100%;
+  height:auto;
+  display:block;
+  margin:10px 0;
+}
+.script{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-size:0.95rem;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<h1>Businesses in ChatGPT, now in beta</h1>
+<p class="tagline">ChatGPT just opened a second front door for businesses, right inside your conversation.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>OpenAI launched a beta called Businesses in ChatGPT. Companies can now claim a profile in a new "Business Hub," manage their own information, and see how people talk about them inside ChatGPT. Eligible businesses can go further and build a "Business Agent," a dedicated AI that answers customer questions and helps people compare products, using data the business itself provides. That agent's answers show up in a conversation clearly labeled apart from ChatGPT's own independent answers, so the two don't get mixed up. For now this is limited to ecommerce and online service businesses in the US, though claiming a basic profile is open anywhere ChatGPT is available.</p>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+<h3>OpenAI</h3>
+<p>Wants ChatGPT to become a discovery and commerce layer where businesses engage customers directly.</p>
+<span class="label">Leverage: a massive existing ChatGPT user base, plus control over how businesses are represented inside conversations.</span>
+</div>
+
+<div class="card">
+<h3>Participating businesses</h3>
+<p>Want control over how they're described in ChatGPT and a new channel to reach and convert customers.</p>
+<span class="label">Leverage: their own product data, pricing feeds, and brand information fed into the Business Agent.</span>
+</div>
+
+<div class="card">
+<h3>ChatGPT users and customers</h3>
+<p>Want accurate answers when comparing products or researching a business, without marketing dressed up as neutral information.</p>
+<span class="label">Leverage: trust in ChatGPT's labeling to tell independent answers apart from business-provided ones.</span>
+</div>
+
+<div class="card">
+<h3>Competing platforms (Google, Amazon, marketplaces)</h3>
+<p>Want to stay the default place people discover and compare businesses and products.</p>
+<span class="label">Leverage: existing ad ecosystems, search dominance, and established merchant relationships.</span>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+<li><span class="when">November 10, 2026</span>OpenAI announces the Businesses in ChatGPT beta through an X thread and a blog post.</li>
+<li><span class="when">At launch</span>Any business, wherever ChatGPT is available, can claim and verify a profile in Business Hub.</li>
+<li><span class="when">After verification</span>Eligible US ecommerce and online service businesses can create a Business Agent and add product feeds with pricing and availability.</li>
+</ul>
+
+<h2>Claims, sorted by how solid they are</h2>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p>Business Agent conversations are clearly labeled and kept separate from ChatGPT's independent answers.</p>
+<p class="reason">Why this label: directly stated as a feature design in OpenAI's own thread describing the product.</p>
+</div>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p>The feature is currently limited to eligible ecommerce and online service businesses in the US.</p>
+<p class="reason">Why this label: explicitly stated in the thread as the current scope of the beta.</p>
+</div>
+
+<div class="claim">
+<span class="tag speaker">Speaker's view</span>
+<p>OpenAI does not share people's conversations or Business Agent chats with the businesses themselves.</p>
+<p class="reason">Why this label: a privacy assurance asserted only by OpenAI in its own announcement, not independently verified.</p>
+</div>
+
+<div class="claim">
+<span class="tag contested">Contested</span>
+<p>This feature positions ChatGPT as a direct competitor to Google and Amazon for product discovery and customer service.</p>
+<p class="reason">Why this label: an interpretation of the launch's strategic intent, not a claim OpenAI itself made in the thread.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+<div class="number-tile">
+  <span class="big">16,357</span>
+  <span class="ctx">likes on the main announcement post, alongside 1,274 retweets, showing strong immediate engagement.</span>
+</div>
+<div class="number-tile">
+  <span class="big">889 / 547</span>
+  <span class="ctx">likes on the two follow-up thread posts, suggesting sustained interest in the feature's details.</span>
+</div>
+</div>
+
+<h2>How it actually works</h2>
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of how a ChatGPT conversation splits into an independent answer and a labeled Business Agent answer, both built from separate sources, shown separately to the user.">
+  <style>
+    .box{fill:none;stroke-width:1.6;}
+    .lbl{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:11px;}
+    .sub{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:9.5px;}
+  </style>
+  <rect x="90" y="8" width="140" height="36" rx="8" class="box" stroke="#8a4b2a" fill="#f0e3d7"/>
+  <text x="160" y="31" text-anchor="middle" class="lbl" fill="#1f2521">User asks a question</text>
+
+  <line x1="160" y1="44" x2="90" y2="80" stroke="#8a4b2a" stroke-width="1.6"/>
+  <line x1="160" y1="44" x2="230" y2="80" stroke="#8a4b2a" stroke-width="1.6"/>
+
+  <rect x="20" y="80" width="140" height="48" rx="8" class="box" stroke="#5b655f" fill="#ffffff"/>
+  <text x="90" y="100" text-anchor="middle" class="lbl" fill="#1f2521">ChatGPT's</text>
+  <text x="90" y="114" text-anchor="middle" class="lbl" fill="#1f2521">independent answer</text>
+  <text x="90" y="126" text-anchor="middle" class="sub" fill="#5b655f">unaffiliated, neutral</text>
+
+  <rect x="160" y="80" width="140" height="48" rx="8" class="box" stroke="#8a4b2a" fill="#f0e3d7"/>
+  <text x="230" y="100" text-anchor="middle" class="lbl" fill="#1f2521">Business Agent</text>
+  <text x="230" y="114" text-anchor="middle" class="lbl" fill="#1f2521">answer (labeled)</text>
+  <text x="230" y="126" text-anchor="middle" class="sub" fill="#5b655f">built from business data</text>
+
+  <line x1="230" y1="128" x2="230" y2="164" stroke="#8a4b2a" stroke-width="1.6"/>
+  <rect x="160" y="164" width="140" height="48" rx="8" class="box" stroke="#8a4b2a" fill="#ffffff"/>
+  <text x="230" y="184" text-anchor="middle" class="lbl" fill="#1f2521">Business Hub profile</text>
+  <text x="230" y="198" text-anchor="middle" class="lbl" fill="#1f2521">plus product feed</text>
+  <text x="230" y="208" text-anchor="middle" class="sub" fill="#5b655f">pricing, availability</text>
+
+  <line x1="90" y1="128" x2="160" y2="250" stroke="#5b655f" stroke-width="1.4"/>
+  <line x1="230" y1="212" x2="160" y2="250" stroke="#8a4b2a" stroke-width="1.4"/>
+  <rect x="60" y="250" width="200" height="50" rx="8" class="box" stroke="#5b655f" fill="#f0e3d7"/>
+  <text x="160" y="270" text-anchor="middle" class="lbl" fill="#1f2521">User sees both,</text>
+  <text x="160" y="284" text-anchor="middle" class="lbl" fill="#1f2521">clearly marked apart</text>
+  <text x="160" y="296" text-anchor="middle" class="sub" fill="#5b655f">no blending of the two</text>
+</svg>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+<p>"ChatGPT just got something like a business directory, but AI-native. Companies can claim a verified profile, manage their info, and see how people mention them in chats. Some of them can also build a Business Agent, an AI trained on their own product data, that answers customer questions and helps people compare products. The key part is that this agent's answers are kept in a separate, clearly labeled conversation, so you can always tell the difference between ChatGPT's own neutral take and a business pitching for itself. Right now it's only for ecommerce and online service businesses in the US, but it's basically a Google Business Profile for the AI era."</p>
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>What can a business now do inside OpenAI's new Business Hub beta, and why would they want that level of control?</summary>
+<p>They can claim their business, manage their info, view engagement insights, and build a labeled Business Agent that answers customer questions using their own data. This gives them control over how ChatGPT represents them instead of leaving it to guesswork.</p>
+</details>
+
+<details>
+<summary>Why does OpenAI keep Business Agent answers in a separate, clearly labeled conversation instead of blending them into ChatGPT's main answers?</summary>
+<p>To protect trust: users can tell when they're getting a business's own curated pitch versus ChatGPT's independent, unaffiliated answer, which avoids confusion about which response is neutral and which is self-interested.</p>
+</details>
+
+<details>
+<summary>Explain to a friend in 30 seconds what Businesses in ChatGPT is and why it matters.</summary>
+<p>A strong answer covers: ChatGPT now has a business directory beta where companies claim a verified profile, can build a customer-facing AI agent fed by their own product data, and get analytics on how people mention or engage with them. This effectively makes ChatGPT a new discovery and customer service channel, similar to a Google Business Profile for the AI era.</p>
+</details>
+
+<footer>
+  Source video: <a href="https://x.com/OpenAI/status/2120216592395174382" target="_blank" rel="noopener">OpenAI's announcement thread on X</a>.
+  Brief written 2026-11-11. General background may be dated.
+</footer>
+
+</body>
+</html>
