@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why tech stocks wobbled on AI spending</title>
+<style>
+:root{
+  --bg:#faf8f5;
+  --card:#ffffff;
+  --text:#1c1c1c;
+  --muted:#5a5a5a;
+  --accent:#b5561f;
+  --border:#e4ddd3;
+  --est:#2f6b3a;
+  --cont:#9a6b00;
+  --view:#9a3a3a;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#ece7df;
+    --muted:#aba397;
+    --accent:#e07a3a;
+    --border:#3a342c;
+    --est:#6fbf7d;
+    --cont:#e0b23a;
+    --view:#e08a8a;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{
+  font-size:1.5rem;
+  margin:0.2em 0 0.1em;
+  line-height:1.3;
+}
+.subtitle{
+  color:var(--accent);
+  font-weight:600;
+  font-size:0.95rem;
+  margin-bottom:1.4em;
+}
+h2{
+  font-size:1.05rem;
+  margin:2em 0 0.6em;
+  border-bottom:2px solid var(--border);
+  padding-bottom:0.3em;
+}
+p{margin:0.6em 0;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:12px;
+}
+.card h3{margin:0 0 6px;font-size:1rem;}
+.card .label{
+  font-size:0.75rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 18px;
+  border-left:2px solid var(--border);
+}
+.timeline li{
+  position:relative;
+  margin-bottom:1.1em;
+  padding-left:14px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-24px;
+  top:4px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--accent);
+  display:block;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:12px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  padding:2px 8px;
+  border-radius:20px;
+  margin-bottom:8px;
+}
+.tag.established{background:rgba(47,107,58,0.15);color:var(--est);}
+.tag.contested{background:rgba(154,107,0,0.15);color:var(--cont);}
+.tag.view{background:rgba(154,58,58,0.15);color:var(--view);}
+.claim p{margin:0.3em 0;}
+.claim .reason{font-size:0.9rem;color:var(--muted);}
+.numgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+.numtile{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  text-align:center;
+}
+.numtile .big{
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.numtile .ctx{
+  font-size:0.78rem;
+  color:var(--muted);
+  margin-top:4px;
+  display:block;
+}
+.visual{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:14px;
+}
+.visual svg{width:100%;height:auto;display:block;}
+.script{
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px;
+  font-style:italic;
+  margin-bottom:14px;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{margin-top:8px;color:var(--muted);}
+.note{
+  font-size:0.85rem;
+  color:var(--muted);
+}
+footer{
+  margin-top:2.5em;
+  padding-top:1em;
+  border-top:1px solid var(--border);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Why US tech stocks wobbled on AI spending</h1>
+<p class="subtitle">Why this matters this week: earnings season just turned AI capex from a growth story into a market worry.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>The Financial Times reported that US tech stocks were set to fall after a batch of earnings results reignited worries about how much big tech is spending on AI. The worry is not AI itself, it is the money going into AI infrastructure outpacing the revenue it brings back. The headline named no companies or numbers, just a broad market reaction across tech stocks during an active earnings week.</p>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+<span class="label">Player</span>
+<h3>Big tech and hyperscalers</h3>
+<p><strong>Wants:</strong> convince investors that AI spending will pay off long term.</p>
+<p><strong>Leverage:</strong> they control the spending guidance and the narrative investors react to.</p>
+</div>
+
+<div class="card">
+<span class="label">Player</span>
+<h3>Investors and fund managers</h3>
+<p><strong>Wants:</strong> evidence that AI capex is converting into revenue and profit.</p>
+<p><strong>Leverage:</strong> can sell shares, which pressures stock prices and valuations.</p>
+</div>
+
+<div class="card">
+<span class="label">Player</span>
+<h3>Chipmakers and infrastructure suppliers</h3>
+<p><strong>Wants:</strong> sustained or growing orders for AI infrastructure.</p>
+<p><strong>Leverage:</strong> they supply the hardware hyperscalers need to build AI capacity.</p>
+</div>
+
+<div class="card">
+<span class="label">Player</span>
+<h3>Financial media, including the FT</h3>
+<p><strong>Wants:</strong> explain and frame the market move for readers.</p>
+<p><strong>Leverage:</strong> shapes how the public interprets earnings and spending signals.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+<li><span class="when">2023 to 2025</span>Big tech ramps up AI infrastructure investment, framed as necessary to stay competitive in AI.</li>
+<li><span class="when">Through 2025 to 2026</span>Periodic market jitters emerge whenever earnings show capex rising faster than AI-driven revenue.</li>
+<li><span class="when">29 October 2026</span>FT reports that earnings results reignite AI spending concerns, sending US tech stocks lower.</li>
+</ul>
+
+<h2>Claims, sorted by how solid they are</h2>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p><strong>US tech stocks were set to fall after these earnings.</strong></p>
+<p class="reason">This is the headline fact directly stated by the FT.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p><strong>AI spending concerns were the cause of the drop.</strong></p>
+<p class="reason">This is the FT's framing in the headline. The underlying earnings details and investor reasoning are not spelled out in the source itself.</p>
+</div>
+
+<div class="claim">
+<span class="tag contested">Contested</span>
+<p><strong>AI infrastructure spending is outpacing AI-driven revenue industry-wide.</strong></p>
+<p class="reason">A widely debated market narrative, not confirmed with numbers by this specific source.</p>
+</div>
+
+<div class="claim">
+<span class="tag contested">Contested</span>
+<p><strong>This is a one-off, single-company event.</strong></p>
+<p class="reason">The headline says "US tech stocks" broadly, suggesting a sector move, though no specific companies are named.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numgrid">
+<div class="numtile">
+<span class="big">$2T+</span>
+<span class="ctx">Market value the Nasdaq 100 erased during the October 2026 AI-capex selloff, per later reporting beyond this headline.</span>
+</div>
+<div class="numtile">
+<span class="big">$10B+</span>
+<span class="ctx">Roughly the per-quarter scale of AI capital spending that Microsoft, Alphabet, Amazon and Meta have disclosed since 2023 (background).</span>
+</div>
+<div class="numtile">
+<span class="big">0</span>
+<span class="ctx">Specific figures or company names given in the original FT headline itself. It is a pure market-reaction statement.</span>
+</div>
+<div class="numtile">
+<span class="big">2026</span>
+<span class="ctx">The year this pattern of capex-driven jitters recurred across multiple earnings seasons, not just once.</span>
+</div>
+</div>
+<p class="note">The dollar figures above come from later background reporting, not the original FT headline, which gave no numbers.</p>
+
+<h2>The mechanism, in one picture</h2>
+<div class="visual">
+<svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing AI spending rising faster than AI revenue, leading investors to sell tech stocks">
+  <text x="150" y="14" text-anchor="middle" font-size="9" fill="currentColor" font-weight="600">AI spending vs AI revenue, quarter by quarter</text>
+  <line x1="30" y1="150" x2="280" y2="150" stroke="var(--border)" stroke-width="1"/>
+  <rect x="45" y="110" width="18" height="40" fill="var(--accent)"/>
+  <rect x="75" y="90" width="18" height="60" fill="var(--accent)"/>
+  <rect x="105" y="60" width="18" height="90" fill="var(--accent)"/>
+  <rect x="45" y="135" width="18" height="15" fill="var(--muted)"/>
+  <rect x="75" y="128" width="18" height="22" fill="var(--muted)"/>
+  <rect x="105" y="120" width="18" height="30" fill="var(--muted)"/>
+  <text x="84" y="165" text-anchor="middle" font-size="8" fill="currentColor">capex rising fast</text>
+  <text x="84" y="177" text-anchor="middle" font-size="8" fill="var(--muted)">revenue rising slow</text>
+  <path d="M135 110 L180 110" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="157" y="102" text-anchor="middle" font-size="8" fill="currentColor">gap widens</text>
+  <rect x="185" y="90" width="90" height="34" rx="6" fill="none" stroke="var(--view)" stroke-width="1.5"/>
+  <text x="230" y="104" text-anchor="middle" font-size="8" fill="currentColor">investor doubt</text>
+  <text x="230" y="115" text-anchor="middle" font-size="8" fill="currentColor">over AI returns</text>
+  <path d="M230 124 L230 150" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="185" y="155" width="90" height="34" rx="6" fill="var(--view)" opacity="0.15" stroke="var(--view)" stroke-width="1.5"/>
+  <text x="230" y="169" text-anchor="middle" font-size="8" fill="currentColor">tech stocks</text>
+  <text x="230" y="180" text-anchor="middle" font-size="8" fill="currentColor">fall sector-wide</text>
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+"Big tech is spending huge money building data centers and buying chips for AI. Investors are fine with that as long as it turns into profit. This week, earnings showed spending still climbing, but the revenue to match it wasn't clearly there yet. So even though current quarter numbers were mostly okay, the market got nervous about the guidance and sold off tech stocks across the board, not just one company."
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>Why did AI spending in earnings reports spook investors instead of reassuring them?</summary>
+<p>Because high spending without matching revenue growth raises doubt about returns on AI investment.</p>
+</details>
+
+<details>
+<summary>Which companies are most exposed when markets react to AI capex worries, and why?</summary>
+<p>Big hyperscalers and chipmakers, since they carry the largest AI infrastructure spending and have valuations tied closely to AI growth.</p>
+</details>
+
+<details>
+<summary>Explain in 30 seconds why AI spending fears can drop tech stocks even when earnings beat expectations.</summary>
+<p>Companies are spending huge sums on data centers and chips. Investors want proof that spending converts to profit. When guidance shows spending rising faster than revenue, the market reprices the stock down, even if the current quarter's numbers were fine.</p>
+</details>
+
+<footer>
+Source video: <a href="https://x.com/FT/status/2115672254134604206">FT on X, 29 October 2026</a><br>
+Brief written: 2026-11-13<br>
+General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>
