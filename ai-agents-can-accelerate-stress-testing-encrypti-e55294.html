@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agents and the RSA Stress Test</title>
+<style>
+:root{
+  --bg:#faf9f6;
+  --surface:#fff;
+  --text:#1c1b19;
+  --muted:#5b584f;
+  --border:#e4e1d8;
+  --accent:#9a3b1f;
+  --accent-bg:#f3e6de;
+  --ok:#2e6b4f;
+  --ok-bg:#e3efe8;
+  --warn:#8a6a1c;
+  --warn-bg:#f3eadb;
+  --contested:#5c4a8a;
+  --contested-bg:#eae6f5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15140f;
+    --surface:#1e1c17;
+    --text:#ece9e2;
+    --muted:#a8a396;
+    --border:#33302a;
+    --accent:#e08a5e;
+    --accent-bg:#3a2a21;
+    --ok:#7fc49c;
+    --ok-bg:#20332a;
+    --warn:#d7bb6c;
+    --warn-bg:#3a3220;
+    --contested:#b6a6e8;
+    --contested-bg:#2b2538;
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px 48px;
+}
+h1{font-size:1.5rem;line-height:1.3;margin:28px 0 6px;}
+h2{font-size:1.1rem;margin:36px 0 12px;border-bottom:1px solid var(--border);padding-bottom:8px;}
+p{margin:10px 0;}
+.subhead{color:var(--muted);font-size:0.95rem;margin:0 0 20px;}
+.section{margin-bottom:8px;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{margin:0 0 6px;font-size:1rem;}
+.card .label{color:var(--muted);font-size:0.85rem;}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--border);}
+.timeline li{position:relative;padding:4px 0 18px 20px;}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:6px;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{font-weight:600;font-size:0.9rem;color:var(--accent);}
+.claim{border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px;}
+.pill{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:600;
+  padding:3px 9px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+.pill.established{background:var(--ok-bg);color:var(--ok);}
+.pill.contested{background:var(--contested-bg);color:var(--contested);}
+.pill.view{background:var(--warn-bg);color:var(--warn);}
+.claim .reason{color:var(--muted);font-size:0.9rem;margin-top:6px;}
+.numbers{display:flex;flex-wrap:wrap;gap:12px;}
+.tile{
+  flex:1 1 130px;
+  background:var(--accent-bg);
+  border-radius:10px;
+  padding:14px 12px;
+  text-align:center;
+}
+.tile .big{font-size:1.4rem;font-weight:700;color:var(--accent);display:block;}
+.tile .ctx{font-size:0.8rem;color:var(--muted);margin-top:4px;display:block;}
+.script{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{font-weight:600;cursor:pointer;}
+details p{margin-top:8px;color:var(--muted);}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:0.85rem;
+}
+footer a{color:var(--accent);}
+svg{width:100%;height:auto;display:block;}
+.note{color:var(--muted);font-size:0.85rem;}
+</style>
+</head>
+<body>
+
+<h1>AI Agents Just Stress-Tested Old Encryption</h1>
+<p class="subhead">Why this matters this week: Google DeepMind says human-guided AI agents found two real weaknesses in 1024-bit RSA, a test case for whether AI can speed up security research itself.</p>
+
+<div class="section">
+<h2>The situation in 60 seconds</h2>
+<p>Google DeepMind announced that its AI models, directed by human researchers, uncovered two notable weaknesses in 1024-bit RSA encryption. That key size is a legacy standard the security industry has already been retiring for over a decade, so this is not a live threat to the encryption protecting your bank or your browser today. DeepMind is framing the news differently: it is presenting this as proof that AI agents, with humans still steering the process, can speed up the slow, grinding work of stress-testing cryptographic systems. The real story is about the method, not about a sudden crack in the internet's locks.</p>
+</div>
+
+<div class="section">
+<h2>Who wants what</h2>
+<div class="card">
+<h3>Google DeepMind</h3>
+<p class="label">Wants: to show AI agents can meaningfully contribute to scientific and security research.</p>
+<p class="label">Leverage: advanced AI models paired with in-house research expertise.</p>
+</div>
+<div class="card">
+<h3>Cryptography and security researchers</h3>
+<p class="label">Wants: proof that AI genuinely speeds up vulnerability discovery, and confidence the findings are reliable.</p>
+<p class="label">Leverage: the domain expertise needed to guide and verify what the AI finds.</p>
+</div>
+<div class="card">
+<h3>Organizations still on older RSA</h3>
+<p class="label">Wants: clarity on whether their systems are at risk and how fast they need to migrate.</p>
+<p class="label">Leverage: control over their own upgrade timelines and budgets.</p>
+</div>
+<div class="card">
+<h3>AI safety and dual-use critics</h3>
+<p class="label">Wants: scrutiny over whether AI-accelerated vulnerability research could later be pointed at offensive uses.</p>
+<p class="label">Leverage: public and regulatory pressure on how this kind of research gets disclosed and used.</p>
+</div>
+</div>
+
+<div class="section">
+<h2>How we got here</h2>
+<ul class="timeline">
+<li><span class="when">1977</span><br>RSA encryption is introduced, becoming a foundational public-key cryptosystem.</li>
+<li><span class="when">1990s to 2000s</span><br>1024-bit RSA becomes a widely used key size across many systems.</li>
+<li><span class="when">Early to mid 2010s</span><br>Standards bodies start urging retirement of 1024-bit RSA in favor of 2048-bit or higher, as computing power and factoring techniques improve.</li>
+<li><span class="when">2026-11-06</span><br>Google DeepMind publicly shares research showing AI agents, guided by humans, found two weaknesses in legacy 1024-bit RSA.</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Claims, sorted by how solid they are</h2>
+<div class="claim">
+<span class="pill established">Established</span>
+<p>1024-bit RSA is a legacy, already-weakened cryptosystem.</p>
+<p class="reason">Reason: the security industry has treated this key size as insufficient for over a decade, independent of this announcement.</p>
+</div>
+<div class="claim">
+<span class="pill established">Established</span>
+<p>Human researchers guided the AI models throughout the process.</p>
+<p class="reason">Reason: directly stated by DeepMind in its own announcement.</p>
+</div>
+<div class="claim">
+<span class="pill view">Speaker's view</span>
+<p>AI agents can accelerate the broader science of stress-testing encryption.</p>
+<p class="reason">Reason: this is DeepMind's own framing of what its research proves, not an independently verified conclusion.</p>
+</div>
+<div class="claim">
+<span class="pill view">Speaker's view</span>
+<p>DeepMind's models uncovered two major weaknesses in 1024-bit RSA.</p>
+<p class="reason">Reason: self-reported finding from DeepMind, not yet independently verified in the source material.</p>
+</div>
+<div class="claim">
+<span class="pill contested">Contested</span>
+<p>This research implies current, widely-deployed encryption is now at risk.</p>
+<p class="reason">Reason: not stated or supported by the source. The target was a known-outdated key size, not modern 2048-bit or higher standards still in active use.</p>
+</div>
+</div>
+
+<div class="section">
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+<div class="tile"><span class="big">1024-bit</span><span class="ctx">the legacy RSA key size the AI agents targeted</span></div>
+<div class="tile"><span class="big">2</span><span class="ctx">major weaknesses DeepMind says its models found</span></div>
+<div class="tile"><span class="big">1,600x</span><span class="ctx">theoretical speedup estimated for one signature-forgery attack</span></div>
+<div class="tile"><span class="big">30x</span><span class="ctx">roughly cheaper per extra key in the new batch-factoring method</span></div>
+<div class="tile"><span class="big">2048-bit+</span><span class="ctx">the minimum key size considered secure today, background</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>How the pieces connect</h2>
+<svg viewBox="0 0 340 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram showing human-guided AI agents stress-testing legacy 1024-bit RSA and finding two weaknesses, while 2048-bit RSA remains unaffected">
+  <style>
+    .lbl{font-size:11px;fill:var(--text,#1c1b19);font-family:-apple-system,sans-serif;}
+    .sub{font-size:9.5px;fill:var(--muted,#5b584f);font-family:-apple-system,sans-serif;}
+    .box{fill:var(--surface,#fff);stroke:var(--border,#e4e1d8);stroke-width:1.5;rx:8;}
+    .acc{fill:var(--accent-bg,#f3e6de);stroke:var(--accent,#9a3b1f);stroke-width:1.5;rx:8;}
+    .safe{fill:var(--ok-bg,#e3efe8);stroke:var(--ok,#2e6b4f);stroke-width:1.5;rx:8;}
+    .arrow{stroke:var(--muted,#5b584f);stroke-width:1.5;fill:none;marker-end:url(#arrowhead);}
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="var(--muted,#5b584f)"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="10" width="220" height="40" class="box" rx="8"/>
+  <text x="170" y="29" class="lbl" text-anchor="middle">Human researchers</text>
+  <text x="170" y="42" class="sub" text-anchor="middle">set direction and guide the work</text>
+
+  <line x1="170" y1="50" x2="170" y2="75" class="arrow"/>
+
+  <rect x="60" y="78" width="220" height="40" class="box" rx="8"/>
+  <text x="170" y="97" class="lbl" text-anchor="middle">AI agents</text>
+  <text x="170" y="110" class="sub" text-anchor="middle">stress-test the cryptosystem</text>
+
+  <line x1="170" y1="118" x2="170" y2="143" class="arrow"/>
+
+  <rect x="40" y="146" width="260" height="36" class="box" rx="8"/>
+  <text x="170" y="169" class="lbl" text-anchor="middle">Target: legacy 1024-bit RSA</text>
+
+  <line x1="120" y1="182" x2="90" y2="207" class="arrow"/>
+  <line x1="220" y1="182" x2="250" y2="207" class="arrow"/>
+
+  <rect x="10" y="210" width="160" height="70" class="acc" rx="8"/>
+  <text x="90" y="230" class="lbl" text-anchor="middle">Weakness 1</text>
+  <text x="90" y="244" class="sub" text-anchor="middle">signature forgery</text>
+  <text x="90" y="258" class="sub" text-anchor="middle">up to 1,600x faster</text>
+  <text x="90" y="271" class="sub" text-anchor="middle">(theoretical estimate)</text>
+
+  <rect x="170" y="210" width="160" height="70" class="acc" rx="8"/>
+  <text x="250" y="230" class="lbl" text-anchor="middle">Weakness 2</text>
+  <text x="250" y="244" class="sub" text-anchor="middle">batch key factoring</text>
+  <text x="250" y="258" class="sub" text-anchor="middle">about 30x cheaper</text>
+  <text x="250" y="271" class="sub" text-anchor="middle">per extra key</text>
+
+  <line x1="90" y1="280" x2="170" y2="320" class="arrow"/>
+  <line x1="250" y1="280" x2="170" y2="320" class="arrow"/>
+
+  <rect x="60" y="323" width="220" height="40" class="box" rx="8"/>
+  <text x="170" y="342" class="lbl" text-anchor="middle">Only affects 1024-bit systems</text>
+  <text x="170" y="355" class="sub" text-anchor="middle">already considered outdated</text>
+
+  <rect x="60" y="378" width="220" height="40" class="safe" rx="8"/>
+  <text x="170" y="397" class="lbl" text-anchor="middle">2048-bit and higher RSA</text>
+  <text x="170" y="410" class="sub" text-anchor="middle">not shown to be affected</text>
+</svg>
+<p class="note">All figures in the diagram come from DeepMind's own reporting on this research.</p>
+</div>
+
+<div class="section">
+<h2>Explain it to a friend in 30 seconds</h2>
+<p class="script">"Google DeepMind had AI agents, guided by human researchers, dig into old 1024-bit RSA encryption and they found two real weaknesses in it. Headlines will make it sound like AI broke encryption, but 1024-bit RSA has been considered outdated for over ten years. Everything using real security today runs on 2048-bit or higher, which wasn't touched. The actual point they're making is that AI can speed up the slow work of security research, with humans still steering it."</p>
+</div>
+
+<div class="section">
+<h2>Check yourself</h2>
+<details>
+<summary>Why use AI agents instead of relying only on human cryptographers?</summary>
+<p>To test whether AI can speed up and scale the slow, grinding process of finding weaknesses in cryptosystems.</p>
+</details>
+<details>
+<summary>What role did humans still play, and why does that matter?</summary>
+<p>Humans guided the AI models throughout. That means this was assisted research, not AI working fully on its own.</p>
+</details>
+<details>
+<summary>What is the one detail that keeps this from being a crisis?</summary>
+<p>The target was 1024-bit RSA, a key size the industry already considers outdated. Modern systems run on 2048-bit or higher, which this research did not touch.</p>
+</details>
+</div>
+
+<footer>
+Source video: <a href="https://x.com/GoogleDeepMind/status/2118755418675765656" target="_blank" rel="noopener">Google DeepMind on X</a><br>
+Brief written: 2026-11-13<br>
+General background may be dated.
+</footer>
+
+</body>
+</html>
