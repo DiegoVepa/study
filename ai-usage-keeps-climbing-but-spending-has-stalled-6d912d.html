@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI usage is up. AI spending isn't.</title>
+<style>
+  :root{
+    --bg:#f7f6f3;
+    --card:#ffffff;
+    --text:#1b1b1b;
+    --muted:#5a5a5a;
+    --accent:#b5541f;
+    --accent-soft:#f1ded0;
+    --line:#e3e0da;
+    --est:#1f7a4d;
+    --con:#b5541f;
+    --view:#5a6b9e;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141311;
+      --card:#1d1c19;
+      --text:#f0ede6;
+      --muted:#a9a49b;
+      --accent:#e08a4f;
+      --accent-soft:#3a2a1e;
+      --line:#34322c;
+      --est:#5fbf8b;
+      --con:#e08a4f;
+      --view:#9fb0e8;
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    max-width:720px;
+    margin:0 auto;
+    padding:0 16px 48px;
+  }
+  h1{font-size:1.5rem;line-height:1.25;margin:28px 0 4px;}
+  h2{font-size:1.05rem;margin:0 0 10px;color:var(--text);}
+  .tag{
+    display:inline-block;
+    font-size:0.78rem;
+    color:var(--accent);
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    margin-top:18px;
+  }
+  .why{color:var(--muted);font-size:0.95rem;margin:4px 0 24px;}
+  section{margin:30px 0;}
+  p{margin:0 0 12px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .card h3{margin:0 0 6px;font-size:1rem;}
+  .card .label{font-size:0.82rem;color:var(--muted);margin:2px 0;}
+  .card .label b{color:var(--text);}
+  .timeline{position:relative;padding-left:22px;border-left:2px solid var(--line);}
+  .tl-item{position:relative;margin-bottom:18px;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .tl-when{font-size:0.8rem;color:var(--accent);font-weight:600;}
+  .tl-what{font-size:0.95rem;margin-top:2px;}
+  .claim{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 16px;
+    margin-bottom:10px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:700;
+    padding:2px 9px;
+    border-radius:999px;
+    margin-bottom:6px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .pill.established{background:rgba(31,122,77,0.15);color:var(--est);}
+  .pill.contested{background:rgba(181,84,31,0.15);color:var(--con);}
+  .pill.view{background:rgba(95,107,158,0.18);color:var(--view);}
+  .claim p{margin:0;font-size:0.95rem;}
+  .claim .reason{color:var(--muted);font-size:0.85rem;margin-top:4px;}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .tile{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+  }
+  .tile .num{font-size:1.5rem;font-weight:700;color:var(--accent);display:block;}
+  .tile .ctx{font-size:0.78rem;color:var(--muted);margin-top:4px;}
+  .note{font-size:0.78rem;color:var(--muted);margin-top:8px;font-style:italic;}
+  svg{width:100%;height:auto;display:block;}
+  .script{
+    background:var(--accent-soft);
+    border-radius:12px;
+    padding:16px;
+    font-size:0.98rem;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 16px;
+    margin-bottom:10px;
+  }
+  summary{font-weight:600;cursor:pointer;font-size:0.95rem;}
+  details p{margin-top:8px;color:var(--muted);font-size:0.9rem;}
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:32px;
+    padding-top:16px;
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<span class="tag">World · AI economics</span>
+<h1>AI usage is climbing. AI spending isn't keeping up.</h1>
+<p class="why">Why it matters this week: the gap between usage and spend is starting to poke at the growth story investors have been pricing into AI stocks.</p>
+
+<section>
+  <h2>The situation in 60 seconds</h2>
+  <p>More people and companies are using AI tools than ever. But the total money changing hands for that usage isn't rising at the same rate. Vendors keep cutting prices to stay competitive, and the biggest-spending companies are tightening their budgets after an initial rush of pilots. Put together, you get more usage without a matching rise in revenue, which is the opposite of the "hypergrowth" story that's been baked into AI valuations.</p>
+</section>
+
+<section>
+  <h2>Who wants what</h2>
+  <div class="card">
+    <h3>AI vendors and providers</h3>
+    <p class="label"><b>Want:</b> usage growth to turn into revenue growth</p>
+    <p class="label"><b>Leverage:</b> better models, deeper enterprise integration, bundling products together</p>
+  </div>
+  <div class="card">
+    <h3>Biggest enterprise AI spenders</h3>
+    <p class="label"><b>Want:</b> the same or better AI output for less money</p>
+    <p class="label"><b>Leverage:</b> buying power at scale, ability to switch vendors, internal budget scrutiny</p>
+  </div>
+  <div class="card">
+    <h3>Investors in AI companies</h3>
+    <p class="label"><b>Want:</b> proof that usage keeps converting into sustained revenue growth</p>
+    <p class="label"><b>Leverage:</b> where they put capital next, and what valuations they're willing to pay</p>
+  </div>
+</section>
+
+<section>
+  <h2>How we got here</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-when">2023–2024</div>
+      <div class="tl-what">Enterprises rush to pilot generative AI, driving an early spending surge.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">2025</div>
+      <div class="tl-what">Usage scales further as tools mature and spread across more workflows.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">2026 (ongoing)</div>
+      <div class="tl-what">Vendors push price cuts to stay competitive. Big spenders adopt stricter cost controls.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-when">Nov 6, 2026</div>
+      <div class="tl-what">TechCrunch flags the usage-vs-spending gap as a possible challenge to investor hypergrowth assumptions.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Claims, labeled honestly</h2>
+
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>AI usage keeps climbing.</p>
+    <p class="reason">Asserted by TechCrunch without specific data attached.</p>
+  </div>
+
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>AI spending has stalled.</p>
+    <p class="reason">Asserted without figures in the original post.</p>
+  </div>
+
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>Price cuts are a cause of stalled spending.</p>
+    <p class="reason">Named as a contributing factor, not shown with supporting numbers.</p>
+  </div>
+
+  <div class="claim">
+    <span class="pill view">Speaker's view</span>
+    <p>Biggest spenders are applying smarter cost controls.</p>
+    <p class="reason">Asserted without naming which companies or what the controls actually are.</p>
+  </div>
+
+  <div class="claim">
+    <span class="pill contested">Contested</span>
+    <p>This could challenge investor assumptions about AI hypergrowth.</p>
+    <p class="reason">Framed with "could" — a possibility raised, not a confirmed outcome.</p>
+  </div>
+
+  <div class="claim">
+    <span class="pill established">Established</span>
+    <p>Per-unit AI usage costs have been falling industry-wide.</p>
+    <p class="reason">Broadly documented trend in AI compute and model pricing over time.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Numbers worth remembering</h2>
+  <div class="tiles">
+    <div class="tile">
+      <span class="num">59%</span>
+      <div class="ctx">of executives said 2026 AI costs ran higher than expected</div>
+    </div>
+    <div class="tile">
+      <span class="num">30–60%</span>
+      <div class="ctx">cost cuts companies target through tactics like prompt compression and model tiering</div>
+    </div>
+    <div class="tile">
+      <span class="num">40%+</span>
+      <div class="ctx">of AI agent projects forecast to be cancelled by end of 2027 over cost or unclear value</div>
+    </div>
+    <div class="tile">
+      <span class="num">0</span>
+      <div class="ctx">hard dollar figures given in the original TechCrunch post itself</div>
+    </div>
+  </div>
+  <p class="note">The first three figures are general background, not from the TechCrunch post, and may be dated.</p>
+</section>
+
+<section>
+  <h2>The mechanism, visualized</h2>
+  <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing usage rising while price cuts and cost controls keep total spending flat">
+    <defs>
+      <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)"></path>
+      </marker>
+    </defs>
+    <!-- Usage box -->
+    <rect x="10" y="20" width="130" height="44" rx="10" fill="var(--card)" stroke="var(--line)"></rect>
+    <text x="75" y="38" text-anchor="middle" font-size="12" fill="var(--text)" font-weight="600">AI usage</text>
+    <text x="75" y="54" text-anchor="middle" font-size="11" fill="var(--accent)">rising ↑</text>
+
+    <!-- arrow down to forces -->
+    <line x1="75" y1="64" x2="75" y2="96" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+
+    <!-- forces box -->
+    <rect x="10" y="100" width="130" height="58" rx="10" fill="var(--card)" stroke="var(--line)"></rect>
+    <text x="75" y="118" text-anchor="middle" font-size="11" fill="var(--text)" font-weight="600">Price cuts</text>
+    <text x="75" y="134" text-anchor="middle" font-size="11" fill="var(--text)" font-weight="600">+ cost controls</text>
+    <text x="75" y="150" text-anchor="middle" font-size="10" fill="var(--muted)">from biggest spenders</text>
+
+    <!-- arrow right to spend box -->
+    <line x1="140" y1="129" x2="180" y2="129" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+
+    <!-- spend box -->
+    <rect x="184" y="100" width="126" height="58" rx="10" fill="var(--card)" stroke="var(--line)"></rect>
+    <text x="247" y="124" text-anchor="middle" font-size="12" fill="var(--text)" font-weight="600">Total spend</text>
+    <text x="247" y="142" text-anchor="middle" font-size="11" fill="var(--accent)">flat →</text>
+
+    <!-- usage to spend direct weak line, dotted, showing disconnect -->
+    <line x1="140" y1="42" x2="184" y2="110" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"></line>
+    <text x="235" y="78" text-anchor="middle" font-size="10" fill="var(--muted)">weak link</text>
+
+    <text x="160" y="195" text-anchor="middle" font-size="11" fill="var(--muted)">More usage does not translate one-to-one into more revenue.</text>
+  </svg>
+</section>
+
+<section>
+  <h2>Explain it to a friend in 30 seconds</h2>
+  <div class="script">
+    "AI usage keeps going up. But the money being spent on it isn't growing nearly as fast. Two reasons: vendors keep cutting prices to compete, and the companies spending the most are now watching their AI budgets more carefully. So more people are using it, but the dollars aren't scaling with that usage. That matters because a lot of investor optimism around AI assumes spending will keep climbing right alongside usage. If that link breaks, it's a real problem for how these companies are being valued."
+  </div>
+</section>
+
+<section>
+  <h2>Check yourself</h2>
+
+  <details>
+    <summary>Who are the biggest AI spenders here, and why would they be cutting costs right now instead of spending more?</summary>
+    <p>The biggest spenders are likely large enterprises that scaled up AI pilots quickly. Cost controls tend to kick in once the novelty fades and finance teams start scrutinizing actual return on investment. Vendor price cuts also mean these companies need to spend less to get the same amount of usage.</p>
+  </details>
+
+  <details>
+    <summary>Why does rising usage paired with flat spending worry investors specifically, rather than being good news?</summary>
+    <p>Investors have priced in AI revenue scaling along with usage. If spending stays flat while usage climbs, revenue per user or per task is shrinking. That breaks the hypergrowth math that current valuations are built on.</p>
+  </details>
+
+  <details>
+    <summary>Explain to a friend in 30 seconds how AI usage can go up while AI spending stays flat.</summary>
+    <p>Vendors are cutting prices per use, and companies are using AI more efficiently or consolidating onto cheaper tools. The result is more total usage happening without more total dollars changing hands.</p>
+  </details>
+</section>
+
+<footer>
+  Source: <a href="https://x.com/TechCrunch/status/2118734927298482621" target="_blank" rel="noopener">TechCrunch post on X</a> · Brief written 2026-11-13 · General background may be dated.
+</footer>
+
+</body>
+</html>
