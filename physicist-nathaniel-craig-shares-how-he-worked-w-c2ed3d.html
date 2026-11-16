@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI as a Physics Collaborator</title>
+<style>
+:root{
+  --bg:#faf8f4;
+  --text:#1c1b19;
+  --muted:#5c5850;
+  --card:#ffffff;
+  --border:#e4ded2;
+  --accent:#9a4b2f;
+  --est:#2f6b3f;
+  --con:#9a4b2f;
+  --spk:#5a5240;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --text:#ece7dc;
+    --muted:#b0a898;
+    --card:#1f1c16;
+    --border:#332e24;
+    --accent:#e0825a;
+    --est:#7fc48c;
+    --con:#e0825a;
+    --spk:#cbbf9c;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px;
+}
+h1{font-size:1.5rem;margin:0 0 6px}
+h2{font-size:1.1rem;margin:28px 0 10px;color:var(--text)}
+.tagline{color:var(--accent);font-weight:600;font-size:0.95rem;margin-bottom:20px}
+p{margin:0 0 12px}
+section{margin-bottom:8px}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:10px;
+}
+.card h3{margin:0 0 6px;font-size:1rem}
+.card .label{font-size:0.82rem;color:var(--muted)}
+.timeline{border-left:2px solid var(--border);padding-left:16px;margin-left:4px}
+.tl-item{margin-bottom:16px;position:relative}
+.tl-item::before{
+  content:"";
+  position:absolute;
+  left:-21px;
+  top:4px;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.tl-when{font-weight:600;font-size:0.85rem;color:var(--accent)}
+.tag{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:20px;
+  margin-bottom:6px;
+  color:#fff;
+}
+.tag.est{background:var(--est)}
+.tag.con{background:var(--con)}
+.tag.spk{background:var(--spk)}
+.reason{font-size:0.88rem;color:var(--muted);margin-top:4px}
+.tiles{display:grid;grid-template-columns:1fr;gap:10px}
+.tile{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+}
+.tile .big{font-size:1.3rem;font-weight:700;color:var(--accent)}
+.tile .ctx{font-size:0.88rem;color:var(--muted);margin-top:4px}
+svg{width:100%;height:auto;display:block;margin:10px 0}
+.script{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 14px;
+  margin-bottom:10px;
+}
+summary{font-weight:600;cursor:pointer}
+details p{margin-top:8px;color:var(--muted)}
+footer{
+  margin-top:30px;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent)}
+.note{font-size:0.8rem;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<main>
+
+<h1>A Physicist, an AI, and the Standard Model</h1>
+<p class="tagline">Why this matters this week: OpenAI just launched a science blog, and its first post is a physicist treating an AI model as a research partner on a decades-old open problem.</p>
+
+<section>
+<h2>The situation in 60 seconds</h2>
+<p>OpenAI launched a new science blog. The debut post describes physicist Nathaniel Craig working with OpenAI's GPT-6 Astra model to produce a candidate way to define the Standard Model of particle physics on a lattice, a discrete computational grid. That specific problem has resisted clean solutions for decades. OpenAI is using the story as an early example of its models acting as genuine collaborators in hard science, not just tools for writing or coding. The result is explicitly labeled a candidate, meaning it is proposed, not yet confirmed by the physics community.</p>
+</section>
+
+<section>
+<h2>Who wants what</h2>
+<div class="card">
+<h3>OpenAI</h3>
+<p class="label">Wants: To show its models are credible collaborators in hard science, not just coding or writing assistants.</p>
+<p class="label">Leverage: A frontier model (GPT-6 Astra) plus a new dedicated blog to publish and promote this kind of story.</p>
+</div>
+<div class="card">
+<h3>Nathaniel Craig</h3>
+<p class="label">Wants: To make progress on a longstanding, difficult problem in theoretical physics.</p>
+<p class="label">Leverage: Deep domain expertise in physics paired with access to a frontier AI model.</p>
+</div>
+<div class="card">
+<h3>The physics research community</h3>
+<p class="label">Wants: Rigorous, independently checkable validation before accepting any claimed progress on a famous open problem.</p>
+<p class="label">Leverage: Peer review and the ability to scrutinize, replicate, or reject the proposed definition.</p>
+</div>
+</section>
+
+<section>
+<h2>How we got here</h2>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-when">Decades ago</div>
+<p>Lattice formulations were developed to make quantum field theories computationally tractable, becoming a standard tool in theoretical physics. (General background.)</p>
+</div>
+<div class="tl-item">
+<div class="tl-when">Longstanding</div>
+<p>Putting the full Standard Model, including its chiral gauge interactions, cleanly onto a lattice remained an unresolved technical problem. (General background.)</p>
+</div>
+<div class="tl-item">
+<div class="tl-when">2026-11-16</div>
+<p>OpenAI publishes the first post on its new science blog, describing Craig's work with GPT-6 Astra on a candidate lattice definition of the Standard Model.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Claims</h2>
+<div class="card">
+<span class="tag spk">Speaker's view</span>
+<h3>GPT-6 Astra helped produce a candidate lattice definition of the Standard Model</h3>
+<p class="reason">Why this label: this is OpenAI's own framing of the collaboration and its result. It has not been independently verified here.</p>
+</div>
+<div class="card">
+<span class="tag est">Established</span>
+<h3>This is the first post on OpenAI's new science blog</h3>
+<p class="reason">Why this label: stated directly in the source post itself.</p>
+</div>
+<div class="card">
+<span class="tag est">Established</span>
+<h3>Defining the Standard Model on a lattice is a longstanding hard problem in physics</h3>
+<p class="reason">Why this label: well-known general background in the field, not something the source needed to argue for.</p>
+</div>
+<div class="card">
+<span class="tag con">Contested</span>
+<h3>The proposed definition is settled or accepted by the physics community</h3>
+<p class="reason">Why this label: the source itself calls it a "candidate," meaning it has not been confirmed or peer reviewed.</p>
+</div>
+</section>
+
+<section>
+<h2>Numbers worth remembering</h2>
+<div class="tiles">
+<div class="tile">
+<div class="big">1</div>
+<div class="ctx">This is OpenAI's first post on its newly launched science blog.</div>
+</div>
+<div class="tile">
+<div class="big">GPT-6 Astra</div>
+<div class="ctx">The specific OpenAI model variant credited in the collaboration with Craig.</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>The core mechanism</h2>
+<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram showing the physicist framing the problem, the AI proposing ideas, the physicist checking rigor, and the result being a candidate pending peer review.">
+  <style>
+    text{font-family:-apple-system,sans-serif;font-size:11px;fill:#1c1b19}
+    .box{fill:#ffffff;stroke:#9a4b2f;stroke-width:1.5}
+    .arrow{stroke:#9a4b2f;stroke-width:1.5;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9a4b2f"/>
+    </marker>
+  </defs>
+  <rect class="box" x="20" y="10" width="280" height="38" rx="6"/>
+  <text x="160" y="26" text-anchor="middle">Craig frames the problem:</text>
+  <text x="160" y="40" text-anchor="middle">define Standard Model on a lattice</text>
+
+  <line class="arrow" x1="160" y1="48" x2="160" y2="66"/>
+
+  <rect class="box" x="20" y="68" width="280" height="38" rx="6"/>
+  <text x="160" y="84" text-anchor="middle">GPT-6 Astra proposes and tests</text>
+  <text x="160" y="98" text-anchor="middle">candidate approaches</text>
+
+  <line class="arrow" x1="160" y1="106" x2="160" y2="124"/>
+
+  <rect class="box" x="20" y="126" width="280" height="38" rx="6"/>
+  <text x="160" y="142" text-anchor="middle">Craig checks rigor and</text>
+  <text x="160" y="156" text-anchor="middle">validity of the proposals</text>
+
+  <line class="arrow" x1="160" y1="164" x2="160" y2="182"/>
+
+  <rect class="box" x="20" y="184" width="280" height="34" rx="6"/>
+  <text x="160" y="198" text-anchor="middle">Result: a candidate definition,</text>
+  <text x="160" y="211" text-anchor="middle">pending peer review</text>
+</svg>
+</section>
+
+<section>
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script">
+"So OpenAI has this new science blog, and the first post is about a physicist named Nathaniel Craig who worked with their GPT-6 Astra model on a really hard problem: how do you define the entire Standard Model of physics on a lattice, basically a discrete grid used for calculations. People have been stuck on this for decades. Craig and the model came up with a candidate way to do it, meaning it's a proposed answer, not a confirmed one. The physicist still owns the rigor and the checking. It's less 'AI solved physics' and more 'AI acted as a real research partner,' and now we wait to see if other physicists agree it holds up."
+</div>
+</section>
+
+<section>
+<h2>Check yourself</h2>
+<details>
+<summary>Why did OpenAI call the result a "candidate" lattice definition instead of a finished one?</summary>
+<p>Because it is a proposed, unverified solution to a hard open problem, not yet confirmed or peer reviewed.</p>
+</details>
+<details>
+<summary>What is OpenAI trying to show by launching a science blog with this as the first post?</summary>
+<p>That its models can be real research collaborators in hard sciences, not just tools for writing or coding tasks.</p>
+</details>
+<details>
+<summary>Explain to a friend in 30 seconds what it means for a physicist to "work with" an AI model on a research problem.</summary>
+<p>A strong answer covers: the physicist frames the problem and questions, the model proposes and tests ideas in response, the physicist still owns the rigor and validation, and this is collaboration rather than the AI doing physics alone.</p>
+</details>
+</section>
+
+<footer>
+Source: <a href="https://x.com/OpenAI/status/2122123437141553630" target="_blank" rel="noopener noreferrer">OpenAI's post on X</a><br>
+Brief written: 2026-11-16<br>
+General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>
