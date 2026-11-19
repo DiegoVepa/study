@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic's IPO: $83 a Share</title>
+<style>
+:root{
+  --bg:#f7f5f0;
+  --card:#ffffff;
+  --text:#1c1b19;
+  --muted:#5c5a54;
+  --accent:#b5651d;
+  --accent-soft:#f1e3d2;
+  --line:#e2ddd2;
+  --established:#2f6b3c;
+  --established-bg:#e4efe2;
+  --contested:#a85c00;
+  --contested-bg:#fbe9d2;
+  --speaker:#7a3b8f;
+  --speaker-bg:#efe1f5;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15140f;
+    --card:#201f19;
+    --text:#ece8df;
+    --muted:#a8a398;
+    --accent:#e0a35c;
+    --accent-soft:#3a2d1c;
+    --line:#3a382f;
+    --established:#8fd19e;
+    --established-bg:#1f3322;
+    --contested:#e3b06a;
+    --contested-bg:#3a2a10;
+    --speaker:#d3a6e8;
+    --speaker-bg:#32243c;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:24px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  margin:0 0 6px;
+  line-height:1.3;
+}
+.subtitle{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin-bottom:28px;
+}
+h2{
+  font-size:1.05rem;
+  margin:36px 0 12px;
+  padding-bottom:6px;
+  border-bottom:2px solid var(--accent-soft);
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.player-name{
+  font-weight:600;
+  color:var(--accent);
+  margin-bottom:4px;
+}
+.player-row{font-size:0.92rem;margin:2px 0;}
+.player-row b{color:var(--muted);font-weight:600;}
+.timeline{
+  list-style:none;
+  padding-left:0;
+  margin:0;
+  border-left:2px solid var(--accent-soft);
+}
+.timeline li{
+  position:relative;
+  padding:0 0 18px 20px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-6px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--muted);
+  display:block;
+}
+.claim{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.label{
+  display:inline-block;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:20px;
+  margin-bottom:8px;
+  letter-spacing:0.02em;
+}
+.label.established{background:var(--established-bg);color:var(--established);}
+.label.contested{background:var(--contested-bg);color:var(--contested);}
+.label.speaker{background:var(--speaker-bg);color:var(--speaker);}
+.claim-text{font-weight:600;margin-bottom:4px;}
+.claim-reason{font-size:0.88rem;color:var(--muted);}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.numtile{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 10px;
+  text-align:center;
+}
+.numtile .big{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+}
+.numtile .ctx{
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-top:4px;
+  display:block;
+}
+svg{width:100%;height:auto;display:block;margin:10px 0;}
+.script-box{
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:16px;
+  font-size:0.97rem;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{margin-top:10px;margin-bottom:0;color:var(--muted);}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Anthropic Prices Its IPO at $83 a Share</h1>
+<p class="subtitle">Why it matters this week: the AI lab behind Claude is leaving private funding behind and stepping onto Nasdaq, with trading set to begin the morning after pricing.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>Anthropic, the company that builds Claude, has priced its initial public offering at $83 per share. Trading is expected to begin on Nasdaq the following day. Before any of this could happen, the SEC had to clear the company's paperwork: it declared the registration statement for Anthropic's Class A common stock effective on November 18, 2026. The mention of "Class A" stock is a signal that Anthropic has set up more than one class of shares, which is common when founders want to keep extra voting control after going public. In short, a company that has spent years raising money privately from big tech and venture investors is now opening itself up to public market investors and public market scrutiny.</p>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+  <div class="player-name">Anthropic</div>
+  <div class="player-row"><b>Wants:</b> Capital and public market validation.</div>
+  <div class="player-row"><b>Leverage:</b> Frontier Claude models and enterprise/API revenue.</div>
+</div>
+
+<div class="card">
+  <div class="player-name">SEC</div>
+  <div class="player-row"><b>Wants:</b> Confirm disclosure requirements are met before trading starts.</div>
+  <div class="player-row"><b>Leverage:</b> Authority to declare the registration statement effective, or delay it.</div>
+</div>
+
+<div class="card">
+  <div class="player-name">Nasdaq</div>
+  <div class="player-row"><b>Wants:</b> A high-profile AI listing that boosts the exchange's tech credibility.</div>
+  <div class="player-row"><b>Leverage:</b> Choice of listing venue and exchange prestige.</div>
+</div>
+
+<div class="card">
+  <div class="player-name">Public investors</div>
+  <div class="player-row"><b>Wants:</b> Access to an AI growth story that was previously limited to private and VC money.</div>
+  <div class="player-row"><b>Leverage:</b> Capital inflows that shape the opening trade price.</div>
+</div>
+
+<div class="card">
+  <div class="player-name">Existing private backers</div>
+  <div class="player-row"><b>Wants:</b> A liquidity event and a return on earlier investment.</div>
+  <div class="player-row"><b>Leverage:</b> Large pre-IPO ownership stakes.</div>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+  <li><span class="when">2021 onward</span>Anthropic builds Claude as a private company, raising funding from major tech and venture investors.</li>
+  <li><span class="when">November 18, 2026</span>The SEC declares the registration statement for Anthropic's Class A common stock effective.</li>
+  <li><span class="when">November 18, 2026</span>Anthropic announces its IPO is priced at $83 per share.</li>
+  <li><span class="when">November 19, 2026</span>Trading is expected to begin on Nasdaq.</li>
+</ul>
+
+<h2>Claims</h2>
+
+<div class="claim">
+  <span class="label established">Established</span>
+  <div class="claim-text">Anthropic's IPO is priced at $83 per share.</div>
+  <div class="claim-reason">Stated directly in the company's own announcement.</div>
+</div>
+
+<div class="claim">
+  <span class="label established">Established</span>
+  <div class="claim-text">Trading begins on Nasdaq the day after pricing.</div>
+  <div class="claim-reason">The announcement says trading is "expected to begin on Nasdaq tomorrow."</div>
+</div>
+
+<div class="claim">
+  <span class="label established">Established</span>
+  <div class="claim-text">The SEC declared the registration statement effective on November 18, 2026.</div>
+  <div class="claim-reason">Stated in the legal disclaimer text of the post.</div>
+</div>
+
+<div class="claim">
+  <span class="label speaker">Speaker's view</span>
+  <div class="claim-text">This IPO validates the AI industry's growth story for public markets.</div>
+  <div class="claim-reason">Outside interpretation; the source itself makes no such claim.</div>
+</div>
+
+<div class="claim">
+  <span class="label contested">Contested</span>
+  <div class="claim-text">This is one of the most anticipated IPOs of the year.</div>
+  <div class="claim-reason">Common media framing, not something the source itself states.</div>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="numtile">
+    <span class="big">$83</span>
+    <span class="ctx">Price per share set for the IPO</span>
+  </div>
+  <div class="numtile">
+    <span class="big">Nov 18, 2026</span>
+    <span class="ctx">Date the SEC declared the filing effective</span>
+  </div>
+</div>
+<p class="note">Price per share alone does not tell you the company's total value. That depends on how many shares exist, which is covered below.</p>
+
+<h2>Why $83 isn't the whole story</h2>
+<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing that share price times shares outstanding equals market value">
+  <rect x="10" y="20" width="90" height="50" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="55" y="42" text-anchor="middle" font-size="13" fill="currentColor">$83</text>
+  <text x="55" y="58" text-anchor="middle" font-size="9" fill="currentColor">price per share</text>
+
+  <text x="115" y="52" text-anchor="middle" font-size="18" fill="var(--accent)">&#215;</text>
+
+  <rect x="130" y="20" width="110" height="50" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+  <text x="185" y="42" text-anchor="middle" font-size="13" fill="currentColor">shares</text>
+  <text x="185" y="58" text-anchor="middle" font-size="9" fill="currentColor">outstanding (not in brief)</text>
+
+  <text x="268" y="52" text-anchor="middle" font-size="18" fill="var(--accent)">=</text>
+
+  <rect x="10" y="100" width="300" height="50" rx="8" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="160" y="122" text-anchor="middle" font-size="13" fill="currentColor">total company value</text>
+  <text x="160" y="140" text-anchor="middle" font-size="9" fill="currentColor">the number that actually matters</text>
+</svg>
+<p class="note">The brief does not give a share count, so a market value is intentionally not shown as a fixed number here. The point is just the mechanism: price per share by itself is not the valuation.</p>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script-box">
+"Anthropic, the company that makes Claude, just priced its IPO at $83 a share. The SEC gave final approval on November 18, 2026, and trading starts on Nasdaq the next day. That means Anthropic is going from a privately funded AI lab, backed by big tech and venture money, to a public company that anyone can buy shares in. The $83 number by itself doesn't tell you the company's total value, that depends on how many shares exist too."
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+  <summary>Why might Anthropic choose an IPO now instead of another private funding round?</summary>
+  <p>Think liquidity for early investors, capital needs, and public validation versus staying private.</p>
+</details>
+
+<details>
+  <summary>Who gains leverage from this IPO: Anthropic, the SEC, Nasdaq, or early private backers, and why?</summary>
+  <p>Each wants something different: Anthropic wants capital, the SEC wants compliance, Nasdaq wants a prestige listing, and early backers want exit liquidity.</p>
+</details>
+
+<details>
+  <summary>Explain Anthropic's IPO to a friend in 30 seconds.</summary>
+  <p>A strong answer covers: Anthropic makes Claude, it priced shares at $83, the SEC cleared it on November 18, 2026, trading starts on Nasdaq next, and this shifts it from a private to a public company.</p>
+</details>
+
+<footer>
+  <p>Source: <a href="https://x.com/AnthropicAI/status/2123196808675405860" target="_blank" rel="noopener">Anthropic's post on X</a>. Brief written 2026-11-19. General background may be dated.</p>
+</footer>
+
+</main>
+</body>
+</html>
