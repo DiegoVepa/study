@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic vs. its own customers</title>
+<style>
+:root{
+  --bg:#faf8f5;
+  --card:#ffffff;
+  --text:#1c1b19;
+  --muted:#5c5852;
+  --border:#e3ddd2;
+  --accent:#9a5b2e;
+  --accent-soft:#f1e3d4;
+  --ok:#3c6e47;
+  --ok-bg:#e7f0e9;
+  --warn:#8a6d00;
+  --warn-bg:#f7f0dc;
+  --view:#7a3b7a;
+  --view-bg:#f1e3ef;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#1e1b16;
+    --text:#ece7de;
+    --muted:#b0a89b;
+    --border:#332e26;
+    --accent:#d99a5f;
+    --accent-soft:#2c231a;
+    --ok:#7fc28f;
+    --ok-bg:#1e2b21;
+    --warn:#e0c25b;
+    --warn-bg:#2b2616;
+    --view:#d99ad9;
+    --view-bg:#2b1f2b;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:16px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+h2{
+  font-size:1.1rem;
+  margin:32px 0 10px;
+  color:var(--accent);
+}
+.tagline{
+  color:var(--muted);
+  font-size:0.95rem;
+  margin-bottom:24px;
+}
+p{margin:0 0 12px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.78rem;
+  color:var(--muted);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.timeline{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 18px;
+  border-left:2px solid var(--border);
+}
+.timeline li{
+  position:relative;
+  margin-bottom:18px;
+  padding-left:14px;
+}
+.timeline li::before{
+  content:"";
+  position:absolute;
+  left:-24px;
+  top:4px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-size:0.8rem;
+  color:var(--muted);
+  display:block;
+  margin-bottom:2px;
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  padding:3px 9px;
+  border-radius:999px;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+}
+.tag.established{background:var(--ok-bg);color:var(--ok);}
+.tag.contested{background:var(--warn-bg);color:var(--warn);}
+.tag.view{background:var(--view-bg);color:var(--view);}
+.claim-text{font-weight:600;margin-bottom:4px;}
+.claim-note{color:var(--muted);font-size:0.92rem;margin:0;}
+.numbers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.numtile{
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:12px;
+}
+.numtile .big{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--accent);
+  display:block;
+  margin-bottom:4px;
+}
+.numtile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+}
+svg{
+  width:100%;
+  height:auto;
+  display:block;
+  margin:8px 0 4px;
+}
+.script-box{
+  background:var(--accent-soft);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  padding:14px 16px;
+  font-style:italic;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details p{margin-top:8px;}
+footer{
+  margin-top:36px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.misc-note{
+  font-size:0.88rem;
+  color:var(--muted);
+  margin-top:14px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Anthropic now competes with its own customers</h1>
+<p class="tagline">Why this matters this week: the AI company selling you an API has started admitting it might build the product you were planning to build with it.</p>
+
+<h2>The situation in 60 seconds</h2>
+<p>Anthropic CEO Dario Amodei has pointed to a $30 trillion opportunity sitting in front of the company. Bloomberg Opinion columnist Parmy Olson argues one way to actually reach a number that big is to stop just selling API access and start pushing deeper into high-value regulated industries: healthcare, law, finance and cybersecurity. The catch is that Anthropic has openly acknowledged this could put it in direct competition with some of the same businesses that currently pay to use its models. That tension, grow by going up the stack versus stay neutral infrastructure for your own customers, is the real story behind the growth headlines.</p>
+
+<h2>Who wants what</h2>
+
+<div class="card">
+<h3>Anthropic / Dario Amodei</h3>
+<p><strong>Wants:</strong> Capture a larger share of the $30 trillion opportunity by building directly in high-value regulated verticals.</p>
+<p><strong>Leverage:</strong> Owns the underlying foundation model (Claude), enterprise relationships, and capital to build vertical products.</p>
+</div>
+
+<div class="card">
+<h3>Anthropic's enterprise / API customers</h3>
+<p><strong>Wants:</strong> Build and defend their own products in healthcare, law, finance and cybersecurity using Claude.</p>
+<p><strong>Leverage:</strong> Domain expertise and existing customer relationships, but limited power if their platform provider enters the same space.</p>
+</div>
+
+<div class="card">
+<h3>Incumbents in healthcare, law, finance, cybersecurity</h3>
+<p><strong>Wants:</strong> Protect existing market share from AI-native entrants.</p>
+<p><strong>Leverage:</strong> Regulatory relationships, proprietary data, licensing and compliance barriers.</p>
+</div>
+
+<div class="card">
+<h3>Bloomberg Opinion / Parmy Olson</h3>
+<p><strong>Wants:</strong> Analyze and surface the tension in Anthropic's strategy for a business audience.</p>
+<p><strong>Leverage:</strong> Media platform and access to Anthropic's public statements.</p>
+</div>
+
+<h2>How we got here</h2>
+<ul class="timeline">
+<li>
+<span class="when">Undated, prior statement</span>
+Dario Amodei states that Anthropic has roughly $30 trillion in potential revenue available to it.
+</li>
+<li>
+<span class="when">Undated, company statement</span>
+Anthropic acknowledges it may increasingly compete with some of its own customers as it expands into their industries.
+</li>
+<li>
+<span class="when">2026-11-18</span>
+Bloomberg Opinion publishes the reel summarizing Parmy Olson's analysis of this strategy and tension.
+</li>
+</ul>
+
+<h2>Claims, labeled</h2>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p class="claim-text">Anthropic has $30 trillion in potential revenue available to it.</p>
+<p class="claim-note">This is Amodei's own stated figure, reported secondhand by Bloomberg. Not independently verified in the source.</p>
+</div>
+
+<div class="card">
+<span class="tag view">Speaker's view</span>
+<p class="claim-text">Going deeper into healthcare, law, finance and cybersecurity is Anthropic's answer to capturing that revenue.</p>
+<p class="claim-note">This is Parmy Olson's interpretation of Anthropic's strategy, not a direct Anthropic statement in the source.</p>
+</div>
+
+<div class="card">
+<span class="tag established">Established</span>
+<p class="claim-text">Anthropic may increasingly compete with some of its own customers.</p>
+<p class="claim-note">Directly quoted as the company's own warning in the source.</p>
+</div>
+
+<div class="card">
+<span class="tag contested">Contested</span>
+<p class="claim-text">This expansion strategy is the right or only way to deliver on the $30 trillion promise.</p>
+<p class="claim-note">Presented as analysis and opinion, not a settled fact.</p>
+</div>
+
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+<div class="numtile">
+<span class="big">$30T</span>
+<span class="ctx">Potential revenue Amodei has cited as Anthropic's opportunity.</span>
+</div>
+<div class="numtile">
+<span class="big">125,413</span>
+<span class="ctx">Plays on the Bloomberg Opinion reel as of 2026-11-18.</span>
+</div>
+<div class="numtile">
+<span class="big">2,348</span>
+<span class="ctx">Likes on the reel as of 2026-11-18.</span>
+</div>
+<div class="numtile">
+<span class="big">30</span>
+<span class="ctx">Comments on the reel as of 2026-11-18.</span>
+</div>
+</div>
+
+<h2>The mechanism, visualized</h2>
+<svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing Anthropic sitting below customers, then moving up to compete in healthcare, law, finance, and cybersecurity">
+  <style>
+    text{font-family:-apple-system,sans-serif;fill:currentColor;}
+    .lbl{font-size:11px;}
+    .small{font-size:9px;}
+  </style>
+  <g color="var(--text)">
+    <rect x="10" y="20" width="300" height="40" rx="8" fill="var(--accent-soft)" stroke="var(--border)"/>
+    <text x="160" y="36" text-anchor="middle" class="lbl" font-weight="700">Anthropic (Claude API)</text>
+    <text x="160" y="50" text-anchor="middle" class="small">sells model access</text>
+
+    <line x1="160" y1="60" x2="160" y2="85" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="10" y="90" width="300" height="40" rx="8" fill="var(--card)" stroke="var(--border)"/>
+    <text x="160" y="106" text-anchor="middle" class="lbl" font-weight="700">Enterprise customers</text>
+    <text x="160" y="120" text-anchor="middle" class="small">build products on top of Claude</text>
+
+    <line x1="160" y1="130" x2="160" y2="155" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="10" y="160" width="300" height="40" rx="8" fill="var(--card)" stroke="var(--border)"/>
+    <text x="160" y="176" text-anchor="middle" class="lbl" font-weight="700">Regulated verticals</text>
+    <text x="160" y="190" text-anchor="middle" class="small">healthcare, law, finance, cybersecurity</text>
+
+    <path d="M 40 60 C 40 100, 40 140, 70 160" fill="none" stroke="var(--view)" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow2)"/>
+    <text x="30" y="230" class="small" fill="var(--view)">Dashed line: Anthropic also moves</text>
+    <text x="30" y="242" class="small" fill="var(--view)">directly into these verticals,</text>
+    <text x="30" y="254" class="small" fill="var(--view)">bypassing the customers above it.</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="var(--view)"/>
+    </marker>
+  </defs>
+</svg>
+
+<h2>Explain it to a friend in 30 seconds</h2>
+<div class="script-box">
+<p>"So Anthropic, the company behind Claude, basically admitted something most infrastructure companies never say out loud: they might start competing with the same businesses that pay to use their AI model. Dario Amodei has talked about a $30 trillion opportunity, and one way to actually get there is to stop just renting out the model and start building finished products in healthcare, law, finance, and cybersecurity. Problem is, those are exactly the industries where their own customers are already building. It is like your landlord deciding to open a competing store right next to yours."</p>
+</div>
+
+<h2>Check yourself</h2>
+
+<details>
+<summary>Why would Anthropic risk competing with the same companies that pay to use its models?</summary>
+<p>Because the biggest margins sit in finished products for regulated industries, not just API access, so capturing that value directly is worth the customer friction.</p>
+</details>
+
+<details>
+<summary>Why do healthcare, law, finance and cybersecurity stand out as Anthropic's expansion targets?</summary>
+<p>They are high-value, high-complexity industries willing to pay a premium for AI that handles specialized, regulated work.</p>
+</details>
+
+<details>
+<summary>Why is it notable that Anthropic admitted it might compete with its own customers?</summary>
+<p>Most infrastructure providers claim to stay neutral. Anthropic openly said it won't necessarily stay that way, which is a real platform risk for any company building a product on top of Claude's API.</p>
+</details>
+
+<p class="misc-note">Background: foundation model companies sell API access to businesses that build specialized products on top of it. As these companies grow, they face a choice: stay neutral infrastructure, or move up the stack into finished products in the same verticals their customers serve. The latter earns more per customer but risks undercutting the very businesses built on the platform.</p>
+
+<footer>
+Source video: <a href="https://www.instagram.com/reel/Df5a1imEvjm/">Bloomberg Opinion reel (Instagram)</a><br>
+Brief written: 2026-11-19<br>
+General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>
