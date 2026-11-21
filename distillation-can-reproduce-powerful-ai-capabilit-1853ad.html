@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distillation: the capability copies, the safety doesn't</title>
+<style>
+:root{
+  --bg:#f7f5f1;
+  --card:#ffffff;
+  --text:#1c1b19;
+  --muted:#5c584f;
+  --accent:#b1431f;
+  --accent-soft:#f1ddd2;
+  --line:#e3ddd2;
+  --est:#2f6b42;
+  --contest:#b1431f;
+  --view:#8a6d10;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15130f;
+    --card:#201d18;
+    --text:#f0ece3;
+    --muted:#b4ada0;
+    --accent:#e07a4e;
+    --accent-soft:#3a2721;
+    --line:#332e26;
+    --est:#6fbf85;
+    --contest:#e07a4e;
+    --view:#e0c35a;
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  -webkit-text-size-adjust:100%;
+}
+main{
+  max-width:720px;
+  margin:0 auto;
+  padding:20px 16px 48px;
+}
+h1{
+  font-size:1.5rem;
+  line-height:1.3;
+  margin:0 0 6px;
+}
+.tagline{
+  color:var(--accent);
+  font-weight:600;
+  font-size:0.95rem;
+  margin:0 0 24px;
+}
+h2{
+  font-size:1.05rem;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--muted);
+  margin:36px 0 12px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:6px;
+}
+p{margin:0 0 14px;}
+section{margin-bottom:8px;}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 16px;
+  margin-bottom:12px;
+}
+.card h3{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+.card .label{
+  font-size:0.78rem;
+  color:var(--muted);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.card p{margin:4px 0 0;font-size:0.95rem;}
+.timeline{
+  position:relative;
+  padding-left:20px;
+  border-left:2px solid var(--line);
+}
+.timeline .item{
+  position:relative;
+  margin-bottom:18px;
+}
+.timeline .item::before{
+  content:"";
+  position:absolute;
+  left:-26px;
+  top:4px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--accent);
+}
+.timeline .when{
+  font-weight:700;
+  font-size:0.85rem;
+  color:var(--accent);
+  display:block;
+  margin-bottom:2px;
+}
+.claim{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:12px;
+  background:var(--card);
+}
+.tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  padding:3px 8px;
+  border-radius:20px;
+  margin-bottom:8px;
+}
+.tag.established{background:rgba(47,107,66,0.15);color:var(--est);}
+.tag.contested{background:rgba(177,67,31,0.15);color:var(--contest);}
+.tag.view{background:rgba(138,109,16,0.15);color:var(--view);}
+.claim p{margin:0;font-size:0.92rem;}
+.claim .reason{
+  margin-top:6px;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+.numbers{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.tile{
+  flex:1 1 140px;
+  background:var(--accent-soft);
+  border-radius:10px;
+  padding:14px;
+}
+.tile .big{
+  font-size:1.6rem;
+  font-weight:800;
+  color:var(--accent);
+  display:block;
+  line-height:1.1;
+}
+.tile .ctx{
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-top:4px;
+  display:block;
+}
+svg{width:100%;height:auto;display:block;}
+.script{
+  background:var(--card);
+  border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;
+  padding:14px 16px;
+  font-size:0.95rem;
+}
+details{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+summary{
+  font-weight:600;
+  cursor:pointer;
+}
+details[open] summary{color:var(--accent);}
+details p{margin:8px 0 0;font-size:0.92rem;color:var(--muted);}
+footer{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--muted);
+}
+footer a{color:var(--accent);}
+.note{
+  font-size:0.8rem;
+  color:var(--muted);
+  font-style:italic;
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Distillation can copy a model's talent without its training in restraint</h1>
+<p class="tagline">Why this matters this week: OpenAI just published research on how rivals cheaply clone its models, and how it fights back.</p>
+
+<section>
+<h2>The situation in 60 seconds</h2>
+<p>OpenAI says outside companies and groups are "distilling" its models: training smaller, cheaper models by learning from a powerful model's outputs instead of building from scratch. That's a legitimate, common technique in machine learning. The catch, according to OpenAI, is that the copy inherits the capability but not the safety guardrails engineered into the original. OpenAI frames this as an organized problem, describing "coordinated attempts" it actively detects and disrupts, and it has published research on how capabilities transfer during this process.</p>
+</section>
+
+<section>
+<h2>Who wants what</h2>
+
+<div class="card">
+<h3>OpenAI</h3>
+<p class="label">Wants</p>
+<p>To protect the capability and safety investment in its frontier models.</p>
+<p class="label">Leverage</p>
+<p>Controls API access, usage terms, and systems that detect unusual query patterns.</p>
+</div>
+
+<div class="card">
+<h3>Groups distilling OpenAI's models</h3>
+<p class="label">Wants</p>
+<p>Cheap access to near-frontier capability without paying the full training cost.</p>
+<p class="label">Leverage</p>
+<p>Can query public APIs at scale to harvest outputs as training data.</p>
+</div>
+
+<div class="card">
+<h3>Rival AI labs and startups</h3>
+<p class="label">Wants</p>
+<p>To catch up to frontier capability faster and cheaper.</p>
+<p class="label">Leverage</p>
+<p>Can use distilled or open models as a shortcut instead of training from zero.</p>
+</div>
+
+<div class="card">
+<h3>Regulators and safety observers</h3>
+<p class="label">Wants</p>
+<p>Confidence that safety guardrails hold across the whole ecosystem, not just in the lab that built them.</p>
+<p class="label">Leverage</p>
+<p>Can push for disclosure rules or restrictions on how model outputs get used.</p>
+</div>
+</section>
+
+<section>
+<h2>How we got here</h2>
+<div class="timeline">
+  <div class="item">
+    <span class="when">Earlier AI cycle</span>
+    <p>Distillation becomes a standard industry technique for building smaller, cheaper models from larger ones.</p>
+  </div>
+  <div class="item">
+    <span class="when">2025</span>
+    <p>Public controversy erupts over whether a low-cost competing model was partly built by learning from a closed frontier model's outputs, intensifying scrutiny of the practice.</p>
+  </div>
+  <div class="item">
+    <span class="when">Nov 20, 2026</span>
+    <p>OpenAI posts that it is sharing new research on fighting distillation, how capabilities transfer, and how it detects and disrupts coordinated distillation attempts.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Claims, sorted by how solid they are</h2>
+
+<div class="claim">
+<span class="tag established">Established</span>
+<p>Distillation can reproduce powerful AI capabilities in a smaller model.</p>
+<p class="reason">Reason: this is a well-documented machine learning technique, not disputed in the field.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>Distilled models lack the safeguards built into the original model.</p>
+<p class="reason">Reason: this is OpenAI's framing of the risk. The post doesn't detail exactly how much safety work fails to transfer.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>There are coordinated attempts specifically targeting OpenAI's models for distillation.</p>
+<p class="reason">Reason: only OpenAI asserts this coordination. No independent verification is given.</p>
+</div>
+
+<div class="claim">
+<span class="tag view">Speaker's view</span>
+<p>OpenAI can reliably detect and disrupt these distillation attempts.</p>
+<p class="reason">Reason: this is OpenAI's own claim about its own capability, without outside confirmation.</p>
+</div>
+
+<div class="claim">
+<span class="tag contested">Contested</span>
+<p>Anti-distillation efforts are purely about AI safety, not also about protecting competitive advantage.</p>
+<p class="reason">Reason: OpenAI frames this as safety. Protecting a commercial moat is a plausible overlapping motive the post doesn't address.</p>
+</div>
+</section>
+
+<section>
+<h2>Numbers worth remembering</h2>
+<div class="numbers">
+  <div class="tile">
+    <span class="big">54% to 0.2%</span>
+    <span class="ctx">Drop in success rate of attacks trying to extract protected model reasoning, after OpenAI tightened safeguards in later models.</span>
+  </div>
+  <div class="tile">
+    <span class="big">Weekly</span>
+    <span class="ctx">Reported cadence of OpenAI enforcement actions against unauthorized distillation campaigns.</span>
+  </div>
+</div>
+<p class="note">These two figures come from recent reporting around OpenAI's security work, not the original post itself, and may be dated.</p>
+</section>
+
+<section>
+<h2>The mechanism, in one picture</h2>
+<svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing a teacher model with guardrails producing outputs that a student model learns from, but the guardrails do not transfer">
+  <rect x="10" y="10" width="300" height="70" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.3"/>
+  <text x="160" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">Frontier model (teacher)</text>
+  <text x="160" y="52" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.7">capability + safety guardrails</text>
+  <rect x="30" y="58" width="110" height="16" rx="8" fill="#b1431f" fill-opacity="0.35"/>
+  <text x="85" y="70" text-anchor="middle" font-size="9" fill="currentColor">capability</text>
+  <rect x="180" y="58" width="110" height="16" rx="8" fill="#2f6b42" fill-opacity="0.35"/>
+  <text x="235" y="70" text-anchor="middle" font-size="9" fill="currentColor">guardrails</text>
+
+  <line x1="160" y1="80" x2="160" y2="120" stroke="currentColor" stroke-opacity="0.4" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="160" y="105" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity="0.7">outputs harvested at scale</text>
+
+  <rect x="10" y="120" width="300" height="60" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.3"/>
+  <text x="160" y="140" text-anchor="middle" font-size="12" fill="currentColor">Outside group trains a new model</text>
+  <text x="160" y="158" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity="0.6">using the teacher's outputs as examples</text>
+
+  <line x1="85" y1="180" x2="85" y2="215" stroke="#b1431f" stroke-width="2" marker-end="url(#arrowR)"/>
+  <line x1="235" y1="180" x2="235" y2="215" stroke="#2f6b42" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="235" y="200" text-anchor="middle" font-size="9" fill="currentColor" fill-opacity="0.7">blocked</text>
+
+  <rect x="10" y="220" width="300" height="60" rx="10" fill="none" stroke="var(--accent)" stroke-width="2"/>
+  <text x="160" y="242" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">Distilled model (student)</text>
+  <rect x="30" y="252" width="110" height="16" rx="8" fill="#b1431f" fill-opacity="0.6"/>
+  <text x="85" y="264" text-anchor="middle" font-size="9" fill="currentColor">capability copied</text>
+  <rect x="180" y="252" width="110" height="16" rx="8" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-opacity="0.3" stroke-dasharray="3 3"/>
+  <text x="235" y="264" text-anchor="middle" font-size="9" fill="currentColor" fill-opacity="0.6">guardrails missing</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="currentColor" fill-opacity="0.5"/>
+    </marker>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#b1431f"/>
+    </marker>
+  </defs>
+</svg>
+</section>
+
+<section>
+<h2>Explain it to a friend in 30 seconds</h2>
+<p class="script">"You know how a student can learn to mimic a teacher's answers without understanding why the teacher reasoned that way? That's distillation. A small, cheap model is trained to copy a big model's outputs, so it ends up acting similarly without the huge training cost. OpenAI's point is that the copy picks up the skill but skips the safety work baked into the original, and they say they're seeing organized groups do this at scale, so they built systems to catch and block it."</p>
+</section>
+
+<section>
+<h2>Check yourself</h2>
+
+<details>
+<summary>Why does OpenAI say a distilled model is different from the original, even if it performs similarly?</summary>
+<p>Because distillation copies outputs and behavior, not the safety guardrails engineered into the source model.</p>
+</details>
+
+<details>
+<summary>What is OpenAI trying to detect and disrupt, according to the post?</summary>
+<p>Coordinated attempts by outside groups to distill its models at scale.</p>
+</details>
+
+<details>
+<summary>Explain AI model distillation to a friend in 30 seconds. What should a strong answer cover?</summary>
+<p>Training a smaller, cheaper model using a bigger model's outputs as the teaching material, so it mimics the bigger model's behavior without needing the same size, cost, or the original safety work.</p>
+</details>
+</section>
+
+<footer>
+Source: <a href="https://x.com/OpenAI/status/2123862344422088794" target="_blank" rel="noopener">OpenAI's post on X</a>, Nov 20, 2026.<br>
+Brief written: 2026-11-21.<br>
+General background may be dated.
+</footer>
+
+</main>
+</body>
+</html>
